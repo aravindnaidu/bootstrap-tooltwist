@@ -60,11 +60,11 @@
 <!-- Respond.js proxy on external server -->
     <link href="http://externalcdn.com/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
 
-    <!-- Respond.js redirect location on local server -->
+<!--     Respond.js redirect location on local server
     <link href="/path/to/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
 
-    <!-- Respond.js proxy script on local server -->
-    <script src="/path/to/respond.proxy.js"></script>
+    Respond.js proxy script on local server
+    <script src="/path/to/respond.proxy.js"></script> -->
 
 <script src="/ttsvr/skypepi/scripts/jquery.simplemodal.1.4.4.min.js"></script>
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/dialog/confirm.css" media="screen" />
