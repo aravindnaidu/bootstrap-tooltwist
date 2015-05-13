@@ -97,7 +97,7 @@
 %%topCode%%
 
 <!--  Provides a common fixed-width (and optionally responsive) layout with only <div class="container"> required. -->
- <div class="container">
+ <div class="divForFixedFooter">
  
  <!--  Create a fluid-->
  <!-- <div class="container-fluid" -->
