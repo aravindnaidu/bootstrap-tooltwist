@@ -21,6 +21,20 @@
 				} 
 			}, 1000); 
 		});
+		
+		$('[data-toggle="tooltip"]').on('shown.bs.tooltip', function () {
+			var _this = this;
+			$(_this).unbind('click').click(function() {
+				$(_this).tooltip('hide');
+			});
+		});
+		
+		$('[data-toggle="tooltip"]').on('hidden.bs.tooltip', function () {
+			var _this = this;
+			$(_this).unbind('click').click(function() {
+				$(_this).tooltip('show');
+			});
+		});
 		</script>
 		 <%if (FreemiumErrorCatchUtil.isPageError(request)=="true"){ %>
 		<script type="text/javascript">
