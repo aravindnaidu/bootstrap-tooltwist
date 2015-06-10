@@ -50,8 +50,8 @@
 	<meta name="description" content="%%descriptionMetatag%%">
 	<meta name="keywords" content="%%keywordMetatag%%">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<link rel="shortcut icon" href="/ttsvr/favicon.ico?v=0.2" type="image/x-icon">
-	 
+	<!-- <link rel="shortcut icon" href="/ttsvr/favicon.ico?v=0.2" type="image/x-icon">/ttsvr/studylane_t/images/icons/back.png -->
+	<link rel="shortcut icon" href="/ttsvr/studylane_t/images/icons/favicon.ico" type="image/x-icon">
 <!--[if lte IE 9]>
 <script src="/ttsvr/studylane_t/libraries/jquery/1.11.0/jquery-1.11.0.min.js"></script>
 <![endif]-->
@@ -75,12 +75,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="%%URL(/ttsvr/bootstrap/css/bootstrap.min.css?v=3.0.0)%%" rel="stylesheet" media="screen" />
+    <script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-56123383-1', 'auto');
+		ga('send', 'pageview');
+	</script> 
   </head>
   <body>
-	<!-- START OF SmartSource Data Collector TAG v10.2.29 -->
-	<!-- Copyright (c) 2012 Webtrends Inc.  All rights reserved. -->
-	<noscript><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="http://statse.webtrendslive.com/dcs222yr3uqow8spu3rba9o5l_2w5b/njs.gif?dcssip=https://english-courses.britishcouncil.org&amp;dcsuri=/nojavascript&amp;WT.dl=0&amp;WT.es=https://english-courses.britishcouncil.org/nojavascript&amp;WT.js=No&amp;WT.tv=BC.nojs.1"/></noscript>
-	<!-- END OF SmartSource Data Collector TAG v10.2.29 -->
   
 %%topCode%%
 
