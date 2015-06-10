@@ -35,6 +35,10 @@
 				$(_this).tooltip('show');
 			});
 		});
+		
+		dataLayer.push({
+			'logged_in' : <%=LoginUser.isLoggedIn(request)%>
+		});
 		</script>
 		 <%if (FreemiumErrorCatchUtil.isPageError(request)=="true"){ %>
 		<script type="text/javascript">
