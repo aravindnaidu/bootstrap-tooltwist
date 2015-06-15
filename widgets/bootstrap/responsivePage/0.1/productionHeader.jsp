@@ -48,7 +48,6 @@
 	%>
 	
 	<%
-	FreemiumUtil.checkFreemiumSiteRedirect(request, response);
 	FreemiumUtil.saveUsersAddressSearch(jh);
 	
 	String map_navpoints_enabled_tmp = Config.getValue("maps.navpoint.enabled");
