@@ -72,15 +72,12 @@
 	<meta name="keywords" content="%%keywordMetatag%%">
 	<meta name="generator" content="ToolTwist" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
 	<%if(currentNavpointId.equals("myrp-1327")){%>
-	<meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
+	<meta name="googlebot" content="nofollow, noindex" />
 	<% } %>
-	
 	<%if(currentNavpointId.equals("myrp-1282")){%>
 	<meta name="google-site-verification" content="yFbd-YGWTkGOW-6CQL4pOJ6d-A9hxYk0ZvXHKkL97UI" />
 	<% } %>
-	
 	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
     <link href="<%=Cloudfront.getDNS() %>/bootstrap/css/bootstrap.min.<%=Config.getValue("bootstrap.version")%>.css.gz" type="text/css" rel="stylesheet" media="screen"> <!-- version used by Simple Machines -->
     <link href="<%=Cloudfront.getDNS() %>/bootstrap/css/font-awesome.<%=Config.getValue("font-awesome.version")%>.css.gz" type="text/css" rel="stylesheet" media="screen">
