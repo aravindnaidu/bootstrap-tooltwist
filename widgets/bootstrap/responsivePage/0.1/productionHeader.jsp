@@ -64,6 +64,7 @@
 	if ("true".equals(request.getParameter("redirect")) && !StringUtil.isEmpty(request.getParameter("pvUrl"))) {
 		CookiesUtil.setCookie(jh, "redirect_to_pv", "1");
 		FreemiumUtil.accessPVURL(request, response);
+		return;
 	}
 	
 	FreemiumUtil.saveUsersAddressSearch(jh);
