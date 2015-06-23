@@ -1,10 +1,13 @@
 <!--START-->
+<%@page import="com.myrp.util.MD5Utils"%>
+<%@page import="com.myrp.util.StringUtil"%>
 <%@page import="tooltwist.myrp.util.FreemiumUtil"%>
 <%@page import="tooltwist.myrp.util.FreemiumErrorCatchUtil"%>
 <%@page import="tooltwist.myrp.util.Config"%>
 <%@page import="tooltwist.myrp.util.LoginUser"%>
 <%@page import="java.util.Map"%>
 <%@page import="com.myrp.util.WebUtil"%>
+<%@page import="com.myrp.util.CookiesUtil"%>
 <%@page import="com.myrp.util.Cloudfront"%>
 <%@page import="tooltwist.wbd.Navpoint"%>
 <%@page import="com.dinaa.misc.AltLang"%>
@@ -48,6 +51,21 @@
 	%>
 	
 	<%
+	boolean isRedirectFromMyrpToPV = !StringUtil.isEmpty(CookiesUtil.getCookie(jh, "redirect_to_pv"));
+	boolean isPVRedirectNotified = !StringUtil.isEmpty(CookiesUtil.getCookie(jh, "redirect_to_pv_noti"));
+	
+	boolean showPVNotification = false;
+	if (isRedirectFromMyrpToPV && !isPVRedirectNotified) {
+		CookiesUtil.setCookie(jh, "redirect_to_pv_noti", MD5Utils.to_MD5("true"), 17280000);
+		showPVNotification = true;	
+	}
+	
+	CookiesUtil.deleteCookie(jh, "redirect_to_pv");
+	if ("true".equals(request.getParameter("redirect")) && !StringUtil.isEmpty(request.getParameter("pvUrl"))) {
+		CookiesUtil.setCookie(jh, "redirect_to_pv", "1");
+		FreemiumUtil.accessPVURL(request, response);
+	}
+	
 	FreemiumUtil.saveUsersAddressSearch(jh);
 	
 	String map_navpoints_enabled_tmp = Config.getValue("maps.navpoint.enabled");

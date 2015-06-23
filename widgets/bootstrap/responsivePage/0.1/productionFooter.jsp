@@ -45,20 +45,20 @@
 		   jQuery('#errorModal').modal();
 		</script>
 		<%}%>
+
+		<% if (showPVNotification) { %>
+		<script>jQuery('#redirectNotification').modal();</script>
+		<% } %>
+		
+		<%
+		if (FreemiumUtil.isJusticeMetricsShown(request)) {
+		%>
+			<script type="text/javascript" src="https://rawgit.com/okor/justice/master/build/justice.min.js"></script>
+			<script type="text/javascript">
+				Justice.init();
+			</script>
+		<%}	%>
 	</body>
-
-	<%
-	if (FreemiumUtil.isJusticeMetricsShown(request)) {
-	%>
-		<script type="text/javascript" src="https://rawgit.com/okor/justice/master/build/justice.min.js"></script>
-		<script type="text/javascript">
-			Justice.init();
-		</script>
-	<%
-	}
-	%>
-
-
 </html>
 
 <%
