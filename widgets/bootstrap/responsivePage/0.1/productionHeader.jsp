@@ -1,11 +1,12 @@
 <!--START-->
 <!-- header for responsivePage -->
-<%@page import="org.apache.commons.lang3.text.WordUtils"%>
+<%@page import="org.apache.commons.lang.WordUtils"%>
+<%@page import="org.apache.commons.lang.StringUtils"%>
 <%@page import="tooltwist.cloudmall.utils.StringUtil"%>
 <%@page import="tooltwist.cloudmall.utils.CloudMallUtils"%>
-<%@page import="tooltwist.cloudmall.utils.WebUtils"%>
 <%@page import="tooltwist.wbd.Navpoint"%>
 <%@page import="com.dinaa.misc.AltLang"%>
+<%@page import="tooltwist.cloudmall.utils.WebUtils"%>
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="com.dinaa.data.XData"%>
 <%@page import="tooltwist.misc.JspHelper"%>
@@ -43,8 +44,9 @@
 <%
 	String jspName = "%%navpointId%%";
 	JspHelper jh = JspHelper.getJspHelper(pageContext, jspName);
-	AltLang lang=WebUtils.getAltLang(jh);
 	%%preFetchCode%%
+
+	AltLang lang=WebUtils.getAltLang(jh);
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -76,7 +78,7 @@
 	<!-- [ CSS from cssContainer widget END ] -->
     
     <!-- [ Cloudmall Essentials - Bootstrap and Font Awesome ] -->
-	<link href="%%URL(/ttsvr/bootstrap/css/build/cloudmall.essential.112014.css)%%" rel="stylesheet" media="screen">
+	<link href="%%URL(/ttsvr/bootstrap/css/build/cloudmall.essential.170215.css)%%" rel="stylesheet" media="screen">
 	<!-- [ Cloudmall Essentials END ] -->
 	
     <!-- [ Favicon ] -->
@@ -85,7 +87,7 @@
 	<!-- [ Favicon END ] -->
 	
 	<%
-	Navpoint navpoint = WbdCache.findNavpointInAnyLoadedProject(jspName, true);
+	Navpoint navpoint = WbdCache.findNavPoint(jspName, true);
 	boolean requiresLogin = navpoint.requiresLogin();
 	%>
 	

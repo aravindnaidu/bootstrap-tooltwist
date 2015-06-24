@@ -178,7 +178,7 @@ public class BreadCrumbsWidget extends WbdWidgetController {
 		//obtain the base navigation point
 		String baseNavpointId = instance.getProperty("baseNavpoint", null);
 		if (!baseNavpointId.equals("")) {
-			Navpoint baseNavpoint = WbdCache.findNavpointInAnyLoadedProject(baseNavpointId, false);
+			Navpoint baseNavpoint = WbdCache.findNavPoint(baseNavpointId, false);
 			String baseUrl = RoutingUIM.navpointUrl(ud.getCredentials(), baseNavpoint.getId(), AutomaticUrlParametersMode.NO_AUTOMATIC_URL_PARAMETERS);
 			navpointList.add(new WidgetNavpoint(baseNavpoint.getLabel(), baseUrl, baseNavpointId));
 
@@ -191,7 +191,7 @@ public class BreadCrumbsWidget extends WbdWidgetController {
 				topNavId = root.getId();
 			} else {
 				//obtain top navpoint
-				Navpoint topNavpoint = WbdCache.findNavpointInAnyLoadedProject(topNavpointId, false);
+				Navpoint topNavpoint = WbdCache.findNavPoint(topNavpointId, false);
 				topNavId = topNavpoint.getId();
 			}
 

@@ -1,8 +1,5 @@
 *.class
-*.swp
 .DS_Store
 .svn/
 /bin/
 /target/
-/build
-.gradle
