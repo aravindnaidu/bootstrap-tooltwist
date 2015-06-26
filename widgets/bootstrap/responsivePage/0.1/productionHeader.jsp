@@ -67,6 +67,11 @@
 		return;
 	}
 	
+	boolean showUnregisterSubscriptionNotification = !StringUtil.isEmpty(CookiesUtil.getCookie(request, "unregister_email_with_subscription")) && !jspName.equals("myrp-1318") && !jspName.equals("myrp-1311") && !jspName.equals(CookiesUtil.getCookie(request, "unregister_subscription"));
+	if (showUnregisterSubscriptionNotification) {
+		CookiesUtil.setCookie(response, "unregister_subscription", jspName);
+	}
+	
 	FreemiumUtil.saveUsersAddressSearch(jh);
 	
 	String map_navpoints_enabled_tmp = Config.getValue("maps.navpoint.enabled");

@@ -50,6 +50,10 @@
 		<script>jQuery('#redirectNotification').modal();</script>
 		<% } %>
 		
+		<% if (showUnregisterSubscriptionNotification) { %>
+		<script>jQuery(document).ready(function() {jQuery('#emailSubscriptionNotification').modal();});</script>
+		<% } %>
+		
 		<%
 		if (FreemiumUtil.isJusticeMetricsShown(request)) {
 		%>
