@@ -72,6 +72,7 @@
 		CookiesUtil.setCookie(response, "unregister_subscription", jspName);
 	}
 	
+	FreemiumUtil.checkAddressParameter(request, response, jh, jspName);
 	FreemiumUtil.saveUsersAddressSearch(jh);
 	
 	String map_navpoints_enabled_tmp = Config.getValue("maps.navpoint.enabled");
