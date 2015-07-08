@@ -51,6 +51,10 @@
 	%>
 	
 	<%
+	if (Config.getValue("propertyvalue.redirect").equals("on")) {
+		FreemiumUtil.redirectToPVDomain(request, response);
+	}
+	
 	boolean isRedirectFromMyrpToPV = !StringUtil.isEmpty(CookiesUtil.getCookie(jh, "redirect_to_pv"));
 	boolean isPVRedirectNotified = !StringUtil.isEmpty(CookiesUtil.getCookie(jh, "redirect_to_pv_noti"));
 	
