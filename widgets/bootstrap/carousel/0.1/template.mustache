@@ -50,7 +50,10 @@
 {{/isNutra}}-->
 {{#imageList}}
   <!-- Controls -->
-  {{^type}}
+  {{#type}}
+  		<!-- 
+  {{/type}}
+ {{/imageList}}
   <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
     <span class="icon-prev"></span>
   </a>
@@ -58,5 +61,8 @@
     <span class="icon-next"></span>
   </a>
 </div>
-{{/type}}
-{{/imageList}}
+{{#imageList}}
+  {{#type}}
+   -->
+  {{/type}}
+   {{/imageList}}
