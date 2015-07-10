@@ -46,33 +46,69 @@ public class CarouselViewHelper extends ViewHelper
 		      imageList = new ArrayList<Carousel>();
 	    	  //XNodes nodes = pageData.getNodes("imagePath");
 		      XNodes nodes = pageData.getNodes("banner");
-	    	  	    	  
-	    	  int index = 0;
-	    	  for (nodes.first(); nodes.next();) {
-	    		  
-	    		  XNodes imageNode = nodes.getNodes("imagePath");
-	    		  XNodes linkNode = nodes.getNodes("bannerLink");
-	    		 
-	    		    boolean status = false;
-	    		  
-		    		//String imagePath = nodes.getText();
-		    		String imagePath = imageNode.getText();
-		    		String linkPath = linkNode.getText();
-		    		
-		    		Carousel carousel = new Carousel();
-		    		carousel.setImage(imagePath);
-		    		carousel.setUrl(linkPath);
-		    		if (index == 0) {
-		    			status = true;
-		    			carousel.setActive(status);
-		    		} else {
-		    			carousel.setActive(status);
-		    		}
-		    		carousel.setIndex(index);
-		    		index++;
-		    		
-		  			imageList.add(carousel);
-			  }
+		      XNodes video = pageData.getNodes("video");
+		      XNodes nodes2 = pageData.getNodes("config");
+		      String confOption = null;
+		      for (nodes2.first(); nodes2.next();) {
+			      XNodes config = nodes2.getNodes("option");
+			      confOption = config.getText();
+		      }
+		    	  int index = 0;
+		    	  
+		    	  if(confOption.equalsIgnoreCase("video")) {
+		    		  for (video.first(); video.next();) {
+			    		  
+			    		  XNodes imageNode = video.getNodes("videoPath");
+			    		  XNodes linkNode = video.getNodes("videoLink");
+			    		 
+			    		    boolean status = false;
+			    		  
+				    		//String imagePath = nodes.getText();
+				    		String imagePath = imageNode.getText();
+				    		String linkPath = linkNode.getText();
+				    		
+				    		Carousel carousel = new Carousel();
+				    		carousel.setImage(imagePath);
+				    		carousel.setUrl(linkPath);
+				    		if (index == 0) {
+				    			status = true;
+				    			carousel.setActive(status);
+				    		} else {
+				    			carousel.setActive(status);
+				    		}
+				    		carousel.setIndex(index);
+				    		index++;
+				    		carousel.setType("video");
+				  				imageList.add(carousel);
+					  }
+		    	  }
+		    	  else {
+		    		  for (nodes.first(); nodes.next();) {
+			    		  
+			    		  XNodes imageNode = nodes.getNodes("imagePath");
+			    		  XNodes linkNode = nodes.getNodes("bannerLink");
+			    		 
+			    		    boolean status = false;
+			    		  
+				    		//String imagePath = nodes.getText();
+				    		String imagePath = imageNode.getText();
+				    		String linkPath = linkNode.getText();
+				    		
+				    		Carousel carousel = new Carousel();
+				    		carousel.setImage(imagePath);
+				    		carousel.setUrl(linkPath);
+				    		if (index == 0) {
+				    			status = true;
+				    			carousel.setActive(status);
+				    		} else {
+				    			carousel.setActive(status);
+				    		}
+				    		carousel.setIndex(index);
+				    		index++;
+				    		
+				  				imageList.add(carousel);
+					  }
+		    	  }
 	      } catch (Exception ex) {
 	    	  logger.error("getImageList() " + ex.fillInStackTrace());
 	      }
@@ -100,6 +136,7 @@ public class CarouselViewHelper extends ViewHelper
 		
 		private String image = "";
 		private String url = "";
+		private String type="";
 		private boolean active = false;
 		private int index = 0;
 		
@@ -108,6 +145,12 @@ public class CarouselViewHelper extends ViewHelper
 		}
 		public void setImage(String image) {
 			this.image = image;
+		}
+		public String getType() {
+			return type;
+		}
+		public void setType(String type) {
+			this.type = type;
 		}
 		public String getUrl() {
 			return url;
