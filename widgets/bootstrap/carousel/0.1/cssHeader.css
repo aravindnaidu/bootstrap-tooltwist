@@ -7,10 +7,13 @@
 	margin-bottom: -5px;
 }
 video {
-/*   z-index: -100; */
-/*   min-height: 100%; */
+  height: 100%; 
   width: 100%; 
-/*   top: 0;
-  left: 0;
-  position: fixed; */
+  margin-top: 167px;
+}
+
+@media (max-width: 767px) {
+	video {
+		margin-top: 75px !important;
+	}
 }
