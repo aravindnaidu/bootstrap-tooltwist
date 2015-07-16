@@ -11,20 +11,19 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
   	{{#imageList}}
-  		{{#type}}
-          <div class="item active">
+  		<div class="item {{#active}}active{{/active}}">
 				    <a href="{{url}}">
-				    		<video autoplay="true" loop="true">
+<!--   		{{#type}}
+				    		<video muted autoplay="true" loop="true">
 					      <source src="{{image}}">
+					      Your browser does not support the video tag.
 					    </video>
+			{{/type}}
+			{{^type}} -->
+					<img src="{{image}}" alt="Banner">
+<!-- 			{{/type}} -->
 					</a>
 			</div>
-			{{/type}}
-			{{^type}}
-			<div class="item {{#active}}active{{/active}}">
-				<a href="{{url}}"><img src="{{image}}" alt="Banner"></a>
-			</div>
-			{{/type}}
  	{{/imageList}}
 
   </div>
@@ -48,12 +47,12 @@
 		</a>
 	</div>
 {{/isNutra}}-->
-{{#imageList}}
+
   <!-- Controls -->
-  {{#type}}
-  		<!-- 
-  {{/type}}
- {{/imageList}}
+
+
+
+  <!-- Controls -->
   <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
     <span class="icon-prev"></span>
   </a>
@@ -61,8 +60,3 @@
     <span class="icon-next"></span>
   </a>
 </div>
-{{#imageList}}
-  {{#type}}
-   -->
-  {{/type}}
-   {{/imageList}}
