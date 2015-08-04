@@ -3,22 +3,9 @@ apply plugin: 'eclipse'
 apply plugin: 'maven'
 apply plugin: 'com.jfrog.artifactory-upload'
 
-buildscript {
-  repositories {
-    jcenter()
-  }
-  dependencies {
-    classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.1.1"
-  }
-}
-
 group = PROJECT_GROUP
 version = PROJECT_VERSION
-sourceCompatibility = PROJECT_SOURCE_COMPATIBILITY
 
-manifest {
-  attributes 'provider': 'gradle'
-}
 configurations {
   provided
   published
@@ -28,6 +15,20 @@ sourceSets {
   test.compileClasspath += configurations.provided
   test.runtimeClasspath += configurations.provided
 }
+
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.1.1"
+  }
+}
+
+repositories {
+  mavenCentral()
+}
+
 dependencies {
   /* ToolTwist Dependencies */
   compile 'com.tooltwist:ttWbd:8.3.3-SNAPSHOT'
@@ -40,6 +41,7 @@ dependencies {
 
   testCompile group: 'junit', name: 'junit', version: '4.8.2'
 }
+
 task sourceJar(type: Jar) {
   from sourceSets.main.allSource
   classifier = 'sources'
@@ -51,11 +53,13 @@ artifacts {
   published sourceJar
 }
 
+project.ext.isSnapshot = version.endsWith("-SNAPSHOT")
+
 artifactory {
   contextUrl = "${RESOLVE_CONTEXTURL}"
   publish {
     repository {
-      repoKey = "${PUBLISH_SNAPSHOT_REPO}"
+      repoKey = isSnapshot ? "${PUBLISH_SNAPSHOT_REPO}" : "${PUBLISH_RELEASE_REPO}"
       username = "${ARTIFACTORY_USER}"
       password = "${ARTIFACTORY_PASSWORD}"
       ivy {
@@ -79,10 +83,6 @@ artifactory {
   }
 }
 
-task wrapper(type: Wrapper) {
-  gradleVersion = '1.12'
-}
-
 /**************************************************************************************************
  *
  *      Copy various resources into the jar file or into separate zip files.
@@ -92,22 +92,27 @@ task copyWebContent(type: Copy) {
   from('WebContent')
   into 'build/classes/main/META-INF/resources'
 }
+
 task copyConfig(type: Copy) {
   from('config')
   into 'build/classes/main/META-INF/tooltwist/config'
 }
+
 task copyWidgets(type: Copy) {
   from('widgets')
   into 'build/classes/main/META-INF/tooltwist/widgets'
 }
+
 task configZip(type: Zip) {
   from 'config'
   classifier = "tooltwist-config"
 }
+
 task widgetsZip(type: Zip) {
   from 'widgets'
   classifier = "tooltwist-widgets"
 }
+
 task webcontentZip(type: Zip) {
   from 'WebContent'
   classifier = "tooltwist-webcontent"
@@ -118,10 +123,12 @@ processResources {
     processResources.dependsOn("configZip")
     project.artifacts { archives configZip }
   }
+
   if (file('widgets').isDirectory()) {
     processResources.dependsOn("widgetsZip")
     project.artifacts { archives widgetsZip }
   }
+
   if (file('WebContent').isDirectory()) {
     processResources.dependsOn("webcontentZip")
     project.artifacts { archives webcontentZip }
