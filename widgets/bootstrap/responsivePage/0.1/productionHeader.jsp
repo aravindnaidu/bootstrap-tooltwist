@@ -48,6 +48,7 @@
 		String jspName = "%%navpointId%%";
 		JspHelper jh = JspHelper.getJspHelper(pageContext, jspName);
 		FreemiumUtil.checkAddressParameter(request, response, jh, jspName);
+		FreemiumUtil.redirectToPVSubDomain(request, response);
 		%%preFetchCode%%
 	%>
 	
