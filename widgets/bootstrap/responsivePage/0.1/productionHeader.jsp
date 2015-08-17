@@ -115,7 +115,13 @@
 	
 	%%headerCode%%
     <!-- [ jQuery ] -->
-	<script src="<%=Cloudfront.getDNS() %>/freemium/script/jquery.1.11.1.min.js.gz"></script>
+	<!--[if lt IE 9]>
+		<script src="<%=Cloudfront.getDNS() %>/freemium/script/jquery.1.11.1.min.js.gz"></script>
+	<![endif]-->
+	<!--[if gte IE 9]><!-->
+    	<script src="<%=Cloudfront.getDNS() %>/freemium/script/jquery-2.1.4.min.js.gz"></script>
+	<!--<![endif]-->
+	
 	<script>$.ajaxSetup({ cache: false });</script>
     <!-- [ CSS from cssContainer widget ] -->
 	<%
