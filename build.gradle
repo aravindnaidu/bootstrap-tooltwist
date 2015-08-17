@@ -1,93 +1,135 @@
-apply plugin: 'java'
+apply plugin:'java'
 apply plugin: 'eclipse'
+apply plugin: 'maven'
+apply plugin: 'com.jfrog.artifactory-upload'
 
-group = 'com.tooltwist'
-version = '1.0.0-SNAPSHOT'
-sourceCompatibility = 1.7
+group = PROJECT_GROUP
+version = PROJECT_VERSION
 
-task sourceJar(type: Jar) {
-    classifier = 'sources'
-    from sourceSets.main.allSource
-}
-
-artifacts {
-    archives sourceJar
-}
-
-//----------------------------------------------------------------------
-// Gradle lacks the "provided" dependency so we'll have to add it.
-// http://blog.codeaholics.org/2012/emulating-mavens-provided-scope-in-gradle/
 configurations {
-    provided
-    published
+  provided
+  published
 }
 sourceSets {
-    main.compileClasspath += configurations.provided
-    test.compileClasspath += configurations.provided
-    test.runtimeClasspath += configurations.provided
+  main.compileClasspath += configurations.provided
+  test.compileClasspath += configurations.provided
+  test.runtimeClasspath += configurations.provided
 }
-//----------------------------------------------------------------------
+
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.1.1"
+  }
+}
 
 repositories {
-    maven {
-        url RESOLVE_CONTEXTURL + RESOLVE_REPO
-        credentials {
-            username = "${ARTIFACTORY_USER}"
-            password = "${ARTIFACTORY_PASSWORD}"
-        }
-    }
-    ivy {
-        url "file:/${localRepo}"
-        layout "maven"
-    }
-    mavenCentral()
+  mavenCentral()
 }
 
 dependencies {
-    /* ToolTwist Dependencies */
-    compile 'com.tooltwist:ttWbd:8.3.3-SNAPSHOT'
-    compile 'com.tooltwist:ttStd:8.3.2'
-    compile 'com.tooltwist:ttsec-standaloneDesigner:8.3.2'
-    
-    /* ToolTwist Dependencies For Local
-    compile 'com.tooltwist:tooltwist:8.3.1-20140404'
-    compile 'com.tooltwist:ttStd:8.3.1-20140404'
-    compile 'com.tooltwist:ttWbd:8.3.1-20140404'
-    */
-    
-    provided 'javax:javaee-api:6.0'
-    
-    testCompile group: 'junit', name: 'junit', version: '4.8.2'
+  /* ToolTwist Dependencies */
+  compile 'com.tooltwist:tooltwist:8.3.3-SNAPSHOT'
+  compile 'com.tooltwist:ttStd:8.3.3-SNAPSHOT'
+  compile 'com.tooltwist:ttWbd:8.3.3-SNAPSHOT'
+
+  /* Project Dependencies */
+  provided 'javax:javaee-api:6.0'
+
+  testCompile group: 'junit', name: 'junit', version: '4.8.2'
+}
+
+task sourceJar(type: Jar) {
+  from sourceSets.main.allSource
+  classifier = 'sources'
+}
+artifactoryPublish {
+  dependsOn sourceJar
+}
+artifacts {
+  published sourceJar
+}
+
+project.ext.isSnapshot = version.endsWith("-SNAPSHOT")
+
+artifactory {
+  contextUrl = "${RESOLVE_CONTEXTURL}"
+  publish {
+    repository {
+      repoKey = isSnapshot ? "${PUBLISH_SNAPSHOT_REPO}" : "${PUBLISH_RELEASE_REPO}"
+      username = "${ARTIFACTORY_USER}"
+      password = "${ARTIFACTORY_PASSWORD}"
+      ivy {
+        ivyLayout = '[organization]/[module]/ivy-[revision].xml'
+        artifactLayout = '[organization]/[module]/[revision]/[module]-[revision](-[classifier]).[ext]'
+        mavenCompatible = true
+      }
+    }
+    defaults {
+      publishConfigs('archives', 'published')
+      properties = ['build.status': "$it.project.status".toString()]
+    }
+  }
+  resolve {
+    repository {
+      repoKey = "${RESOLVE_REPO}"
+      username = "${ARTIFACTORY_USER}"
+      password = "${ARTIFACTORY_PASSWORD}"
+      maven = true
+    }
+  }
 }
 
 /**************************************************************************************************
  *
  *      Copy various resources into the jar file or into separate zip files.
  */
+
 task copyWebContent(type: Copy) {
-        from 'WebContent'
-        into 'build/bootstrap-tooltwist-resources/WebContent'
+  from('WebContent')
+  into 'build/classes/main/META-INF/resources'
 }
+
 task copyConfig(type: Copy) {
-        from 'config'
-        into 'build/bootstrap-tooltwist-resources/bootstrap-tooltwist/config'
+  from('config')
+  into 'build/classes/main/META-INF/tooltwist/config'
 }
+
 task copyWidgets(type: Copy) {
-        from 'widgets'
-        into 'build/bootstrap-tooltwist-resources/bootstrap-tooltwist/widgets'
+  from('widgets')
+  into 'build/classes/main/META-INF/tooltwist/widgets'
 }
-/*task copyLib(type: Copy) {
-        from configurations.runtime
-        into "build/bootstrap-tooltwist-resources/WebContent/WEB-INF/lib"
-}*/
-task zipResources(type: Zip) {
-        from 'build/bootstrap-tooltwist-resources'
-        classifier = 'bootstrap-tooltwist-resources'
+
+task configZip(type: Zip) {
+  from 'config'
+  classifier = "tooltwist-config"
+}
+
+task widgetsZip(type: Zip) {
+  from 'widgets'
+  classifier = "tooltwist-widgets"
+}
+
+task webcontentZip(type: Zip) {
+  from 'WebContent'
+  classifier = "tooltwist-webcontent"
 }
 processResources {
-        processResources.dependsOn("copyWebContent")
-        processResources.dependsOn("copyConfig")
-        processResources.dependsOn("copyWidgets")
-        //processResources.dependsOn("copyLib")
-        processResources.dependsOn("zipResources")
+  // Create zip files for config, widget and WebContent.
+  if (file('config').isDirectory()) {
+    processResources.dependsOn("configZip")
+    project.artifacts { archives configZip }
+  }
+
+  if (file('widgets').isDirectory()) {
+    processResources.dependsOn("widgetsZip")
+    project.artifacts { archives widgetsZip }
+  }
+
+  if (file('WebContent').isDirectory()) {
+    processResources.dependsOn("webcontentZip")
+    project.artifacts { archives webcontentZip }
+  }
 }
