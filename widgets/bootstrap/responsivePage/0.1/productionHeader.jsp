@@ -51,7 +51,15 @@
 	<meta name="keywords" content="%%keywordMetatag%%">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<!-- <link rel="shortcut icon" href="/ttsvr/favicon.ico?v=0.2" type="image/x-icon">/ttsvr/studylane_t/images/icons/back.png -->
-	<link rel="shortcut icon" href="/ttsvr/studylane_t/images/icons/favicon.ico" type="image/x-icon">
+	
+	<!-- FAVICON BASED ON HOST -->
+	<% Object isGSP = request.getSession(false).getAttribute("isGSP");
+		if ("false".equals(isGSP) ) { %>
+		<link rel="shortcut icon" href="/ttsvr/studylane_t/images/icons/favicon/studylane/favicon.ico?v=0.1" type="image/x-icon">	
+	<% } else { %>
+	<link rel="shortcut icon" href="/ttsvr/studylane_t/images/icons/favicon/gsp/favicon.ico?v=0.1" type="image/x-icon">
+	<% } %>
+	
 <!--[if lte IE 9]>
 <script src="/ttsvr/studylane_t/libraries/jquery/1.11.0/jquery-1.11.0.min.js"></script>
 <![endif]-->
