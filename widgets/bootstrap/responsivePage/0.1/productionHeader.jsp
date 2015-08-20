@@ -88,7 +88,8 @@
 	} catch(Exception e) {
 		currentNavpointId = "";
 	}
-	
+
+	boolean isHomePage = currentNavpointId.equals("myrp-1282");
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -104,25 +105,41 @@
 	<%if(currentNavpointId.equals("myrp-1282")){%>
 	<meta name="google-site-verification" content="yFbd-YGWTkGOW-6CQL4pOJ6d-A9hxYk0ZvXHKkL97UI" />
 	<% } %>
-	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-    <link href="<%=Cloudfront.getDNS() %>/bootstrap/css/bootstrap.min.<%=Config.getValue("bootstrap.version")%>.css.gz" type="text/css" rel="stylesheet" media="screen"> <!-- version used by Simple Machines -->
-    <link href="<%=Cloudfront.getDNS() %>/bootstrap/css/font-awesome.<%=Config.getValue("font-awesome.version")%>.css.gz" type="text/css" rel="stylesheet" media="screen">
-    <link href="<%=Cloudfront.getDNS() %>/freemium/css/pv/cl-bootstrap.<%=Config.getValue("cl-bootstrap.version")%>.css.gz" type="text/css" rel="stylesheet" media="screen">
-    <link href="<%=Cloudfront.getDNS() %>/freemium/css/pv/z-adjustments.<%=Config.getValue("z-adjustments.version")%>.css.gz" type="text/css" rel="stylesheet" media="screen">
+
      <!-- [ Favicon ] -->
 	<link rel="shortcut icon" href="/ttsvr/freemium/images/pv/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="/ttsvr/freemium/images/pv/favicon.ico" type="image/x-icon">
-	
+
+	<%
+	if (!isHomePage) {
+	%>
+		<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+	    <link href="<%=Cloudfront.getDNS() %>/bootstrap/css/bootstrap.min.<%=Config.getValue("bootstrap.version")%>.css.gz" type="text/css" rel="stylesheet" media="screen"> <!-- version used by Simple Machines -->
+	    <link href="<%=Cloudfront.getDNS() %>/bootstrap/css/font-awesome.<%=Config.getValue("font-awesome.version")%>.css.gz" type="text/css" rel="stylesheet" media="screen">
+	    <link href="<%=Cloudfront.getDNS() %>/freemium/css/pv/cl-bootstrap.<%=Config.getValue("cl-bootstrap.version")%>.css.gz" type="text/css" rel="stylesheet" media="screen">
+	    <link href="<%=Cloudfront.getDNS() %>/freemium/css/pv/z-adjustments.<%=Config.getValue("z-adjustments.version")%>.css.gz" type="text/css" rel="stylesheet" media="screen">
+	<%
+	}
+	%>
+
 	%%headerCode%%
-    <!-- [ jQuery ] -->
-	<!--[if lt IE 9]>
-		<script src="<%=Cloudfront.getDNS() %>/freemium/script/jquery.1.11.1.min.js.gz"></script>
-	<![endif]-->
-	<!--[if gte IE 9]><!-->
-    	<script src="<%=Cloudfront.getDNS() %>/freemium/script/jquery-2.1.4.min.js.gz"></script>
-	<!--<![endif]-->
+
+	<%
+	if (!isHomePage) {
+	%>
+	    <!-- [ jQuery ] -->
+		<!--[if lt IE 9]>
+			<script src="<%=Cloudfront.getDNS() %>/freemium/script/jquery.1.11.1.min.js.gz"></script>
+		<![endif]-->
+		<!--[if gte IE 9]><!-->
+	    	<script src="<%=Cloudfront.getDNS() %>/freemium/script/jquery-2.1.4.min.js.gz"></script>
+		<!--<![endif]-->
+
+		<script>$.ajaxSetup({ cache: false });</script>
+	<%
+	}
+	%>
 	
-	<script>$.ajaxSetup({ cache: false });</script>
     <!-- [ CSS from cssContainer widget ] -->
 	<%
 		for(String map_navpoint_enabled : map_navpoints_enabled) {
@@ -163,4 +180,3 @@
 	</div> <!-- /container -->
 
 </body>
-</html>

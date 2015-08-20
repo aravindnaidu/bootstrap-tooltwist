@@ -1,7 +1,30 @@
-<html>
-	<head></head>
+	<%
+	if (isHomePage) {
+	%>
+		<!-- Stylesheets -->
+		<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+	    <link href="<%=Cloudfront.getDNS() %>/bootstrap/css/bootstrap.min.<%=Config.getValue("bootstrap.version")%>.css.gz" type="text/css" rel="stylesheet" media="screen"> <!-- version used by Simple Machines -->
+	    <link href="<%=Cloudfront.getDNS() %>/bootstrap/css/font-awesome.<%=Config.getValue("font-awesome.version")%>.css.gz" type="text/css" rel="stylesheet" media="screen">
+	    <link href="<%=Cloudfront.getDNS() %>/freemium/css/pv/cl-bootstrap.<%=Config.getValue("cl-bootstrap.version")%>.css.gz" type="text/css" rel="stylesheet" media="screen">
+	    <link href="<%=Cloudfront.getDNS() %>/freemium/css/pv/z-adjustments.<%=Config.getValue("z-adjustments.version")%>.css.gz" type="text/css" rel="stylesheet" media="screen">
+	<%
+	}
+	%>
 	
-	<body>
+	<%
+	if (isHomePage) {
+	%>
+	    <!-- [ jQuery ] -->
+		<!--[if lt IE 9]>
+			<script src="<%=Cloudfront.getDNS() %>/freemium/script/jquery.1.11.1.min.js.gz"></script>
+		<![endif]-->
+		<!--[if gte IE 9]><!-->
+	    	<script src="<%=Cloudfront.getDNS() %>/freemium/script/jquery-2.1.4.min.js.gz"></script>
+		<!--<![endif]-->
+	<%
+	}
+	%>
+
 		<script src="<%=Cloudfront.getDNS() %>/freemium/script/bootstrap.min.v3.3.1.js.gz"></script> <!-- version used by Simple Machines -->
 		<!-- [ myrp_t ] -->
 		<script src="<%=Cloudfront.getDNS() %>/freemium/script/allfreemium.<%=Config.getValue("allFreemium.version")%>.min.js.gz"></script>
@@ -62,7 +85,6 @@
 				Justice.init();
 			</script>
 		<%}	%>
-	</body>
 </html>
 
 <%
