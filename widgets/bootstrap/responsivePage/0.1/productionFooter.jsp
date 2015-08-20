@@ -17,7 +17,7 @@
 			<script src="/ttsvr/cloudmall/js/build/c260615.js"></script>
 		
 		<!-- [ Bootstrap Project ] -->
-		<script src="/ttsvr/bootstrap/js/build/c170215.js"></script>
+		<script src="/ttsvr/bootstrap/js/build/c190815.js"></script>
 
 		%%bottomCode%%
 	
