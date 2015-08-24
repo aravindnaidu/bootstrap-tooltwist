@@ -94,20 +94,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
 	<script type="text/javascript">
-		WebFontConfig = {
-		  google: { families: [ 'Open+Sans::latin' ] }
-		};
-		(function() {
-		  var wf = document.createElement('script');
-		  wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-		    '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-		  wf.type = 'text/javascript';
-		  wf.async = 'true';
-		  var s = document.getElementsByTagName('script')[0];
-		  s.parentNode.insertBefore(wf, s);
-		})();
+		WebFontConfig={google:{families:["Open+Sans:400,300:latin"]}},function(){var t=document.createElement("script");t.src=("https:"==document.location.protocol?"https":"http")+"://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js",t.type="text/javascript",t.async="true";var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}();
 	</script>
 
 	<title>%%pageTitle%%</title>
@@ -126,31 +114,14 @@
 	<link rel="shortcut icon" href="/ttsvr/freemium/images/pv/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="/ttsvr/freemium/images/pv/favicon.ico" type="image/x-icon">
 
+    <link href="<%=Cloudfront.getDNS() %>/bootstrap/css/bootstrap.min.<%=Config.getValue("bootstrap.version")%>.css.gz" type="text/css" rel="stylesheet" media="screen">
+    <link href="<%=Cloudfront.getDNS() %>/freemium/css/pv/cl-bootstrap_z-adjustments.<%=Config.getValue("cl-bootstrap.z-adjustments.version")%>.min.css.gz" type="text/css" rel="stylesheet" media="screen">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css" rel="stylesheet" media="screen">
 	<%
-	/* Sequence of the assets matters! */
-	if (!isHomePage) {
+	if (isHomePage) {
 	%>
-		<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-	    <link href="<%=Cloudfront.getDNS() %>/bootstrap/css/bootstrap.min.<%=Config.getValue("bootstrap.version")%>.css.gz" type="text/css" rel="stylesheet" media="screen">
-	    <link href="<%=Cloudfront.getDNS() %>/bootstrap/css/font-awesome.<%=Config.getValue("font-awesome.version")%>.css.gz" type="text/css" rel="stylesheet" media="screen">
-	    <link href="<%=Cloudfront.getDNS() %>/freemium/css/pv/cl-bootstrap_z-adjustments.<%=Config.getValue("cl-bootstrap.z-adjustments.version")%>.min.css.gz" type="text/css" rel="stylesheet" media="screen">
-	<%
-	} else {
-	%>
-	    <link href="<%=Cloudfront.getDNS() %>/bootstrap/css/bootstrap.min.<%=Config.getValue("bootstrap.version")%>.css.gz" type="text/css" rel="stylesheet" media="screen">
-		<link href="<%=Cloudfront.getDNS() %>/freemium/css/pv/cl-bootstrap_z-adjustments.<%=Config.getValue("cl-bootstrap.z-adjustments.version")%>.min.css.gz" type="text/css" rel="stylesheet" media="screen">
 		<style type="text/css">
-			.wf-loading * {
-				opacity: 0;
-			}
-		
-			.wf-active *, 
-			.wf-inactive * {
-				-webkit-transition: opacity 1s ease-out;  
-				-moz-transition: opacity 1s ease-out; 
-				-o-transition: opacity 1s ease-out;  
-				transition: opacity 1s ease-out;  
-			}
+			.wf-loading *{opacity:0}.wf-active *,.wf-inactive *{-webkit-transition:opacity 1s ease-out;-moz-transition:opacity 1s ease-out;-o-transition:opacity 1s ease-out;transition:opacity 1s ease-out}
 		</style>
 	<%
 	}

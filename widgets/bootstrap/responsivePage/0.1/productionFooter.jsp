@@ -1,15 +1,6 @@
 	<%
 	if (isHomePage) {
 	%>
-		<!-- Stylesheets -->
-	    <link href="<%=Cloudfront.getDNS() %>/bootstrap/css/font-awesome.<%=Config.getValue("font-awesome.version")%>.css.gz" type="text/css" rel="stylesheet" media="screen">
-	<%
-	}
-	%>
-	
-	<%
-	if (isHomePage) {
-	%>
 	    <!-- [ jQuery ] -->
 		<!--[if lt IE 9]>
 			<script src="<%=Cloudfront.getDNS() %>/freemium/script/jquery.1.11.1.min.js.gz"></script>
