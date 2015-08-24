@@ -54,13 +54,14 @@
     <!-- [ Bootstrap ] -->
     <link href="%%URL(/ttsvr/bootstrap/css/bootstrap.css)%%" rel="stylesheet" media="screen">
     <link href="%%URL(/ttsvr/bootstrap/css/font-awesome.css)%%" rel="stylesheet" media="screen">
-    
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+
     %%headerCode%%
 
     <!-- [ Favicon ] -->
     <link rel="icon" href="/ttsvr/cropImage/<%=WbdCache.getProperty("store.name") %>.images.favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/ttsvr/cropImage/<%=WbdCache.getProperty("store.name") %>.images.favicon.ico" type="image/x-icon">
-    
+
   </head>
   <body>
 %%topCode%%
