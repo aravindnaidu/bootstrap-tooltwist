@@ -94,7 +94,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>%%pageTitle%%</title>
+
+	<script type="text/javascript">
+		WebFontConfig = {
+		  google: { families: [ 'Open+Sans::latin' ] }
+		};
+		(function() {
+		  var wf = document.createElement('script');
+		  wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+		    '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+		  wf.type = 'text/javascript';
+		  wf.async = 'true';
+		  var s = document.getElementsByTagName('script')[0];
+		  s.parentNode.insertBefore(wf, s);
+		})();
+	</script>
+
+	<title>%%pageTitle%%</title>
 	<meta name="description" content="%%descriptionMetatag%%">
 	<meta name="keywords" content="%%keywordMetatag%%">
 	<meta name="generator" content="ToolTwist" />
@@ -123,6 +139,19 @@
 	%>
 	    <link href="<%=Cloudfront.getDNS() %>/bootstrap/css/bootstrap.min.<%=Config.getValue("bootstrap.version")%>.css.gz" type="text/css" rel="stylesheet" media="screen">
 		<link href="<%=Cloudfront.getDNS() %>/freemium/css/pv/cl-bootstrap_z-adjustments.<%=Config.getValue("cl-bootstrap.z-adjustments.version")%>.min.css.gz" type="text/css" rel="stylesheet" media="screen">
+		<style type="text/css">
+			.wf-loading * {
+				opacity: 0;
+			}
+		
+			.wf-active *, 
+			.wf-inactive * {
+				-webkit-transition: opacity 1s ease-out;  
+				-moz-transition: opacity 1s ease-out; 
+				-o-transition: opacity 1s ease-out;  
+				transition: opacity 1s ease-out;  
+			}
+		</style>
 	<%
 	}
 	%>

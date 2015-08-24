@@ -2,7 +2,6 @@
 	if (isHomePage) {
 	%>
 		<!-- Stylesheets -->
-		<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 	    <link href="<%=Cloudfront.getDNS() %>/bootstrap/css/font-awesome.<%=Config.getValue("font-awesome.version")%>.css.gz" type="text/css" rel="stylesheet" media="screen">
 	<%
 	}
@@ -82,7 +81,7 @@
 				Justice.init();
 			</script>
 		<%}	%>
-</html>
+</html><!-- This should be the end -->
 
 <%
 	session.removeAttribute("propertyDetailSession");
