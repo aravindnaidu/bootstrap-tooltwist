@@ -93,95 +93,86 @@
 %>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-	<script type="text/javascript">
-		WebFontConfig={google:{families:["Open+Sans:400,300:latin"]}},function(){var t=document.createElement("script");t.src=("https:"==document.location.protocol?"https":"http")+"://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js",t.type="text/javascript",t.async="true";var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}();
-	</script>
+	<head>
+		<title>%%pageTitle%%</title>
+		<meta name="description" content="%%descriptionMetatag%%">
+		<meta name="keywords" content="%%keywordMetatag%%">
+		<meta name="generator" content="ToolTwist" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>%%pageTitle%%</title>
-	<meta name="description" content="%%descriptionMetatag%%">
-	<meta name="keywords" content="%%keywordMetatag%%">
-	<meta name="generator" content="ToolTwist" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<%if(currentNavpointId.equals("myrp-1327")){%>
-	<meta name="googlebot" content="nofollow, noindex" />
-	<% } %>
-	<%if(currentNavpointId.equals("myrp-1282")){%>
-	<meta name="google-site-verification" content="yFbd-YGWTkGOW-6CQL4pOJ6d-A9hxYk0ZvXHKkL97UI" />
-	<% } %>
+		<%if(currentNavpointId.equals("myrp-1327")){%>
+		<meta name="googlebot" content="nofollow, noindex" />
+		<% } %>
+		<%if(isHomePage){%>
+		<meta name="google-site-verification" content="yFbd-YGWTkGOW-6CQL4pOJ6d-A9hxYk0ZvXHKkL97UI" />
 
-     <!-- [ Favicon ] -->
-	<link rel="shortcut icon" href="/ttsvr/freemium/images/pv/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="/ttsvr/freemium/images/pv/favicon.ico" type="image/x-icon">
-
-    <link href="<%=Cloudfront.getDNS() %>/bootstrap/css/bootstrap.min.<%=Config.getValue("bootstrap.version")%>.css.gz" type="text/css" rel="stylesheet" media="screen">
-    <link href="<%=Cloudfront.getDNS() %>/freemium/css/pv/cl-bootstrap_z-adjustments.<%=Config.getValue("cl-bootstrap.z-adjustments.version")%>.min.css.gz" type="text/css" rel="stylesheet" media="screen">
-    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css" rel="stylesheet" media="screen">
-	<%
-	if (isHomePage) {
-	%>
-		<style type="text/css">
-			.wf-loading *{opacity:0}.wf-active *,.wf-inactive *{-webkit-transition:opacity 1s ease-out;-moz-transition:opacity 1s ease-out;-o-transition:opacity 1s ease-out;transition:opacity 1s ease-out}
-		</style>
-	<%
-	}
-	%>
-
-	%%headerCode%%
-
-	<%
-	if (!isHomePage) {
-	%>
-	    <!-- [ jQuery ] -->
-		<!--[if lt IE 9]>
-			<script src="<%=Cloudfront.getDNS() %>/freemium/script/jquery.1.11.1.min.js.gz"></script>
-		<![endif]-->
-		<!--[if gte IE 9]><!-->
-	    	<script src="<%=Cloudfront.getDNS() %>/freemium/script/jquery-2.1.4.min.js.gz"></script>
-		<!--<![endif]-->
-
-		<script>$.ajaxSetup({ cache: false });</script>
-	<%
-	}
-	%>
+		<% } %>
 	
-    <!-- [ CSS from cssContainer widget ] -->
-	<%
-		for(String map_navpoint_enabled : map_navpoints_enabled) {
-			if(map_navpoint_enabled.equals(currentNavpointId)) {
-	%>
-	<script src="https://maps.googleapis.com/maps/api/js?v=3&client=gme-rpdata&sensor=false&channel=freemium&libraries=places"></script>
-	<script src="<%=Cloudfront.getDNS() %>/freemium/script/markerwithlabel.min.js.gz"></script>
-	<%
-			}	
-		} 
-	%>
-  </head>
-<body>
-<!-- Google Tag Manager -->
-<noscript>
-	<iframe src="//www.googletagmanager.com/ns.html?id=<%=Config.getValue("fgtm.containerId")%>" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-</noscript>
+		<!-- [ Styles ] -->
+		<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+		<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css" rel="stylesheet" media="screen">
+		<link href="<%=Cloudfront.getDNS() %>/bootstrap/css/bootstrap.min.<%=Config.getValue("bootstrap.version")%>.css.gz" type="text/css" rel="stylesheet" media="screen">
+		<link href="<%=Cloudfront.getDNS() %>/freemium/css/pv/cl-bootstrap_z-adjustments.<%=Config.getValue("cl-bootstrap.z-adjustments.version")%>.min.css.gz" type="text/css" rel="stylesheet" media="screen">
 	
-<script>
-	(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','<%=Config.getValue("fgtm.containerId")%>');
-</script>
-<!-- End Google Tag Manager -->
-%%topCode%%
+		<!-- [ Favicon ] -->
+		<link rel="shortcut icon" href="/ttsvr/freemium/images/pv/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="/ttsvr/freemium/images/pv/favicon.ico" type="image/x-icon">
 
-	<!--  Provides a common fixed-width (and optionally responsive) layout with only <div class="container"> required. -->
-	<div class="container">
+		%%headerCode%%
+
+		<%
+		if (!isHomePage) {
+		%>
+		    <!-- [ jQuery ] -->
+			<!--[if lt IE 9]>
+				<script src="<%=Cloudfront.getDNS() %>/freemium/script/jquery.1.11.1.min.js.gz"></script>
+			<![endif]-->
+			<!--[if gte IE 9]><!-->
+		    	<script src="<%=Cloudfront.getDNS() %>/freemium/script/jquery-2.1.4.min.js.gz"></script>
+			<!--<![endif]-->
 	
-		<!--  Create a fluid-->
-		<!-- <div class="container-fluid" -->
+			<script>$.ajaxSetup({ cache: false });</script>
+		<%
+		}
+		%>
+	
+	    <!-- [ CSS from cssContainer widget ] -->
+		<%
+			for(String map_navpoint_enabled : map_navpoints_enabled) {
+				if(map_navpoint_enabled.equals(currentNavpointId)) {
+		%>
+		<script src="https://maps.googleapis.com/maps/api/js?v=3&client=gme-rpdata&sensor=false&channel=freemium&libraries=places"></script>
+		<script src="<%=Cloudfront.getDNS() %>/freemium/script/markerwithlabel.min.js.gz"></script>
+		<%
+				}	
+			} 
+		%>
+	</head>
+
+	<body>
+		<!-- Google Tag Manager -->
+		<noscript>
+			<iframe src="//www.googletagmanager.com/ns.html?id=<%=Config.getValue("fgtm.containerId")%>" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+
+		<script>
+			(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','<%=Config.getValue("fgtm.containerId")%>');
+		</script>
+		<!-- End Google Tag Manager -->
+
+		%%topCode%%
 		
-		<!--END-->
-		<hr>
-		
-		<footer>
-		<p>&copy; Company 2013</p>
-		</footer>
-	
-	</div> <!-- /container -->
+		<!--  Provides a common fixed-width (and optionally responsive) layout with only <div class="container"> required. -->
+		<div class="container">
+			<!--  Create a fluid-->
+			<!-- <div class="container-fluid" -->
 
-</body>
+			<!--END-->
+			<hr>
+			<footer>
+			<p>&copy; Company 2013</p>
+			</footer>
+		</div> <!-- /container -->
+		
+	</body>
+</html>
