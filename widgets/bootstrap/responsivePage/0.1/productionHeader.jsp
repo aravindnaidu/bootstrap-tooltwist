@@ -1,12 +1,7 @@
 <!--START-->
 <!-- header for responsivePage -->
-<%@page import="org.apache.commons.lang.WordUtils"%>
-<%@page import="org.apache.commons.lang.StringUtils"%>
-<%@page import="tooltwist.cloudmall.utils.StringUtil"%>
-<%@page import="tooltwist.cloudmall.utils.CloudMallUtils"%>
 <%@page import="tooltwist.wbd.Navpoint"%>
 <%@page import="com.dinaa.misc.AltLang"%>
-<%@page import="tooltwist.cloudmall.utils.WebUtils"%>
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="com.dinaa.data.XData"%>
 <%@page import="tooltwist.misc.JspHelper"%>
@@ -44,73 +39,20 @@
 <%
 	String jspName = "%%navpointId%%";
 	JspHelper jh = JspHelper.getJspHelper(pageContext, jspName);
-	%%preFetchCode%%
+%%preFetchCode%%
 
-	AltLang lang=WebUtils.getAltLang(jh);
 %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <%-- <%
-  String categoryName = jh.getRequest().getParameter("categoryName");
-  String domainName = jh.getRequest().getServerName();
-  if (StringUtil.isNullOrEmpty(categoryName)) {
-	  categoryName = "%%pageTitle%%" + " - " + domainName;
-  } else {
-	  if(StringUtils.contains(categoryName, "/")){
-		categoryName = StringUtil.substringAfterLast(categoryName, "/");
-	  } 
-	  categoryName = "%%pageTitle%%" + " " + WordUtils.capitalize((StringUtil.replaceAll(categoryName, "-", " "))) + " - " + domainName;
-  }
-  %>
-    <title><%=categoryName %></title> --%>
-    
     <title>%%pageTitle%%</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="description" content="%%descriptionMetatag%%">
 	<meta name="keywords" content="%%keywordMetatag%%">
 	<meta name="generator" content="ToolTwist" />
+	
+%%headerCode%%
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- [ CSS from cssContainer widget ] -->
-	%%headerCode%%
-	<!-- [ CSS from cssContainer widget END ] -->
-    
-    <!-- [ Cloudmall Essentials - Bootstrap and Font Awesome ] -->
-	<link href="%%URL(/ttsvr/bootstrap/css/build/cloudmall.essential.170215.css)%%" rel="stylesheet" media="screen">
-	<!-- [ Cloudmall Essentials END ] -->
-	
-    <!-- [ Favicon ] -->
-    <link rel="icon" href="/ttsvr/cropImage/<%=WbdCache.getProperty("store.name") %>.images.favicon.ico" type="image/x-icon"> 
-	<link rel="shortcut icon" href="/ttsvr/cropImage/<%=WbdCache.getProperty("store.name") %>.images.favicon.ico" type="image/x-icon"> 
-	<!-- [ Favicon END ] -->
-	
-	<%
-	Navpoint navpoint = WbdCache.findNavpointInAnyLoadedProject(jspName, true);
-	boolean requiresLogin = navpoint.requiresLogin();
-	%>
-	
-	<!-- [ Google Analytics ] -->
-	<% if (!navpoint.getParent().getId().equals(WbdCache.getProperty("store.name") + "-176")) { %>
-	  	<% if (navpoint.getLabel().equalsIgnoreCase("home")) { %>
-		  	<meta name="google-site-verification" content="AhLcdFsg980gnZh8k4dzSkYUiLzwgnDapP8c80WM_-A" />
-		  	<meta name="msvalidate.01" content="4017B989E703CFA096F76AF5F42A2293" />
-	  	<% } %>
-		  	
-	  	<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-			ga('create', '<%=WbdCache.getProperty("uaCode")%>', '<%=WbdCache.getProperty("uaDomainName")%>');
-			ga('require', 'linkid', 'linkid.js');
-			ga('require', 'displayfeatures');
-			ga('send', 'pageview');
-		</script>	
-	<% } %>
-	<!-- [ Google Analytics END ] -->
-	
+    <link href="%%URL(/ttsvr/bootstrap/css/bootstrap.min.css)%%" rel="stylesheet" media="screen">
   </head>
   <body>
 %%topCode%%

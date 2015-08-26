@@ -2,7 +2,8 @@
 <classpath>
 	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry exported="true" kind="lib" path="/Users/kelvinjohnsantos/.gradle/caches/modules-2/files-2.1/com.tooltwist/ttWbd/8.5.0-SNAPSHOT/ea71b2fe7eb154b857d93f168bec7fd139f52fa0/ttWbd-8.5.0-SNAPSHOT.jar" sourcepath="/Users/kelvinjohnsantos/.gradle/caches/modules-2/files-2.1/com.tooltwist/ttWbd/8.5.0-SNAPSHOT/e8eabb4aca4c578f2e6bf94a0cd8a763a2d41d1/ttWbd-8.5.0-SNAPSHOT-sources.jar">
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v7.0"/>
+	<classpathentry exported="true" kind="lib" path="/Users/kelvinjohnsantos/.gradle/caches/modules-2/files-2.1/com.tooltwist/ttWbd/8.5.0-SNAPSHOT/f7a20be37719743edd77f10f9f37cd4de5e0d06f/ttWbd-8.5.0-SNAPSHOT.jar" sourcepath="/Users/kelvinjohnsantos/.gradle/caches/modules-2/files-2.1/com.tooltwist/ttWbd/8.5.0-SNAPSHOT/3d145478aeee691ca7eb2d792a40e175726cd61f/ttWbd-8.5.0-SNAPSHOT-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
 		</attributes>
@@ -127,7 +128,7 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry exported="true" kind="lib" path="/Users/kelvinjohnsantos/.gradle/caches/modules-2/files-2.1/com.tooltwist/tooltwist/8.5.0-SNAPSHOT/d6885ebc30282de0e50d20e1024e09a94bfd0df0/tooltwist-8.5.0-SNAPSHOT.jar">
+	<classpathentry exported="true" kind="lib" path="/Users/kelvinjohnsantos/.gradle/caches/modules-2/files-2.1/com.tooltwist/tooltwist/8.5.0-SNAPSHOT/13d7cb365d742ac284b1594ca487e704bf6dd2b7/tooltwist-8.5.0-SNAPSHOT.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
 		</attributes>
@@ -167,6 +168,5 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v7.0"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
