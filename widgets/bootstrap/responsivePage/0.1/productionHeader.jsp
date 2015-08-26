@@ -55,6 +55,7 @@
     <link href="%%URL(/ttsvr/bootstrap/css/bootstrap.css)%%" rel="stylesheet" media="screen">
     <link href="%%URL(/ttsvr/bootstrap/css/font-awesome.css)%%" rel="stylesheet" media="screen">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href="%%URL(/ttsvr/bootstrap/css/jquery-ui.min.css)%%" rel="stylesheet" media="screen">
 
     %%headerCode%%
 
@@ -67,6 +68,7 @@
 %%topCode%%
 
  <div class="container">
+ <input type="hidden" name="serverUrl" value="<%=WbdCache.getProperty("server.url")%>">
 <!--END-->
       <hr>
       <footer>
