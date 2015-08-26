@@ -69,6 +69,7 @@
 
  <div class="container">
  <input type="hidden" name="serverUrl" value="<%=WbdCache.getProperty("server.url")%>">
+ <input type="hidden" name="siteVersion" value="<%=WbdCache.getProperty("site.version")%>">
 <!--END-->
       <hr>
       <footer>
