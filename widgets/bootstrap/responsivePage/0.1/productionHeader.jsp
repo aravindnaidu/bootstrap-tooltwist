@@ -53,8 +53,8 @@
 	<!-- <link rel="shortcut icon" href="/ttsvr/favicon.ico?v=0.2" type="image/x-icon">/ttsvr/studylane_t/images/icons/back.png -->
 	
 	<!-- FAVICON BASED ON HOST -->
-	<% Object isGSP = request.getSession(false).getAttribute("isGSP");
-		if ("false".equals(isGSP) ) { %>
+	<% Object isStudylane = request.getSession(false).getAttribute("isStudylane");
+		if ("true".equals(isStudylane) ) { %>
 		<link rel="shortcut icon" href="/ttsvr/studylane_t/images/icons/favicon/studylane/favicon.ico?v=0.1" type="image/x-icon">	
 	<% } else { %>
 	<link rel="shortcut icon" href="/ttsvr/studylane_t/images/icons/favicon/gsp/favicon.ico?v=0.1" type="image/x-icon">
