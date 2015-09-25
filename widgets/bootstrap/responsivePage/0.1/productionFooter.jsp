@@ -79,17 +79,6 @@
 </html><!-- This should be the end -->
 
 <%
-	session.removeAttribute("demographicsParagraphSession");
-	session.removeAttribute("avmSalesHistoryDetailSession");
-	session.removeAttribute("bsg3PropertyAddressSession");
-	session.removeAttribute("bsg3PropertyDetailsSession");
-	session.removeAttribute("bsg3SalesPropertySearchSession");
-	session.removeAttribute("bsg3ForSaleAdvertisementUrlSession");
-	session.removeAttribute("bsg3SuggestService");
-	session.removeAttribute("avmSession");
-	session.removeAttribute("isOtmSession");
-	session.removeAttribute("requestTimeSession");
-	session.removeAttribute("bsg3StreetSalesPropertySearchSession");
 	session.removeAttribute("bsg3SuburbSalesPropetySearchSession");
 	session.removeAttribute("bsg3ForSaleAdvertisementUrlSession");
 	
