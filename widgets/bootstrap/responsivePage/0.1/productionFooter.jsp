@@ -79,10 +79,6 @@
 </html><!-- This should be the end -->
 
 <%
-	session.removeAttribute("propertyDetailSession");
-	session.removeAttribute("propertySearchSession");
-	session.removeAttribute("purchaseHistorySession");
-	session.removeAttribute("relevantAgentSession");
 	session.removeAttribute("demographicsParagraphSession");
 	session.removeAttribute("avmSalesHistoryDetailSession");
 	session.removeAttribute("bsg3PropertyAddressSession");
