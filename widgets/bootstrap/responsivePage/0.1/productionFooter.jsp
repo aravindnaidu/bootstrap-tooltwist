@@ -11,6 +11,7 @@
   <script src="/ttsvr/bootstrap/js/src/lodash.min.js"></script>
   <script src="/ttsvr/bootstrap/js/src/pagination.js"></script>
   <script src="/ttsvr/bootstrap/js/src/chart.min.js"></script>
+  <script src="/ttsvr/bootstrap/js/src/moment.min.js"></script>
 
   %%bottomCode%%
 </body>
