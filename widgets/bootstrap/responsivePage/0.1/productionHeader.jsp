@@ -52,12 +52,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- [ Bootstrap ] -->
-    <link href="%%URL(/ttsvr/bootstrap/css/bootstrap.css)%%" rel="stylesheet" media="screen">
+    <link href="%%URL(/ttsvr/bootstrap/css/bootstrap.min.css)%%" rel="stylesheet" media="screen">
     <link href="%%URL(/ttsvr/bootstrap/css/font-awesome.min.css)%%" rel="stylesheet" media="screen">
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
-    <link href='//cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css' rel='stylesheet' type='text/css'>
     <link href="%%URL(/ttsvr/bootstrap/css/jquery-ui.min.css)%%" rel="stylesheet" media="screen">
-    <link href="%%URL(/ttsvr/bootstrap/css/pagination.css)%%" rel="stylesheet" media="screen">
+    <link href="%%URL(/ttsvr/bootstrap/css/pagination.min.css)%%" rel="stylesheet" media="screen">
+    <link href="%%URL(/ttsvr/bootstrap/css/animate.min.css)%%" rel="stylesheet" media="screen">
 
     %%headerCode%%
 
