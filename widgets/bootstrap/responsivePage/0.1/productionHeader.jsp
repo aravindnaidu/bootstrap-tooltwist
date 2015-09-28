@@ -58,13 +58,12 @@
     <link href='//cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css' rel='stylesheet' type='text/css'>
     <link href="%%URL(/ttsvr/bootstrap/css/jquery-ui.min.css)%%" rel="stylesheet" media="screen">
     <link href="%%URL(/ttsvr/bootstrap/css/pagination.css)%%" rel="stylesheet" media="screen">
-    <link rel="stylesheet" href="https://i.icomoon.io/public/temp/32ee907e57/FormsExpressFonts/style.css">
 
     %%headerCode%%
 
     <!-- [ Favicon ] -->
-    <link rel="icon" href="/ttsvr/cropImage/<%=WbdCache.getProperty("store.name") %>.images.favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="/ttsvr/cropImage/<%=WbdCache.getProperty("store.name") %>.images.favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/ttsvr/formsexpress/resources/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/ttsvr/formsexpress/resources/favicon.ico" type="image/x-icon">
 
   </head>
   <body>
