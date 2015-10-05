@@ -55,15 +55,17 @@
 	<!-- FAVICON BASED ON HOST -->
 	<% Object isHostStudylane = request.getSession(false).getAttribute("isStudylane");
 		if ("true".equals(isHostStudylane) ) { %>
-		<link rel="shortcut icon" href="/ttsvr/studylane_t/images/icons/favicon/studylane/favicon.ico?v=0.1" type="image/x-icon">	
+		<link rel="shortcut icon" href="https://d2hpwmayxrmlo8.cloudfront.net/public/images/icons/favicon/studylane/favicon.ico" type="image/x-icon">	
 	<% } else { %>
-		<link rel="shortcut icon" href="/ttsvr/studylane_t/images/icons/favicon/gsp/favicon.ico?v=0.1" type="image/x-icon">
+		<link rel="shortcut icon" href="https://d2hpwmayxrmlo8.cloudfront.net/public/images/icons/favicon/gsp/favicon.ico" type="image/x-icon">
 	<% } %>
 	
 %%headerCode%%
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
+<!--     <link href="https://d2hpwmayxrmlo8.cloudfront.net/public/libraries/bootstrap/css/bootstrap.min.css?v=3.0.0" rel="stylesheet" media="screen" /> -->
     <link href="%%URL(/ttsvr/bootstrap/css/bootstrap.min.css?v=3.0.0)%%" rel="stylesheet" media="screen" />
+
     <script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
