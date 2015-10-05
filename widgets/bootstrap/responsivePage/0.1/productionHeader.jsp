@@ -57,28 +57,9 @@
 		if ("true".equals(isHostStudylane) ) { %>
 		<link rel="shortcut icon" href="/ttsvr/studylane_t/images/icons/favicon/studylane/favicon.ico?v=0.1" type="image/x-icon">	
 	<% } else { %>
-	<link rel="shortcut icon" href="/ttsvr/studylane_t/images/icons/favicon/gsp/favicon.ico?v=0.1" type="image/x-icon">
+		<link rel="shortcut icon" href="/ttsvr/studylane_t/images/icons/favicon/gsp/favicon.ico?v=0.1" type="image/x-icon">
 	<% } %>
 	
-<!--[if lte IE 9]>
-<script src="/ttsvr/studylane_t/libraries/jquery/1.11.0/jquery-1.11.0.min.js"></script>
-<![endif]-->
-
-<!--[if gt IE 9]><!-->
-<script src="/ttsvr/studylane_t/libraries/jquery/2.1.0/jquery-2.1.0.min.js"></script>
-
-<!--<![endif]-->
-
-<!-- Mustache -->
-<script src="/ttsvr/studylane_t/libraries/mustache/mustache.min.js"></script>
-
-<!-- Font Awesome -->
-<link href="/ttsvr/studylane_t/libraries/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
-
-<script src="/ttsvr/bootstrap/js/bootstrap.min.js?v=3.0.0" type="text/javascript"></script>
-
-<script type="text/javascript">if (typeof console == "undefined" || typeof console.log == "undefined") var console = { log: function() {} };</script>
-
 %%headerCode%%
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
