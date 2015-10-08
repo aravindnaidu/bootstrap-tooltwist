@@ -38,12 +38,34 @@
 	
 	<% } else { %>
 	
+	/*OLD CODE
 			window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
 			d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
 			_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
 			$.src="//v2.zopim.com/?321J9JjpX6qn7OYrYVC6oUEWAXNAn7AP";z.t=+new Date;$.
 			type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
-	
+	*/
+	var _ues = {
+			host:'myfeedback.userecho.com',
+			forum:'45868',
+			lang:'en',
+			tab_corner_radius:10,
+			tab_font_size:21,
+			tab_image_hash:'ZmVlZGJhY2sgJiBzdXBwb3J0',
+			tab_chat_hash:'YWdlbnQgY2hhdA%3D%3D',
+			tab_alignment:'left',
+			tab_text_color:'#ffffff',
+			tab_text_shadow_color:'#00000055',
+			tab_bg_color:'#772e6e',
+			tab_hover_color:'#00abbe'
+			};
+
+			(function() {
+			var _ue = document.createElement('script'); _ue.type = 'text/javascript'; _ue.async = true;
+			_ue.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.userecho.com/js/widget-1.4.gz.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(_ue, s);
+			})();
+			
 	<% } %>    
 	</script>
     
