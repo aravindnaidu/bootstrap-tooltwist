@@ -10,7 +10,9 @@
     	</div>
     	
 		<!-- [ Should be called first and cannot be mixed into the unified Js file. ] -->
-		<script src="/ttsvr/cloudmall/js/jquery-1.11.0.min.js"></script>
+		<script src="/ttsvr/cloudmall/js/jquery-2.1.4.min.js"></script>
+		<script src="/ttsvr/cloudmall/js/jquery-ui.js"></script>
+		<script src="/ttsvr/cloudmall/js/jquery.datetimepicker.js"></script>
 		
 		<!-- [ Cloudmall Project ] -->
 			<script src="/ttsvr/cloudmall/js/build/c121015.js"></script>
