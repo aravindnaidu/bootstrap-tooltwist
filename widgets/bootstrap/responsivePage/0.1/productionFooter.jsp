@@ -14,6 +14,7 @@
 		<script src="/ttsvr/cloudmall/js/jquery-ui.js"></script>
 		<script src="/ttsvr/cloudmall/js/jquery.datetimepicker.js"></script>
 		<script src="/ttsvr/cloudmall/js/jquery.validate.js"></script>
+		<script src="/ttsvr/cloudmall/js/jquery.simplePagination.js"></script>
 		
 		<!-- [ Cloudmall Project ] -->
 			<script src="/ttsvr/cloudmall/js/build/c121015.js"></script>
