@@ -12,9 +12,6 @@
 		<!-- [ Should be called first and cannot be mixed into the unified Js file. ] -->
 		<script src="/ttsvr/cloudmall/js/jquery-2.1.4.min.js"></script>
 		<script src="/ttsvr/cloudmall/js/jquery-ui.js"></script>
-		<script src="/ttsvr/cloudmall/js/jquery.datetimepicker.js"></script>
-		<script src="/ttsvr/cloudmall/js/jquery.validate.js"></script>
-		<script src="/ttsvr/cloudmall/js/jquery.simplePagination.js"></script>
 		
 		<!-- [ Cloudmall Project ] -->
 		<script src="/ttsvr/cloudmall/js/build/c161015.js"></script>
