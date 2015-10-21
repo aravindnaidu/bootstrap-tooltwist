@@ -14,7 +14,7 @@
 		<script src="/ttsvr/cloudmall/js/jquery-ui.js"></script>
 		
 		<!-- [ Cloudmall Project ] -->
-		<script src="/ttsvr/cloudmall/js/build/c161015.js"></script>
+		<script src="/ttsvr/cloudmall/js/build/c201015.js"></script>
 		
 		<!-- [ Bootstrap Project ] -->
 		<script src="/ttsvr/bootstrap/js/build/c021015.js"></script>
