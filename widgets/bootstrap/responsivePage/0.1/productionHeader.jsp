@@ -76,7 +76,7 @@
 
 	FreemiumUtil.saveUsersAddressSearch(jh);
 	
-	FreemiumUtil.checkUserLanguage(jh);
+	FreemiumUtil.checkLanguageUrlPrefix(jh);
 	
 	String map_navpoints_enabled_tmp = Config.getValue("maps.navpoint.enabled");
 	String [] map_navpoints_enabled = map_navpoints_enabled_tmp.split(",");
