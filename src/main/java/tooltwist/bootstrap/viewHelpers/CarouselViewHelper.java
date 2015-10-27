@@ -3,6 +3,7 @@ package tooltwist.bootstrap.viewHelpers;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -87,16 +88,19 @@ public class CarouselViewHelper extends ViewHelper
 			    		  
 			    		  XNodes imageNode = nodes.getNodes("imagePath");
 			    		  XNodes linkNode = nodes.getNodes("bannerLink");
+			    		  XNodes target = nodes.getNodes("target");
 			    		 
 			    		    boolean status = false;
 			    		  
 				    		//String imagePath = nodes.getText();
 				    		String imagePath = imageNode.getText();
 				    		String linkPath = linkNode.getText();
+				    		String targetType = target != null ? target.getText() : "";
 				    		
 				    		Carousel carousel = new Carousel();
 				    		carousel.setImage(imagePath);
 				    		carousel.setUrl(linkPath);
+				    		carousel.setTarget(targetType);
 				    		if (index == 0) {
 				    			status = true;
 				    			carousel.setActive(status);
@@ -138,6 +142,7 @@ public class CarouselViewHelper extends ViewHelper
 		private String url = "";
 		private String type="";
 		private boolean active = false;
+		private String target = "";
 		private int index = 0;
 		
 		public String getImage() {
@@ -164,15 +169,18 @@ public class CarouselViewHelper extends ViewHelper
 		public void setActive(boolean active) {
 			this.active = active;
 		}
+		public String getTarget() {
+			return target;
+		}
+		public void setTarget(String target) {
+			this.target = target;
+		}
 		public int getIndex() {
 			return index;
 		}
 		public void setIndex(int index) {
 			this.index = index;
 		}
-		
-		
-		
 	}
 	
 }
