@@ -7,7 +7,6 @@ import java.util.Properties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import tooltwist.cloudmall.utils.StringUtil;
 import tooltwist.misc.TtConfig;
 import tooltwist.wbd.ViewHelper;
 import tooltwist.wbd.WbdCache;
@@ -96,7 +95,7 @@ public class CarouselViewHelper extends ViewHelper
 				    		//String imagePath = nodes.getText();
 				    		String imagePath = imageNode.getText();
 				    		String linkPath = linkNode.getText();
-				    		String targetType = target != null ? target.getText() : StringUtil.EMPTY;
+				    		String targetType = target != null ? target.getText() : "";
 				    		
 				    		Carousel carousel = new Carousel();
 				    		carousel.setImage(imagePath);
