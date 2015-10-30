@@ -55,9 +55,9 @@
 	<!-- FAVICON BASED ON HOST -->
 	<% Object isHostStudylane = request.getSession(false).getAttribute("isStudylane");
 		if ("true".equals(isHostStudylane) ) { %>
-		<link rel="shortcut icon" href="https://d2hpwmayxrmlo8.cloudfront.net/public/images/icons/favicon/studylane/favicon.ico" type="image/x-icon">	
+		<link rel="shortcut icon" href="https://d2hpwmayxrmlo8.cloudfront.net/public/images/icons/favicon/studylane/favicon.ico?v0.1" type="image/x-icon">	
 	<% } else { %>
-		<link rel="shortcut icon" href="https://d2hpwmayxrmlo8.cloudfront.net/public/images/icons/favicon/gsp/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="https://d2hpwmayxrmlo8.cloudfront.net/public/images/icons/favicon/gsp/favicon.ico?v0.1" type="image/x-icon">
 	<% } %>
 	
 %%headerCode%%

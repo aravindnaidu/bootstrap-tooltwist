@@ -2,7 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v7.0.55"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/Java SE 8 [1.8.0_60]"/>
 	<classpathentry exported="true" kind="lib" path="/Users/jay.bengco/Development/gradle-repo/com/tooltwist/tooltwist/8.3.1-20140404/tooltwist-8.3.1-20140404.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
@@ -246,6 +245,16 @@
 	<classpathentry exported="true" kind="lib" path="/Users/jay.bengco/.gradle/caches/modules-2/files-2.1/com.github.spullara.mustache.java/jackson-support/0.6.3/fde0537496f58ef71c33a9deea7cd658fa3efcbe/jackson-support-0.6.3.jar" sourcepath="/Users/jay.bengco/.gradle/caches/modules-2/files-2.1/com.github.spullara.mustache.java/jackson-support/0.6.3/aefb8892a819bf8a9bc4acf28a59ac08922abb82/jackson-support-0.6.3-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v8.0">
+		<attributes>
+			<attribute name="owner.project.facets" value="jst.webfragment"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/Java SE 8 [1.8.0_60]">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="bin"/>

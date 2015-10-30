@@ -24,65 +24,70 @@
     -->
     
     
-<!-- Google Analytics -->
     <script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		
-		ga('create', 'UA-56123383-1', 'auto');
-		ga('send', 'pageview');
 	</script>    
     
-<!-- CHAT BASED ON HOST -->
+<!-- SCRIPTS BASED ON HOST -->
 	
-	<!--Start of Zopim Live Chat Script-->
 	<script type="text/javascript">
+	
 	<% if ("true".equals(request.getSession(false).getAttribute("isStudylane"))) { %>
-	
-		window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
-		d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
-		_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
-		$.src="//v2.zopim.com/?3IARwigMUmpWmHZdJv29GqCgiFh3Hf2H";z.t=+new Date;$.
-		type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
-	
-	<% } else { %>
-	
-	/*OLD CODE
+
+			/*Google Analytics */
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		  	ga('create', 'UA-7076928-2', 'auto');
+		 	 ga('send', 'pageview');
+		
+			/*Zopim Live Chat Script*/
 			window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
 			d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
 			_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
-			$.src="//v2.zopim.com/?321J9JjpX6qn7OYrYVC6oUEWAXNAn7AP";z.t=+new Date;$.
+			$.src="//v2.zopim.com/?3IARwigMUmpWmHZdJv29GqCgiFh3Hf2H";z.t=+new Date;$.
 			type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
-	*/
 	
-		window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
-		d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
-		_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
-		$.src="//v2.zopim.com/?3OWnOZVcMF3ZjG5cnItVbWqnxUv4S8bq";z.t=+new Date;$.
-		type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+	<% } else { %>
 	
-	var _ues = {
-			host:'myfeedback.userecho.com',
-			forum:'45868',
-			lang:'en',
-			tab_corner_radius:10,
-			tab_font_size:21,
-			tab_image_hash:'ZmVlZGJhY2sgJiBzdXBwb3J0',
-			tab_chat_hash:'YWdlbnQgY2hhdA%3D%3D',
-			tab_alignment:'left',
-			tab_text_color:'#ffffff',
-			tab_text_shadow_color:'#00000055',
-			tab_bg_color:'#772e6e',
-			tab_hover_color:'#00abbe'
-			};
-
-			(function() {
-			var _ue = document.createElement('script'); _ue.type = 'text/javascript'; _ue.async = true;
-			_ue.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.userecho.com/js/widget-1.4.gz.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(_ue, s);
-			})();
+		/*Google Analytics */
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-56123383-1', 'auto');
+			ga('send', 'pageview');
+			
+			
+			/*Zopim Live Chat Script*/
+			window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+			d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+			_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+			$.src="//v2.zopim.com/?3OWnOZVcMF3ZjG5cnItVbWqnxUv4S8bq";z.t=+new Date;$.
+			type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+	
+			/* feedback*/
+			var _ues = {
+				host:'myfeedback.userecho.com',
+				forum:'45868',
+				lang:'en',
+				tab_corner_radius:10,
+				tab_font_size:21,
+				tab_image_hash:'ZmVlZGJhY2sgJiBzdXBwb3J0',
+				tab_chat_hash:'YWdlbnQgY2hhdA%3D%3D',
+				tab_alignment:'left',
+				tab_text_color:'#ffffff',
+				tab_text_shadow_color:'#00000055',
+				tab_bg_color:'#772e6e',
+				tab_hover_color:'#00abbe'
+				};
+	
+				(function() {
+				var _ue = document.createElement('script'); _ue.type = 'text/javascript'; _ue.async = true;
+				_ue.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.userecho.com/js/widget-1.4.gz.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(_ue, s);
+				})();
 			
 	<% } %>    
 	</script>
