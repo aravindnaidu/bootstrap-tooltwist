@@ -14,6 +14,7 @@
 		<script src="/ttsvr/cloudmall/js/jquery-ui.js"></script>
 		<script src="/ttsvr/cloudmall/js/jquery.blockUI.js"></script>
 		<script src="/ttsvr/cloudmall/js/d3.min.js"></script>
+		<script src="/ttsvr/cloudmall/js/dropzone.js"></script>
 		
 		<!-- [ Cloudmall Project ] -->
 		<script src="/ttsvr/cloudmall/js/build/c201015.js"></script>
