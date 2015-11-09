@@ -39,6 +39,7 @@
 <%@page import="tooltwist.wbd.WbdSession"%>
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="tooltwist.wbd.WbdCache"%>
+<%@page import="tooltwist.chinese.enumerated.LanguageEnum"%>
 <%@page contentType="text/html; charset=UTF-8" %>
 <% session.removeAttribute("freemiumErrorCatch"); %>
 <% session.removeAttribute("freemiumPageCall"); %>
@@ -115,10 +116,20 @@
 		<link href="<%=Cloudfront.getDNS() %>/bootstrap/css/font-awesome.<%=Config.getValue("font-awesome.version")%>.css.gz" type="text/css" rel="stylesheet" media="screen">
 		<link href="<%=Cloudfront.getDNS() %>/bootstrap/css/bootstrap.min.<%=Config.getValue("bootstrap.version")%>.css.gz" type="text/css" rel="stylesheet" media="screen">
 		<link href="<%=Cloudfront.getDNS() %>/freemium/css/pv/cl-bootstrap_z-adjustments.<%=Config.getValue("cl-bootstrap.z-adjustments.version")%>.min.css.gz" type="text/css" rel="stylesheet" media="screen">
-	
+
 		<!-- [ Favicon ] -->
 		<link rel="shortcut icon" href="/ttsvr/freemium/images/pv/favicon.ico" type="image/x-icon">
 		<link rel="icon" href="/ttsvr/freemium/images/pv/favicon.ico" type="image/x-icon">
+
+		<!-- hreflangs -->
+		<link rel="alternate" href="<%=FreemiumUtil.getURLForHrefLanguage(request, LanguageEnum.DEFAULT_ENGLISH.getIdx()) %>" hreflang="en-au" />
+		<link rel="alternate" href="<%=FreemiumUtil.getURLForHrefLanguage(request, LanguageEnum.DEFAULT_ENGLISH.getIdx()) %>" hreflang="en-cn" />
+		<link rel="alternate" href="<%=FreemiumUtil.getURLForHrefLanguage(request, LanguageEnum.DEFAULT_ENGLISH.getIdx()) %>" hreflang="en-hk" />
+		<link rel="alternate" href="<%=FreemiumUtil.getURLForHrefLanguage(request, LanguageEnum.DEFAULT_ENGLISH.getIdx()) %>" hreflang="en-tw" />
+		<link rel="alternate" href="<%=FreemiumUtil.getURLForHrefLanguage(request, LanguageEnum.CHINESE_SIMPLIFIED.getIdx()) %>" hreflang="zh-au" />
+		<link rel="alternate" href="<%=FreemiumUtil.getURLForHrefLanguage(request, LanguageEnum.CHINESE_SIMPLIFIED.getIdx()) %>" hreflang="zh-cn" />
+		<link rel="alternate" href="<%=FreemiumUtil.getURLForHrefLanguage(request, LanguageEnum.CHINESE_SIMPLIFIED.getIdx()) %>" hreflang="zh-hk" />
+		<link rel="alternate" href="<%=FreemiumUtil.getURLForHrefLanguage(request, LanguageEnum.CHINESE_SIMPLIFIED.getIdx()) %>" hreflang="zh-tw" />
 
 		%%headerCode%%
 
