@@ -52,10 +52,24 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<!-- <link rel="shortcut icon" href="/ttsvr/favicon.ico?v=0.2" type="image/x-icon">/ttsvr/studylane_t/images/icons/back.png -->
 	
-	<!-- FAVICON BASED ON HOST -->
 	<% Object isHostStudylane = request.getSession(false).getAttribute("isStudylane");
 		if ("true".equals(isHostStudylane) ) { %>
+		
 		<link rel="shortcut icon" href="https://d2hpwmayxrmlo8.cloudfront.net/public/images/icons/favicon/studylane/favicon.ico?v0.1" type="image/x-icon">	
+		
+		<!-- Facebook Pixel Code -->
+		<script>
+			!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+			n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+			n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+			t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+			document,'script','//connect.facebook.net/en_US/fbevents.js');
+			fbq('init', '1621979274729114');
+			fbq('track', "PageView");</script>
+		<noscript>
+		<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1621979274729114&ev=PageView&noscript=1"/></noscript>
+		<!-- End Facebook Pixel Code -->		
+		
 	<% } else { %>
 		<link rel="shortcut icon" href="https://d2hpwmayxrmlo8.cloudfront.net/public/images/icons/favicon/gsp/favicon.ico?v0.1" type="image/x-icon">
 	<% } %>
