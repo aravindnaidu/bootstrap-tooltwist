@@ -48,8 +48,10 @@
 	<%
 		String jspName = "%%navpointId%%";
 		JspHelper jh = JspHelper.getJspHelper(pageContext, jspName);
+		FreemiumUtil.saveUsersAddressSearch(jh);
 		FreemiumUtil.checkAddressParameter(request, response, jh, jspName);
 		FreemiumUtil.redirectToPVSubDomain(request, response);
+		FreemiumUtil.checkLanguageUrlPrefix(jh);
 		%%preFetchCode%%
 	%>
 	
@@ -75,10 +77,6 @@
 		CookiesUtil.setCookie(response, "unregister_subscription", jspName);
 	}
 
-	FreemiumUtil.saveUsersAddressSearch(jh);
-	
-	FreemiumUtil.checkLanguageUrlPrefix(jh);
-	
 	String map_navpoints_enabled_tmp = Config.getValue("maps.navpoint.enabled");
 	String [] map_navpoints_enabled = map_navpoints_enabled_tmp.split(",");
 	Map<String, String> properties = new HashMap<String, String>();
