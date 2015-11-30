@@ -36,7 +36,8 @@ dependencies {
   compile 'com.tooltwist:ttsec-standaloneDesigner:8.3.2'
 
   /* Project Dependencies */
-
+  compile 'org.tuckey:urlrewritefilter:4.0.4'
+  
   provided 'javax:javaee-api:6.0'
 
   testCompile group: 'junit', name: 'junit', version: '4.8.2'
