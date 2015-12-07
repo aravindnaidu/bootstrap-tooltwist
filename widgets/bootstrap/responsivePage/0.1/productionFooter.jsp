@@ -23,10 +23,6 @@
     <script src="/ttsvr/cloudmall/js/frontend.config.js"></script>
     -->
     
-    
-    <script>
-	</script>    
-    
 <!-- SCRIPTS BASED ON HOST -->
 	
 	<script type="text/javascript">

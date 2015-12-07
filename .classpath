@@ -167,11 +167,6 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry exported="true" kind="lib" path="/Users/jay.bengco/.gradle/caches/modules-2/files-2.1/org.quartz-scheduler/quartz/2.1.6/437f496e3e06677ce0da705996c98595718c0979/quartz-2.1.6.jar" sourcepath="/Users/jay.bengco/.gradle/caches/modules-2/files-2.1/org.quartz-scheduler/quartz/2.1.6/8201df2b4b575d658672b931d7d97b817ec41250/quartz-2.1.6-sources.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry exported="true" kind="lib" path="/Users/jay.bengco/.gradle/caches/modules-2/files-2.1/batik/batik/1.5/961f15f9e62d169de8e1dbba36b352ae7166f022/batik-1.5.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
