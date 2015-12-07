@@ -129,7 +129,9 @@
   
 	<!--
 		 Google Tag Manager
-		 note : why after body tag : https://developers.google.com/tag-manager/quickstart 
+		 note : 
+		 	info : https://developers.google.com/tag-manager/quickstart
+		 	why after body tag : http://www.lunametrics.com/blog/2014/12/12/google-tag-manager-snippet-placement/
 	-->
 	<% if ("true".equals(request.getSession(false).getAttribute("isStudylane"))) { %>
 		<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-M8T384" 
