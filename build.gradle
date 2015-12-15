@@ -23,15 +23,23 @@ dependencies {
 	compile project(':xdata')
 	compile project(':filemap')
 	compile project(':tooltwist')
-	compile project(':ttWbd')
 	compile project(':ttStd')
 	*/
+	// Decide whether to use source or JAR files
+	if (project.properties['TOOLTWIST_SOURCE_IN_ECLIPSE'] == 'true') {
+		println 'Will use ToolTwist projects in eclipse.'
+		compile project(':ttWbd')
+	}
+	else
+	{
+		println 'Will use ToolTwist jar files.'
+		compile group: 'com.tooltwist', name: 'ttWbd', version: TOOLTWIST_VERSION 
+	}
 
 	/* ToolTwist Dependencies
 	compile group: 'com.tooltwist', name: 'tooltwist', version: TOOLTWIST_VERSION
 	compile group: 'com.tooltwist', name: 'ttStd', version: TOOLTWIST_VERSION
 	*/
-	compile group: 'com.tooltwist', name: 'ttWbd', version: TOOLTWIST_VERSION 
     
     // This jar contains stubs used only while compiling. At runtime the
     // web server (e.g. Tomcat) provides the real implementation of the API.
