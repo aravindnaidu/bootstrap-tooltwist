@@ -56,6 +56,7 @@
     <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
     <link href="%%URL(/ttsvr/bootstrap/css/jquery-ui.min.css)%%" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <link href="%%URL(/ttsvr/bootstrap/css/pagination.min.css)%%" rel="stylesheet" media="screen">
 
     %%headerCode%%
@@ -64,6 +65,39 @@
     <link rel="icon" href="/ttsvr/formsexpress/resources/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/ttsvr/formsexpress/resources/favicon.ico" type="image/x-icon">
 
+
+
+
+    <script>
+    var browser = get_browser_info();
+    if ( ( browser.name == 'Chrome' && browser.version < 22 ) ||
+         ( browser.name == 'Firefox' && browser.version < 21 ) ||
+         ( browser.name == 'Safari' && browser.version < 5 ) ||
+         ( browser.name == 'IE' && browser.version < 9 ) ){
+      var url = window.location.href;
+      if (url.indexOf("browser-support") <= -1){
+        window.location.href="/ttsvr/browser-support";
+      }
+    }
+
+    function get_browser_info(){
+        var ua=navigator.userAgent,tem,M=ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+        if(/trident/i.test(M[1])){
+            tem=/\brv[ :]+(\d+)/g.exec(ua) || [];
+            return {name:'IE', VERSION:(tem[1]||'')};
+            }
+        if(M[1]==='Chrome'){
+            tem=ua.match(/\bOPR\/(\d+)/)
+            if(tem!=null)   {return {name:'Opera', version:tem[1]};}
+            }
+        M=M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+        if((tem=ua.match(/version\/(\d+)/i))!=null) {M.splice(1,1,tem[1]);}
+        return {
+          name: M[0],
+          version: M[1]
+        };
+     }
+    </script>
   </head>
   <body>
 %%topCode%%
