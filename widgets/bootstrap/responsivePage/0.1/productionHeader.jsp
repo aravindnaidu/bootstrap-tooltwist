@@ -45,7 +45,9 @@
 <html lang="en">
   <head>
     <title>%%pageTitle%%</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8">-->
     <meta name="description" content="%%descriptionMetatag%%">
     <meta name="keywords" content="%%keywordMetatag%%">
     <meta name="generator" content="ToolTwist" />
@@ -58,6 +60,12 @@
     <link href="%%URL(/ttsvr/bootstrap/css/jquery-ui.min.css)%%" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <link href="%%URL(/ttsvr/bootstrap/css/pagination.min.css)%%" rel="stylesheet" media="screen">
+      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
 
     %%headerCode%%
 
@@ -70,6 +78,7 @@
 
     <script>
     var browser = get_browser_info();
+    var roleId = readCookie('roleId');
     if ( ( browser.name == 'Chrome' && browser.version < 22 ) ||
          ( browser.name == 'Firefox' && browser.version < 21 ) ||
          ( browser.name == 'Safari' && browser.version < 5 ) ||
@@ -78,7 +87,20 @@
       if (url.indexOf("browser-support") <= -1){
         window.location.href="/ttsvr/browser-support";
       }
+    } else if (roleId === null){
+      var url = window.location.href;
+      if ((url.indexOf("login-page") <= -1) &&
+          (url.indexOf("request-password") <= -1) &&
+          (url.indexOf("password-requested") <= -1) &&
+          (url.indexOf("change-password") <= -1) &&
+          (url.indexOf("password-changed") <= -1) &&
+          (url.indexOf("healthcheck") <= -1) ){
+        window.location.href="/ttsvr/login-page";
+      }
+    } else if (roleId !== null){
+      restriction();
     }
+
 
     function get_browser_info(){
         var ua=navigator.userAgent,tem,M=ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
@@ -97,6 +119,50 @@
           version: M[1]
         };
      }
+
+     function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+      }
+
+      function restriction() {
+        var xmlhttp;
+
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        xmlhttp.onreadystatechange = function() {
+
+            if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+               if(xmlhttp.status == 200){
+                 var url = window.location.href;
+                 if (xmlhttp.responseText != 'Allowed'){
+                   window.location.href = '/ttsvr' + xmlhttp.responseText;
+                 }
+               }
+               else if(xmlhttp.status == 400) {
+                  alert('There was an error 400')
+               }
+               else {
+                  alert('something else other than 200 was returned')
+               }
+            }
+        }
+        var _url = window.location.href;
+        xmlhttp.open("POST", '<%=WbdCache.getProperty("server.url")%>page-restriction?url=' + _url + '&roleId=' + roleId, true);
+        xmlhttp.send();
+    }
     </script>
   </head>
   <body>
