@@ -88,18 +88,8 @@
       if (url.indexOf("browser-support") <= -1){
         window.location.href="/ttsvr/browser-support";
       }
-    } else if (roleId === null){
-      var url = window.location.href;
-      if ((url.indexOf("login-page") <= -1) &&
-          (url.indexOf("request-password") <= -1) &&
-          (url.indexOf("password-requested") <= -1) &&
-          (url.indexOf("change-password") <= -1) &&
-          (url.indexOf("password-changed") <= -1) &&
-          (url.indexOf("healthcheck") <= -1) ){
-        window.location.href="/ttsvr/login-page";
-      }
-    } else if (roleId !== null){
-      restriction();
+    } else {
+      restriction(roleId);
     }
 
 
@@ -132,7 +122,7 @@
         return null;
       }
 
-      function restriction() {
+      function restriction(roleId) {
         var xmlhttp;
 
         if (window.XMLHttpRequest) {
@@ -148,8 +138,19 @@
             if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
                if(xmlhttp.status == 200){
                  var url = window.location.href;
-                 if (xmlhttp.responseText != 'Allowed'){
+                 if ( xmlhttp.responseText == 'Allowed' && roleId != null ){
+                   console.log('Has session');
+                 } else if ( xmlhttp.responseText != 'Allowed' && xmlhttp.responseText != 'No Access' && roleId != null ) {
                    window.location.href = '/ttsvr' + xmlhttp.responseText;
+                 } else {
+                   if ((url.indexOf("login-page") <= -1) &&
+                       (url.indexOf("request-password") <= -1) &&
+                       (url.indexOf("password-requested") <= -1) &&
+                       (url.indexOf("change-password") <= -1) &&
+                       (url.indexOf("password-changed") <= -1) &&
+                       (url.indexOf("healthcheck") <= -1) ){
+                     window.location.href="/ttsvr/login-page";
+                   }
                  }
                }
                else if(xmlhttp.status == 400) {
@@ -161,7 +162,7 @@
             }
         }
         var _url = window.location.href;
-        xmlhttp.open("POST", '<%=WbdCache.getProperty("server.url")%>page-restriction?url=' + _url + '&roleId=' + roleId, true);
+        xmlhttp.open("POST", '<%=WbdCache.getProperty("server.url")%>page-restriction?url=' + _url, true);
         xmlhttp.withCredentials = true;
         xmlhttp.send();
     }
