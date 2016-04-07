@@ -37,39 +37,26 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 %%importCode%%
 <%
-	String jspName = "%%navpointId%%";
-	JspHelper jh = JspHelper.getJspHelper(pageContext, jspName);
+String jspName = "%%navpointId%%";
+JspHelper jh = JspHelper.getJspHelper(pageContext, jspName);
 %%preFetchCode%%
-
 %>
+
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>%%pageTitle%%</title>
-	<meta name="description" content="%%descriptionMetatag%%">
-	<meta name="keywords" content="%%keywordMetatag%%">
-	<meta name="generator" content="ToolTwist" />
-	
-%%headerCode%%
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="%%URL(/ttsvr/bootstrap/css/bootstrap.min.css)%%" rel="stylesheet" media="screen">
-  </head>
-  <body>
-%%topCode%%
+	<html lang="en">
+	<head>
+		<title>%%pageTitle%%</title>
+		<meta name="description" content="%%descriptionMetatag%%">
+		<meta name="keywords" content="%%keywordMetatag%%">
+		<meta name="generator" content="ToolTwist" />
 
-<!--  Provides a common fixed-width (and optionally responsive) layout with only <div class="container"> required. -->
- <div class="container">
- 
- <!--  Create a fluid-->
- <!-- <div class="container-fluid" -->
- 
-<!--END-->
-      <hr>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="%%URL(/ttsvr/bootstrap/css/bootstrap.min.css)%%" rel="stylesheet" media="screen">
+		%%headerCode%%
+	</head>
+	<body>
 
-      <footer>
-        <p>&copy; Company 2013</p>
-      </footer>
+		%%topCode%%
 
-    </div> <!-- /container -->
-</body>
+	</body>
 </html>
