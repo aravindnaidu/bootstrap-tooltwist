@@ -57,6 +57,3 @@ JspHelper jh = JspHelper.getJspHelper(pageContext, jspName);
 	<body>
 
 		%%topCode%%
-
-	</body>
-</html>
