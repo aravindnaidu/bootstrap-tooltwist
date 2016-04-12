@@ -9,6 +9,9 @@
   <!-- <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
   <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script>
   <script src="/ttsvr/bootstrap/js/chartjs.horizontalbar.js"></script>
+  <script src="/ttsvr/bootstrap/js/exif.js"></script>
+  <script src="/ttsvr/bootstrap/js/croppie.min.js"></script>
+  <script src="/ttsvr/bootstrap/js/cropbox-min.js"></script>
 
   %%bottomCode%%
 </body>
