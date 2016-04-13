@@ -79,10 +79,11 @@
 
 
     <script>
+    initArrayIndexOf();
     var browser = get_browser_info();
     var roleId = readCookie('roleId');
-    var supported_browsers = ['Chrome', 'Firefox', 'Safari', 'MSIE'];
-    var supported_versions = [22, 43, 5, 10];
+    var supported_browsers = ['Chrome', 'Firefox', 'Safari', 'MSIE', 'IE'];
+    var supported_versions = [22, 43, 9, 10, 10];
     var browser_index = supported_browsers.indexOf(browser.name);
     if(browser_index < 0 || browser.version < supported_versions[browser_index]) {
       var url = window.location.href;
@@ -93,6 +94,30 @@
         restriction(roleId);
     }
 
+    function initArrayIndexOf() {
+      if (!Array.prototype.indexOf)
+      {
+        Array.prototype.indexOf = function(elt /*, from*/)
+        {
+          var len = this.length >>> 0;
+
+          var from = Number(arguments[1]) || 0;
+          from = (from < 0)
+               ? Math.ceil(from)
+               : Math.floor(from);
+          if (from < 0)
+            from += len;
+
+          for (; from < len; from++)
+          {
+            if (from in this &&
+                this[from] === elt)
+              return from;
+          }
+          return -1;
+        };
+      }
+    }
 
     function get_browser_info(){
         var ua=navigator.userAgent,tem,M=ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
@@ -174,6 +199,7 @@
 
  <div class="container">
  <input type="hidden" name="serverUrl" value="<%=WbdCache.getProperty("server.url")%>">
+ <input type="hidden" name="pathUrl" value="<%=WbdCache.getProperty("path.url")%>">
  <input type="hidden" name="siteVersion" value="<%=WbdCache.getProperty("site.version")%>">
 <!--END-->
       <hr>
