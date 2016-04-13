@@ -81,16 +81,16 @@
     <script>
     var browser = get_browser_info();
     var roleId = readCookie('roleId');
-    if ( ( browser.name == 'Chrome' && browser.version < 22 ) ||
-         ( browser.name == 'Firefox' && browser.version < 21 ) ||
-         ( browser.name == 'Safari' && browser.version < 5 ) ||
-         ( browser.name == 'IE' && browser.version < 9 ) ){
+    var supported_browsers = ['Chrome', 'Firefox', 'Safari', 'MSIE'];
+    var supported_versions = [22, 43, 5, 10];
+    var browser_index = supported_browsers.indexOf(browser.name);
+    if(browser_index < 0 || browser.version < supported_versions[browser_index]) {
       var url = window.location.href;
       if (url.indexOf("browser-support") <= -1){
         window.location.href="/ttsvr/browser-support";
       }
     } else {
-      restriction(roleId);
+        restriction(roleId);
     }
 
 
