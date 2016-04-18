@@ -74,107 +74,11 @@
     <!-- [ Favicon ] -->
     <link rel="icon" href="/ttsvr/formsexpress/resources/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/ttsvr/formsexpress/resources/favicon.ico" type="image/x-icon">
-
-
-
-
-    <script>
-    var browser = get_browser_info();
-    var roleId = readCookie('roleId');
-    var supported_browsers = ['Chrome', 'Firefox', 'Safari', 'MSIE'];
-    var supported_versions = [22, 43, 5, 10];
-    var browser_index = supported_browsers.indexOf(browser.name);
-    if(browser_index < 0 || browser.version < supported_versions[browser_index]) {
-      var url = window.location.href;
-      if (url.indexOf("browser-support") <= -1){
-        window.location.href="/ttsvr/browser-support";
-      }
-    } else {
-        restriction(roleId);
-    }
-
-
-    function get_browser_info(){
-        var ua=navigator.userAgent,tem,M=ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
-        if(/trident/i.test(M[1])){
-            tem=/\brv[ :]+(\d+)/g.exec(ua) || [];
-            return {name:'IE', VERSION:(tem[1]||'')};
-            }
-        if(M[1]==='Chrome'){
-            tem=ua.match(/\bOPR\/(\d+)/)
-            if(tem!=null)   {return {name:'Opera', version:tem[1]};}
-            }
-        M=M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
-        if((tem=ua.match(/version\/(\d+)/i))!=null) {M.splice(1,1,tem[1]);}
-        return {
-          name: M[0],
-          version: M[1]
-        };
-     }
-
-     function readCookie(name) {
-        var nameEQ = name + "=";
-        var ca = document.cookie.split(';');
-        for(var i=0;i < ca.length;i++) {
-            var c = ca[i];
-            while (c.charAt(0)==' ') c = c.substring(1,c.length);
-            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-        }
-        return null;
-      }
-
-      function restriction(roleId) {
-        var xmlhttp;
-
-        if (window.XMLHttpRequest) {
-            // code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp = new XMLHttpRequest();
-        } else {
-            // code for IE6, IE5
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-
-        xmlhttp.onreadystatechange = function() {
-
-            if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
-               if(xmlhttp.status == 200){
-                 var url = window.location.href;
-                 if ( xmlhttp.responseText == 'Allowed' && roleId != null ){
-                   console.log('Has session');
-                 } else if ( xmlhttp.responseText != 'Allowed' && xmlhttp.responseText != 'No Access' && roleId != null ) {
-                   window.location.href = '/ttsvr' + xmlhttp.responseText;
-                 } else {
-                   if ((url.indexOf("login-page") <= -1) &&
-                       (url.indexOf("request-password") <= -1) &&
-                       (url.indexOf("password-requested") <= -1) &&
-                       (url.indexOf("change-password") <= -1) &&
-                       (url.indexOf("password-changed") <= -1) &&
-                       (url.indexOf("healthcheck") <= -1) ){
-                     window.location.href="/ttsvr/login-page";
-                   }
-                 }
-               }
-               else if(xmlhttp.status == 400) {
-                  alert('There was an error 400')
-               }
-               else {
-                  alert('something else other than 200 was returned')
-               }
-            }
-        }
-        var _url = window.location.href;
-        xmlhttp.open("POST", '<%=WbdCache.getProperty("server.url")%>page-restriction?url=' + _url, true);
-        xmlhttp.withCredentials = true;
-        xmlhttp.send();
-    }
-    </script>
   </head>
   <body>
 %%topCode%%
 
  <div class="container">
- <input type="hidden" name="serverUrl" value="<%=WbdCache.getProperty("server.url")%>">
- <input type="hidden" name="siteVersion" value="<%=WbdCache.getProperty("site.version")%>">
 <!--END-->
       <hr>
       <footer>
