@@ -52,7 +52,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<!-- <link rel="shortcut icon" href="/ttsvr/favicon.ico?v=0.2" type="image/x-icon">/ttsvr/studylane_t/images/icons/back.png -->
 	
-	<% Object isHostStudylane = request.getSession(false).getAttribute("isStudylane");
+	<% 
+		Object isHostStudylane = request.getSession(false).getAttribute("isStudylane");
+		Object isLocalBuild = request.getSession(false).getAttribute("isLocal");
 		if ("true".equals(isHostStudylane) ) { %>
 		
 		<link rel="shortcut icon" href="https://d2hpwmayxrmlo8.cloudfront.net/public/images/icons/favicon/studylane/favicon.ico?v0.1" type="image/x-icon">	
@@ -133,8 +135,7 @@
     	boolean isCourseSearchResultSlane = ( targetURI.length() -  courseSearchStudylaneJSP.length() == targetURI.lastIndexOf(courseSearchStudylaneJSP) );
     	boolean isCourseSearchResultGSP = ( targetURI.length() -  courseSearchGSPJSP.length() == targetURI.lastIndexOf(courseSearchGSPJSP) );
     %>
-    
-	<% if (isCourseSearchResultSlane || isCourseSearchResultGSP) { %>
+	<% if ( ( isCourseSearchResultSlane || isCourseSearchResultGSP ) && "true".equals(isLocalBuild) == false ) { %>
 		<script type="text/javascript">
 		setTimeout(function(){var a=document.createElement("script");
 		var b=document.getElementsByTagName("script")[0];
