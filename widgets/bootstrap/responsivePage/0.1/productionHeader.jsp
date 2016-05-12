@@ -84,22 +84,7 @@
     <% 
     	String currentUri = (String)request.getAttribute("javax.servlet.forward.request_uri");
     	if ( null != currentUri && currentUri.indexOf("successfully-submitted") > -1 && "true".equals(isHostStudylane)){ %>
-			<!-- Google Code for Register Conversion Page -->
-			<script type="text/javascript">
-			/* <![CDATA[ */
-			var google_conversion_id = 1041844223;
-			var google_conversion_language = "en";
-			var google_conversion_format = "3";
-			var google_conversion_color = "ffffff";
-			var google_conversion_label = "hLpDCJmPqWEQ_4_l8AM";
-			var google_remarketing_only = false;
-			/* ]]> */
-			</script>
-			<noscript>
-			<div style="display:inline;">
-			<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/1041844223/?label=hLpDCJmPqWEQ_4_l8AM&amp;guid=ON&amp;script=0"/>
-			</div>
-			</noscript>
+    		
     <% }else if("true".equals(isHostStudylane)) { %>
     		<!-- Google Code for Remarketing Tag -->
 			<!--
