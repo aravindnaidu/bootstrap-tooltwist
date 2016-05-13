@@ -4,6 +4,14 @@
 	<body>
 <!--START-->
 
+<!--
+      <footer>
+        <p>&copy; Company 2013</p>
+      </footer>
+ -->
+
+	<!-- footer for responsivePage -->
+
 <!-- SCRIPTS BASED ON HOST -->
 	
 	<script type="text/javascript">
