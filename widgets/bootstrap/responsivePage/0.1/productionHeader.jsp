@@ -79,7 +79,6 @@
 %%headerCode%%
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-<!--     <link href="https://d2hpwmayxrmlo8.cloudfront.net/public/libraries/bootstrap/css/bootstrap.min.css?v=3.0.0" rel="stylesheet" media="screen" /> -->
     <link href="%%URL(/ttsvr/bootstrap/css/bootstrap.min.css?v=3.0.0)%%" rel="stylesheet" media="screen" />
     <% 
     	String currentUri = (String)request.getAttribute("javax.servlet.forward.request_uri");
