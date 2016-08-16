@@ -119,14 +119,6 @@
     	boolean isCourseSearchResultSlane = ( targetURI.length() -  courseSearchStudylaneJSP.length() == targetURI.lastIndexOf(courseSearchStudylaneJSP) );
     	boolean isCourseSearchResultGSP = ( targetURI.length() -  courseSearchGSPJSP.length() == targetURI.lastIndexOf(courseSearchGSPJSP) );
     %>
-	<% if ( ( isCourseSearchResultSlane || isCourseSearchResultGSP ) && "true".equals(isLocalBuild) == false ) { %>
-		<script type="text/javascript">
-		setTimeout(function(){var a=document.createElement("script");
-		var b=document.getElementsByTagName("script")[0];
-		a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0049/3473.js?"+Math.floor(new Date().getTime()/3600000);
-		a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
-		</script>    
-    <%} %>
     
     <!-- END Crazy Egg -->
     
