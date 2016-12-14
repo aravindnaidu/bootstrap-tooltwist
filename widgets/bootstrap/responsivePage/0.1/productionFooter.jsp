@@ -43,6 +43,7 @@
 			type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 	
 			/* feedback*/
+			/*
 			var _ues = {
 				host:'myfeedback.userecho.com',
 				forum:'45868',
@@ -63,7 +64,7 @@
 				_ue.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.userecho.com/js/widget-1.4.gz.js';
 				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(_ue, s);
 				})();
-			
+				*/
 	<% } %>    
 	</script>
     

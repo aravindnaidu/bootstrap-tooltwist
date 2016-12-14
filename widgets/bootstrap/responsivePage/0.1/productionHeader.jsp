@@ -108,10 +108,35 @@
     
     <%if("true".equals(isHostStudylane)){ %>
     	 <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
-    <% } %>
+    	 
+    	 
+		<!-- Hotjar Tracking Code for https://studylane.com.au -->
+		<script>
+		    (function(h,o,t,j,a,r){
+		        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+		        h._hjSettings={hjid:267314,hjsv:5};
+		        a=o.getElementsByTagName('head')[0];
+		        r=o.createElement('script');r.async=1;
+		        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+		        a.appendChild(r);
+		    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+		</script>    	 
+    	 
+    <% } else {  %>
     
-    <!-- Crazy Egg -->
-    
+		    <!-- Hotjar Tracking Code for https://globalstudypartners.com/ -->
+		<script>
+		    (function(h,o,t,j,a,r){
+		        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+		        h._hjSettings={hjid:267316,hjsv:5};
+		        a=o.getElementsByTagName('head')[0];
+		        r=o.createElement('script');r.async=1;
+		        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+		        a.appendChild(r);
+		    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+		</script>
+    <%  } %>
+        
     <% 
     	String targetURI = request.getRequestURI();
     	String courseSearchStudylaneJSP = "studylane-92.jsp";
@@ -120,7 +145,7 @@
     	boolean isCourseSearchResultGSP = ( targetURI.length() -  courseSearchGSPJSP.length() == targetURI.lastIndexOf(courseSearchGSPJSP) );
     %>
     
-    <!-- END Crazy Egg -->
+ 
     
   </head>
   <body>
@@ -131,21 +156,31 @@
 		 	why after body tag : http://www.lunametrics.com/blog/2014/12/12/google-tag-manager-snippet-placement/
 	-->
 	<% if ("true".equals(request.getSession(false).getAttribute("isStudylane"))) { %>
-		<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-M8T384" 
+			<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-5B45DMC');</script>	
+<!-- 		<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-M8T384" 
 		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-M8T384');</script>
+		})(window,document,'script','dataLayer','GTM-M8T384');</script> -->
 	<%} else { %>
-		<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PWQBNF" 
+				<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-5B45DMC');</script>	
+<!-- 		<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PWQBNF" 
 		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-PWQBNF');</script>
+		})(window,document,'script','dataLayer','GTM-PWQBNF');</script> -->
 	<%} %>    
 	<!-- End Google Tag Manager -->    
   
