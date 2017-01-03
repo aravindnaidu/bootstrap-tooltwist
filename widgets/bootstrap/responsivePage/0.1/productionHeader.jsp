@@ -86,10 +86,6 @@
 	
   </head>
   <body>
-  <% String googleTagManager = WbdCache.getProperty("google.tag.manager"); %>
-  <% if (googleTagManager != null) { %> 
-  			<%=googleTagManager %>
-  <% } %>
 %%topCode%%
 
 <!--  Provides a common fixed-width (and optionally responsive) layout with only <div class="container"> required. -->
