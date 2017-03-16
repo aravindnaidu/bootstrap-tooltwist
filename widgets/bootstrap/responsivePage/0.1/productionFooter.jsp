@@ -74,7 +74,7 @@
 	<script src="https://d2hpwmayxrmlo8.cloudfront.net/public/libraries/jquery/1.11.0/jquery-1.11.0.min.js"></script>
 	<![endif]-->
 	<!--[if gt IE 9]><!-->
-	<script src="https://d2hpwmayxrmlo8.cloudfront.net/public/libraries/jquery/2.1.0/jquery-2.1.0.min.js"></script>
+	<!-- <script src="https://d2hpwmayxrmlo8.cloudfront.net/public/libraries/jquery/2.1.0/jquery-2.1.0.min.js"></script> -->
 	<!--<![endif]-->
 	
 <!-- 	<script src="/ttsvr/bootstrap/js/bootstrap.min.js?v=3.0.0" type="text/javascript"></script> -->
