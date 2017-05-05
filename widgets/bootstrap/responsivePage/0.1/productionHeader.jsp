@@ -46,18 +46,43 @@
 
   <head>
     <title>%%pageTitle%%</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta name="description" content="%%descriptionMetatag%%">
-	<meta name="keywords" content="%%keywordMetatag%%">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<!-- <link rel="shortcut icon" href="/ttsvr/favicon.ico?v=0.2" type="image/x-icon">/ttsvr/studylane_t/images/icons/back.png -->
-	
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+	<meta name="description" content="%%descriptionMetatag%%"></meta>
+	<meta name="keywords" content="%%keywordMetatag%%"></meta>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+    	
 	<% 
 		Object isHostStudylane = request.getSession(false).getAttribute("isStudylane");
 		Object isLocalBuild = request.getSession(false).getAttribute("isLocal");
-		if ("true".equals(isHostStudylane) ) { %>
+	   	String currentUri = (String)request.getAttribute("javax.servlet.forward.request_uri");
+	%>	   	
+	
+	<!--
+	***********************************
+	*
+	*	STUDYLANE Specific scripts
+	* 
+	***********************************
+	-->	
+	<% if ("true".equals(isHostStudylane) ) { %>
+	
+		<!-- Favicon -->
+		<link 
+			rel="shortcut icon" 
+			href="https://d2hpwmayxrmlo8.cloudfront.net/public/images/icons/favicon/studylane/favicon.ico?v0.1" 
+			type="image/x-icon">
+		</link>
 		
-		<link rel="shortcut icon" href="https://d2hpwmayxrmlo8.cloudfront.net/public/images/icons/favicon/studylane/favicon.ico?v0.1" type="image/x-icon">	
+		<!-- Google Tag Manager -->
+		<script>
+			(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-M8T384');
+		</script>
+		<!-- End Google Tag Manager -->
 		
 		<!-- Facebook Pixel Code -->
 		<script>
@@ -68,23 +93,68 @@
 			document,'script','//connect.facebook.net/en_US/fbevents.js');
 			fbq('init', '1621979274729114');
 			fbq('track', "PageView");</script>
-		<noscript>
-		<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1621979274729114&ev=PageView&noscript=1"/></noscript>
-		<!-- End Facebook Pixel Code -->		
+		<!-- End Facebook Pixel Code -->	
+		
+   	 	<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+		<!-- Hotjar Tracking Code for https://studylane.com.au -->
+		<script>
+		    (function(h,o,t,j,a,r){
+		        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+		        h._hjSettings={hjid:267314,hjsv:5};
+		        a=o.getElementsByTagName('head')[0];
+		        r=o.createElement('script');r.async=1;
+		        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+		        a.appendChild(r);
+		    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+		</script>    			
 		
 	<% } else { %>
-		<link rel="shortcut icon" href="https://d2hpwmayxrmlo8.cloudfront.net/public/images/icons/favicon/gsp/favicon.ico?v0.1" type="image/x-icon">
+		<link 
+			rel="shortcut icon" 
+			href="https://d2hpwmayxrmlo8.cloudfront.net/public/images/icons/favicon/gsp/favicon.ico?v0.1" 
+			type="image/x-icon"></link>
+			
+		<!-- Google Tag Manager -->
+		<script>
+			(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-PWQBNF');
+		</script>
+		<!-- End Google Tag Manager -->		
+		
+	    <!-- Hotjar Tracking Code for https://globalstudypartners.com/ -->
+		<script>
+		    (function(h,o,t,j,a,r){
+		        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+		        h._hjSettings={hjid:267316,hjsv:5};
+		        a=o.getElementsByTagName('head')[0];
+		        r=o.createElement('script');r.async=1;
+		        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+		        a.appendChild(r);
+		    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+		</script>			
 	<% } %>
+
+	<!--
+	***********************************
+	*
+	*	END - STUDYLANE Specific scripts
+	* 
+	***********************************
+	-->
 	
 %%headerCode%%
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="%%URL(/ttsvr/bootstrap/css/bootstrap.min.css?v=3.0.0)%%" rel="stylesheet" media="screen" />
-    <% 
-    	String currentUri = (String)request.getAttribute("javax.servlet.forward.request_uri");
-    	if ( null != currentUri && currentUri.indexOf("successfully-submitted") > -1 && "true".equals(isHostStudylane)){ %>
+    
+   	<!-- Bootstrap -->
+   	<link href="%%URL(/ttsvr/bootstrap/css/bootstrap.min.css?v=3.0.0)%%" rel="stylesheet" media="screen" />    	
+   	    
+    <% if ( null != currentUri 
+   			&& currentUri.indexOf("successfully-submitted") > -1 
+   			&& "true".equals(isHostStudylane)) { %>
     		
-    <% }else if("true".equals(isHostStudylane)) { %>
+    <% } else if ("true".equals(isHostStudylane)) { %>
     		<!-- Google Code for Remarketing Tag -->
 			<!--
 				Remarketing tags may not be associated with personally 
@@ -99,90 +169,55 @@
 			var google_remarketing_only = true;
 			/* ]]> */
 			</script>	
-			<noscript>
-			<div style="display:inline;">
-			<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1041844223/?value=0&amp;guid=ON&amp;script=0"/>
-			</div>
-			</noscript>
+
     <% } %>
     
-    <%if("true".equals(isHostStudylane)){ %>
-    	 <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
-    	 
-    	 
-		<!-- Hotjar Tracking Code for https://studylane.com.au -->
-		<script>
-		    (function(h,o,t,j,a,r){
-		        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-		        h._hjSettings={hjid:267314,hjsv:5};
-		        a=o.getElementsByTagName('head')[0];
-		        r=o.createElement('script');r.async=1;
-		        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-		        a.appendChild(r);
-		    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
-		</script>    	 
-    	 
-    <% } else {  %>
-    
-		    <!-- Hotjar Tracking Code for https://globalstudypartners.com/ -->
-		<script>
-		    (function(h,o,t,j,a,r){
-		        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-		        h._hjSettings={hjid:267316,hjsv:5};
-		        a=o.getElementsByTagName('head')[0];
-		        r=o.createElement('script');r.async=1;
-		        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-		        a.appendChild(r);
-		    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
-		</script>
-    <%  } %>
         
-    <% 
+<%--     <% 
     	String targetURI = request.getRequestURI();
     	String courseSearchStudylaneJSP = "studylane-92.jsp";
     	String courseSearchGSPJSP = "gsp-4.jsp";
     	boolean isCourseSearchResultSlane = ( targetURI.length() -  courseSearchStudylaneJSP.length() == targetURI.lastIndexOf(courseSearchStudylaneJSP) );
     	boolean isCourseSearchResultGSP = ( targetURI.length() -  courseSearchGSPJSP.length() == targetURI.lastIndexOf(courseSearchGSPJSP) );
-    %>
-    
- 
+    %> --%>
     
   </head>
   <body>
+  
+  	 
 	<!--
-		 Google Tag Manager
-		 note : 
-		 	info : https://developers.google.com/tag-manager/quickstart
-		 	why after body tag : http://www.lunametrics.com/blog/2014/12/12/google-tag-manager-snippet-placement/
+	***********************************
+	*
+	*	STUDYLANE Specific <noscript>
+	* 
+	***********************************
 	-->
-	<% if ("true".equals(request.getSession(false).getAttribute("isStudylane"))) { %>
-			<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-			})(window,document,'script','dataLayer','GTM-5B45DMC');</script>	
-<!-- 		<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-M8T384" 
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-M8T384');</script> -->
-	<%} else { %>
-				<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-			})(window,document,'script','dataLayer','GTM-5B45DMC');</script>	
-<!-- 		<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PWQBNF" 
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-PWQBNF');</script> -->
-	<%} %>    
-	<!-- End Google Tag Manager -->    
+	<% if ("true".equals(isHostStudylane) ) { %>
+	
+		<noscript>
+			<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1621979274729114&ev=PageView&noscript=1"/>
+		</noscript>		
+		
+		<!-- Google Tag Manager (noscript) -->
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M8T384" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<!-- End Google Tag Manager (noscript) -->	
+		
+		<noscript>
+			<div style="display:inline;">
+				<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1041844223/?value=0&amp;guid=ON&amp;script=0"/>
+			</div>
+		</noscript>			
+	
+	<% } else { %>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWQBNF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<!-- End Google Tag Manager (noscript) -->	
+	<% } %>
+	
   
 %%topCode%%
 
