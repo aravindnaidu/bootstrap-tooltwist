@@ -39,6 +39,7 @@
 <%@page import="tooltwist.wbd.WbdSession"%>
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="tooltwist.wbd.WbdCache"%>
+<%@page import="javax.servlet.http.HttpServletRequest"%>
 <%@page contentType="text/html; charset=UTF-8" %>
 %%importCode%%
 <%
@@ -107,6 +108,40 @@
   
   <% String googleTagManager = WbdCache.getProperty("google.tag.manager"); %>
   <% if (googleTagManager != null) { %> 
+
+  			<script>
+  			var page = "";
+  				if(window.location.pathname == '/au/' || window.location.pathname == '/us/'){
+  					page = "home";
+  				} else if (window.location.pathname == '/au/car-mats') {
+  					page = "car mats";
+  				} else if (window.location.pathname == '/us/floor-mats'){
+  					page = "floor mats";
+  				} else if (window.location.pathname == '/au/dash-mats') {
+  					page = "dash mats";
+  				} else if (window.location.pathname == '/us/dash-covers'){
+  					page = "dash covers";
+  				} else if (window.location.pathname == '/au/ute-mats') {
+  					page = "ute mats";
+  				} else if (window.location.pathname == '/us/trunk-mats'){
+  					page = "trunk mats";
+  				} else if (window.location.pathname == '/au/boot-liners') {
+  					page = "boot liners";
+  				} else if (window.location.pathname == '/us/trunk-liners'){
+  					page = "trunk liners";
+  				} else if (window.location.pathname.endsWith("plastics")) {
+  					page = "plastics";
+  				} else if (window.location.pathname.endsWith("accessories")){
+  					page = "accessories";
+  				}
+  				
+  				dataLayer = [{
+				 	'event': 'remarketing_home',
+				    'google_tag_params': {
+				            'ecomm_pagetype': page,
+				 	}
+				}];
+			</script>
   			
   			<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
