@@ -111,36 +111,59 @@
 
   			<script>
   			var page = "";
+  			var event = "";
   				if(window.location.pathname == '/au/' || window.location.pathname == '/us/'){
+  					event = "remarketing_home";
   					page = "home";
   				} else if (window.location.pathname == '/au/car-mats') {
+  					event = "remarketing_category";
   					page = "car mats";
   				} else if (window.location.pathname == '/us/floor-mats'){
+  					event = "remarketing_category";
   					page = "floor mats";
   				} else if (window.location.pathname == '/au/dash-mats') {
+  					event = "remarketing_category";
   					page = "dash mats";
   				} else if (window.location.pathname == '/us/dash-covers'){
+  					event = "remarketing_category";
   					page = "dash covers";
   				} else if (window.location.pathname == '/au/ute-mats') {
+  					event = "remarketing_category";
   					page = "ute mats";
   				} else if (window.location.pathname == '/us/trunk-mats'){
+  					event = "remarketing_category";
   					page = "trunk mats";
   				} else if (window.location.pathname == '/au/boot-liners') {
+  					event = "remarketing_category";
   					page = "boot liners";
   				} else if (window.location.pathname == '/us/trunk-liners'){
+  					event = "remarketing_category";
   					page = "trunk liners";
   				} else if (window.location.pathname.endsWith("plastics")) {
+  					event = "remarketing_category";
   					page = "plastics";
   				} else if (window.location.pathname.endsWith("accessories")){
+  					event = "remarketing_category";
   					page = "accessories";
+  				} else if (window.location.pathname.endsWith("payment-summary")){
+  					event = "remarketing_checkout";
+  					page = "checkout";
+  				} else if (window.location.pathname.includes("payment-success")){
+  					event = "remarketing_confirmation";
+  					page = "purchase";
+  				} else {
+  					event = "remarketing_other";
+  					page = "other";
   				}
   				
-  				dataLayer = [{
-				 	'event': 'remarketing_home',
-				    'google_tag_params': {
-				            'ecomm_pagetype': page,
-				 	}
-				}];
+  				if (page!="" && event!="") {
+	  				dataLayer = [{
+					 	'event': event,
+					    'google_tag_params': {
+					            'ecomm_pagetype': page,
+					 	}
+					}];
+  				}
 			</script>
   			
   			<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
