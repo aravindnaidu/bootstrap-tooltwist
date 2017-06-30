@@ -108,7 +108,8 @@
   
   <% String googleTagManager = WbdCache.getProperty("google.tag.manager"); %>
   <% if (googleTagManager != null) { %> 
-
+  <% HttpServletRequest headerRequest = jh.getRequest(); %>
+  
   			<script>
   			var page = "";
   			var event = "";
@@ -148,9 +149,10 @@
   				} else if (window.location.pathname.endsWith("payment-summary")){
   					event = "remarketing_checkout";
   					page = "checkout";
-  				} else if (window.location.pathname.includes("payment-success")){
-  					event = "remarketing_confirmation";
-  					page = "purchase";
+  				} else if (window.location.pathname.includes("payment-success") || window.location.pathname.includes("search-product-list") || window.location.pathname.includes("shopping-cart") 
+  								|| <%= org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-63.jsp") %>  || <%= org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-179.jsp") %>){
+  					event = "";
+  					page = "";
   				} else {
   					event = "remarketing_other";
   					page = "other";
