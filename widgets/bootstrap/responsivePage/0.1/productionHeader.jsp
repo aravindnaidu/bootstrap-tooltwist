@@ -113,39 +113,50 @@
   			<script>
   			var page = "";
   			var event = "";
+  			var category = "";
   				if(window.location.pathname == '/au/' || window.location.pathname == '/us/'){
   					event = "remarketing_home";
   					page = "home";
   				} else if (window.location.pathname == '/au/car-mats') {
   					event = "remarketing_category";
-  					page = "car mats";
+  					category = "car mats";
+  					page = "category";
   				} else if (window.location.pathname == '/us/floor-mats'){
   					event = "remarketing_category";
-  					page = "floor mats";
+  					category = "floor mats";
+  					page = "category";
   				} else if (window.location.pathname == '/au/dash-mats') {
   					event = "remarketing_category";
-  					page = "dash mats";
+  					category = "dash mats";
+  					page = "category";
   				} else if (window.location.pathname == '/us/dash-covers'){
   					event = "remarketing_category";
-  					page = "dash covers";
+  					category = "dash covers";
+  					page = "category";
   				} else if (window.location.pathname == '/au/ute-mats') {
   					event = "remarketing_category";
-  					page = "ute mats";
+  					category = "ute mats";
+  					page = "category";
   				} else if (window.location.pathname == '/us/trunk-mats'){
   					event = "remarketing_category";
-  					page = "trunk mats";
+  					category = "trunk mats";
+  					page = "category";
   				} else if (window.location.pathname == '/au/boot-liners') {
   					event = "remarketing_category";
-  					page = "boot liners";
+  					category = "boot liners";
+  					page = "category";
   				} else if (window.location.pathname == '/us/trunk-liners'){
   					event = "remarketing_category";
-  					page = "trunk liners";
+  					category = "trunk liners";
+  					page = "category";
   				} else if (window.location.pathname.endsWith("plastics")) {
   					event = "remarketing_category";
-  					page = "plastics";
+  					category = "plastics";
+  					page = "category";
   				} else if (window.location.pathname.endsWith("accessories")){
   					event = "remarketing_category";
-  					page = "accessories";
+  					category = "accessories";
+  					page = "category";
   				} else if (window.location.pathname.endsWith("payment-summary")){
   					event = "remarketing_checkout";
   					page = "checkout";
@@ -163,6 +174,7 @@
 					 	'event': event,
 					    'google_tag_params': {
 					            'ecomm_pagetype': page,
+					            'ecomm_category': category
 					 	}
 					}];
   				}
