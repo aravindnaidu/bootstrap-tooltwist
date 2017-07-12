@@ -100,6 +100,18 @@
 			  	<meta name="google-site-verification" content="AhLcdFsg980gnZh8k4dzSkYUiLzwgnDapP8c80WM_-A" />
 			  	<meta name="msvalidate.01" content="4017B989E703CFA096F76AF5F42A2293" />
 		  	<% } %>
+		  	
+		  	<script>
+                        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+                        ga('create', '<%=WbdCache.getProperty("uaCode")%>', '<%=WbdCache.getProperty("uaDomainName")%>');
+                        ga('require', 'linkid', 'linkid.js');
+                        ga('require', 'displayfeatures');
+                        ga('send', 'pageview');
+            </script>
+		  	
 		<% } %>
 		<!-- [ Google Analytics END ] -->
 
@@ -108,80 +120,6 @@
   
   <% String googleTagManager = WbdCache.getProperty("google.tag.manager"); %>
   <% if (googleTagManager != null) { %> 
-  <% HttpServletRequest headerRequest = jh.getRequest(); %>
-  
-  			<% String pageName = ""; 
-  			 String event = ""; 
-  			 String category = ""; 
-  				 if(org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-111.jsp")  ||  org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-181.jsp") ){ 
-  					 event = "remarketing_home"; 
-  					 pageName = "home"; 
-  				 } else if ( org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-125.jsp") ||  org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-300.jsp")) { 
-  					 event = "remarketing_category"; 
-  					 category = "car mats"; 
-  					 pageName = "category"; 
-  				 } else if (org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-184.jsp")){ 
-  					 event = "remarketing_category"; 
-  					 category = "floor mats"; 
-  					 pageName = "category"; 
-  				 } else if (org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-123.jsp")) { 
-  					 event = "remarketing_category"; 
-  					 category = "dash mats"; 
-  					 pageName = "category"; 
-  				 } else if (org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-186.jsp")){ 
-  					 event = "remarketing_category"; 
-  					 category = "dash covers"; 
-  					 pageName = "category"; 
-  				 } else if (org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-121.jsp")) { 
-  					 event = "remarketing_category"; 
-  					 category = "ute mats"; 
-  					 pageName = "category"; 
-  				 } else if (org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-188.jsp")){ 
-  					 event = "remarketing_category"; 
-  					 category = "trunk mats"; 
-  					 pageName = "category"; 
-  				 } else if (org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-124.jsp")) { 
-  					 event = "remarketing_category"; 
-  					 category = "boot liners"; 
-  					 pageName = "category"; 
-  				 } else if (org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-185.jsp")){ 
-  					 event = "remarketing_category"; 
-  					 category = "trunk liners"; 
-  					 pageName = "category"; 
-  				 } else if (org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-122.jsp") || org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-187.jsp")) { 
-  					 event = "remarketing_category"; 
-  					 category = "plastics"; 
-  					 pageName = "category"; 
-  				 } else if (org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-126.jsp") || org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-183.jsp")){ 
-  					 event = "remarketing_category"; 
-  					 category = "accessories"; 
-  					 pageName = "category"; 
-  				 } else if (org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-291.jsp") || org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-275.jsp")){ 
-  					 event = "remarketing_checkout"; 
-  					 pageName = "checkout"; 
-  				 } else if (org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-89.jsp") || org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-273.jsp")  
-  								 || org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-275.jsp") 
-  								 || org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-73.jsp") || org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-280.jsp")  
-  								 || org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-86.jsp") || org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-276.jsp")  
-  								 || org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-63.jsp") || org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-179.jsp")){ 
-  					 event = ""; 
-  					 pageName = ""; 
-  				 } else { 
-  					 event = "remarketing_other"; 
-  					 pageName = "other"; 
-  				 } %>
-  				 
-  			<script>
-  			<%if (pageName!="" && event!="") { %>
-  				dataLayer = [{
-				 	'event': event,
-				    'google_tag_params': {
-				            'ecomm_pagetype': "<%=pageName%>",
-				            'ecomm_category':  "<%=category%>"
-				 	}
-				}];
-	  		<%}%>
-			</script>
   			
   			<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
