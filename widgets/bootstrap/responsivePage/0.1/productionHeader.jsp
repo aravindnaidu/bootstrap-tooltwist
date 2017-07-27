@@ -120,7 +120,7 @@
   					 event = "remarketing_category"; 
   					 category = "car mats"; 
   					 pageName = "category"; 
-  				 } else if (org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-184.jsp")){ 
+  				 } else if (org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-184.jsp") ||  org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-301.jsp")){ 
   					 event = "remarketing_category"; 
   					 category = "floor mats"; 
   					 pageName = "category"; 
