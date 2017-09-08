@@ -75,6 +75,8 @@
 
     <!-- [ CSS from cssContainer widget ] -->
 	%%headerCode%%
+	<script src="https://cdn.optimizely.com/js/<%=WbdCache.getProperty("optimizely.id")%>.js"></script>
+	
 	<!-- [ CSS from cssContainer widget END ] -->
 
     <!-- [ Cloudmall Essentials - Bootstrap and Font Awesome ] -->
