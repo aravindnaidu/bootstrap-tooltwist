@@ -39,6 +39,7 @@
 <%@page import="tooltwist.wbd.WbdSession"%>
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="tooltwist.wbd.WbdCache"%>
+<%@page import="javax.servlet.http.HttpServletRequest"%>
 <%@page contentType="text/html; charset=UTF-8" %>
 %%importCode%%
 <%
@@ -74,6 +75,7 @@
 
     <!-- [ CSS from cssContainer widget ] -->
 	%%headerCode%%
+	<script src="https://cdn.optimizely.com/js/<%=WbdCache.getProperty("optimizely.id")%>.js"></script>
 	<!-- [ CSS from cssContainer widget END ] -->
 
     <!-- [ Cloudmall Essentials - Bootstrap and Font Awesome ] -->
@@ -94,46 +96,103 @@
 	%>
 
 	<!-- [ Google Analytics ] -->
-	<% if (!navpoint.getParent().getId().equals(WbdCache.getProperty("store.name") + "-176")) { %>
-	  	<% if (navpoint.getLabel().equalsIgnoreCase("home")) { %>
-		  	<meta name="google-site-verification" content="AhLcdFsg980gnZh8k4dzSkYUiLzwgnDapP8c80WM_-A" />
-		  	<meta name="msvalidate.01" content="4017B989E703CFA096F76AF5F42A2293" />
-	  	<% } %>
-
-	  	<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-			ga('create', '<%=WbdCache.getProperty("uaCode")%>', '<%=WbdCache.getProperty("uaDomainName")%>');
-			ga('require', 'linkid', 'linkid.js');
-			ga('require', 'displayfeatures');
-			ga('send', 'pageview');
-		</script>
-	<% } %>
+		<% if (!navpoint.getParent().getId().equals(WbdCache.getProperty("store.name") + "-176")) { %>
+		  	<% if (navpoint.getLabel().equalsIgnoreCase("home")) { %>
+			  	<meta name="google-site-verification" content="AhLcdFsg980gnZh8k4dzSkYUiLzwgnDapP8c80WM_-A" />
+			  	<meta name="msvalidate.01" content="4017B989E703CFA096F76AF5F42A2293" />
+		  	<% } %>
+		<% } %>
 	<!-- [ Google Analytics END ] -->
-	
-	<!-- Facebook Pixel Code (Initial Code for Stage) -->
-	<script>
-		!function(f,b,e,v,n,t,s)
-		{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-		n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-		if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-		n.queue=[];t=b.createElement(e);t.async=!0;
-		t.src=v;s=b.getElementsByTagName(e)[0];
-		s.parentNode.insertBefore(t,s)}(window,document,'script',
-		'https://connect.facebook.net/en_US/fbevents.js');
-		 fbq('init', '282296572267911'); 
-		fbq('track', 'PageView');
-	</script>
-	
-	<noscript>
-		<img height="1" width="1" src="https://www.facebook.com/tr?id=282296572267911&ev=PageView&noscript=1"/>
-	</noscript>
-	<!-- End Facebook Pixel Code (Initial Code for Stage) -->
 
   </head>
   <body>
+  
+  <% String googleTagManager = WbdCache.getProperty("google.tag.manager"); %>
+  <% if (googleTagManager != null) { %> 
+  <% HttpServletRequest headerRequest = jh.getRequest(); %>
+  
+  			<% String pageName = ""; 
+  			 String event = ""; 
+  			 String category = ""; 
+  				 if(org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-111.jsp")  ||  org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-181.jsp") ){ 
+  					 event = "remarketing_home"; 
+  					 pageName = "home"; 
+  				 } else if ( org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-125.jsp") ||  org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-300.jsp")) { 
+  					 event = "remarketing_category"; 
+  					 category = "car mats"; 
+  					 pageName = "category"; 
+  				 } else if (org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-184.jsp") ||  org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-301.jsp")){ 
+  					 event = "remarketing_category"; 
+  					 category = "floor mats"; 
+  					 pageName = "category"; 
+  				 } else if (org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-123.jsp")) { 
+  					 event = "remarketing_category"; 
+  					 category = "dash mats"; 
+  					 pageName = "category"; 
+  				 } else if (org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-186.jsp")){ 
+  					 event = "remarketing_category"; 
+  					 category = "dash covers"; 
+  					 pageName = "category"; 
+  				 } else if (org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-121.jsp")) { 
+  					 event = "remarketing_category"; 
+  					 category = "ute mats"; 
+  					 pageName = "category"; 
+  				 } else if (org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-188.jsp")){ 
+  					 event = "remarketing_category"; 
+  					 category = "trunk mats"; 
+  					 pageName = "category"; 
+  				 } else if (org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-124.jsp")) { 
+  					 event = "remarketing_category"; 
+  					 category = "boot liners"; 
+  					 pageName = "category"; 
+  				 } else if (org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-185.jsp")){ 
+  					 event = "remarketing_category"; 
+  					 category = "trunk liners"; 
+  					 pageName = "category"; 
+  				 } else if (org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-122.jsp") || org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-187.jsp")) { 
+  					 event = "remarketing_category"; 
+  					 category = "plastics"; 
+  					 pageName = "category"; 
+  				 } else if (org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-126.jsp") || org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-183.jsp")){ 
+  					 event = "remarketing_category"; 
+  					 category = "accessories"; 
+  					 pageName = "category"; 
+  				 } else if (org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-291.jsp") || org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-275.jsp")){ 
+  					 event = "remarketing_checkout"; 
+  					 pageName = "checkout"; 
+  				 } else if (org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-89.jsp") || org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-273.jsp")  
+  								 || org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-275.jsp") 
+  								 || org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-73.jsp") || org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-280.jsp")  
+  								 || org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-86.jsp") || org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-276.jsp")  
+  								 || org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-304.jsp") || org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-179.jsp")){ 
+  					 event = ""; 
+  					 pageName = ""; 
+  				 } else { 
+  					 event = "remarketing_other"; 
+  					 pageName = "other"; 
+  				 } %>
+  				 
+  			<script>
+  			<%if (pageName!="" && event!="") { %>
+  				dataLayer = [{
+				 	'event': "<%=event%>",
+				    'google_tag_params': {
+				            'ecomm_pagetype': "<%=pageName%>",
+				            'ecomm_category':  "<%=category%>"
+				 	}
+				}];
+	  		<%}%>
+			</script>
+  			
+  			<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer',<%=googleTagManager %>);
+  			</script>
+  			
+  <% } %>
+  
 %%topCode%%
 
 <!--  Provides a common fixed-width (and optionally responsive) layout with only <div class="container"> required. -->
