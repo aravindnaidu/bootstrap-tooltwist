@@ -104,7 +104,7 @@ public class CloseWidget extends WbdWidgetController {
 		return true;
 	}
 
-	private void renderWidget(WbdGenerator generator, WbdWidget instance, WbdRenderHelper buf) throws WbdException {
+	private void renderWidget(WbdGenerator generator, WbdWidget instance, WbdRenderHelper buf) {
 
 		buf.append("<button class='close'>&times;</button>\n");
 	}

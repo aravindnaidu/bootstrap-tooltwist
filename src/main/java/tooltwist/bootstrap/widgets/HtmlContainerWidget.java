@@ -3,8 +3,6 @@ package tooltwist.bootstrap.widgets;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import javax.servlet.ServletException;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -326,7 +324,7 @@ public class HtmlContainerWidget extends ContainerWidget
 		return snippet.getContent();
 	}
 	
-	public UimResult op_insertNavBar(DesignerUIM designer, UimHelper uh, DesignerHelper helper, WbdWidget instance) throws DinaaException, ServletException, IOException {
+	public UimResult op_insertNavBar(DesignerUIM designer, UimHelper uh, DesignerHelper helper, WbdWidget instance) throws DinaaException, IOException {
 		logger.debug("op_insertNavBar() start...");
 		
 		WbdVersionSelector vs = DesignerUIM.getUserVersionSelector(uh);
@@ -352,7 +350,7 @@ public class HtmlContainerWidget extends ContainerWidget
 		return uh.reply(html);
 	}
 	
-	public UimResult op_removeNavBar(DesignerUIM designer, UimHelper uh, DesignerHelper helper, WbdWidget instance) throws DinaaException, ServletException, IOException {
+	public UimResult op_removeNavBar(DesignerUIM designer, UimHelper uh, DesignerHelper helper, WbdWidget instance) throws DinaaException, IOException {
 		logger.debug("op_insertNavBar() start...");
 		
 		WbdVersionSelector vs = DesignerUIM.getUserVersionSelector(uh);
@@ -379,7 +377,7 @@ public class HtmlContainerWidget extends ContainerWidget
 		return uh.reply(html);
 	}
 	
-	public UimResult op_selectNavBar(DesignerUIM designer, UimHelper uh, DesignerHelper helper, WbdWidget instance) throws DinaaException, ServletException, IOException {
+	public UimResult op_selectNavBar(DesignerUIM designer, UimHelper uh, DesignerHelper helper, WbdWidget instance) throws DinaaException, IOException {
 		logger.debug("op_selectNavBar() start...");
 		
 		WbdVersionSelector vs = DesignerUIM.getUserVersionSelector(uh);

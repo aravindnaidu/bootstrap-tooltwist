@@ -49,7 +49,6 @@ public class CarouselViewHelper extends ViewHelper
 		      XNodes nodes = pageData.getNodes("banner");
 //		      XNodes video = pageData.getNodes("video");
 //		      XNodes nodes2 = pageData.getNodes("config");
-		      String confOption = null;
 //		      for (nodes2.first(); nodes2.next();) {
 //			      XNodes config = nodes2.getNodes("option");
 //			      confOption = config.getText();

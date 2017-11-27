@@ -184,7 +184,7 @@ public class RowWidget extends ContainerWidget
 		rh.afterProductionCode(generator, instance);
 	}
 	
-	private SnippetParam[] getSnippetParams(WbdGenerator generator, WbdWidget instance, UimData ud) throws WbdException {
+	private SnippetParam[] getSnippetParams(WbdGenerator generator, WbdWidget instance, UimData ud) {
 //		String myProperty = instance.getProperty("myProperty", null);
 //		String myNavpoint = instance.getProperty("myNavpoint", null);
 		SnippetParam[] params = {

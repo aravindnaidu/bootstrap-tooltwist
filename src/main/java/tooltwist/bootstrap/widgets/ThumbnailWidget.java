@@ -22,7 +22,6 @@ import com.dinaa.ui.UimHelper;
 public class ThumbnailWidget extends ContainerWidget
 {
 	private static final String SNIPPET_PREVIEW = "thumbnail_preview.html";
-	private static final String SNIPPET_DESIGN = "thumbnail_design.html";
 	private static final String SNIPPET_PRODUCTION = "thumbnail_production.jsp";
 	private static final boolean USE_PRODUCTION_HELPER = false;
 

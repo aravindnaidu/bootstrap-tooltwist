@@ -3,8 +3,6 @@ package tooltwist.bootstrap.widgets;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import javax.servlet.ServletException;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -280,7 +278,7 @@ public class DropdownWidget extends ContainerWidget
 		return snippet.getContent();
 	}
 
-	public UimResult op_insertItem(DesignerUIM designer, UimHelper uh, DesignerHelper helper, WbdWidget instance) throws DinaaException, ServletException, IOException {
+	public UimResult op_insertItem(DesignerUIM designer, UimHelper uh, DesignerHelper helper, WbdWidget instance) throws DinaaException, IOException {
 		logger.debug("op_insertItem() start...");
 
 		String idx = uh.getRequestValue("index");
@@ -294,7 +292,7 @@ public class DropdownWidget extends ContainerWidget
 		return reply;
 	}
 
-	public UimResult op_removeItem(DesignerUIM designer, UimHelper uh, DesignerHelper helper, WbdWidget instance) throws DinaaException, ServletException, IOException {
+	public UimResult op_removeItem(DesignerUIM designer, UimHelper uh, DesignerHelper helper, WbdWidget instance) throws DinaaException, IOException {
 		logger.debug("op_removeItem() start...");
 
 		String idx = uh.getRequestValue("index");
@@ -317,7 +315,7 @@ public class DropdownWidget extends ContainerWidget
 		return reply;
 	}
 
-	private UimResult saveAndRedrawDesigner(DesignerUIM designer, UimHelper uh, DesignerHelper helper, WbdWidget instance) throws DinaaException, ServletException, IOException {
+	private UimResult saveAndRedrawDesigner(DesignerUIM designer, UimHelper uh, DesignerHelper helper, WbdWidget instance) throws DinaaException, IOException {
 		logger.debug("saveAndRedrawDesigner()");
 
 		WbdVersionSelector vs = DesignerUIM.getUserVersionSelector(uh);
@@ -342,7 +340,7 @@ public class DropdownWidget extends ContainerWidget
 	}
 
 	//redraw the page
-	public UimResult op_selectItem(DesignerUIM designer, UimHelper uh, DesignerHelper helper, WbdWidget instance) throws DinaaException, ServletException, IOException {
+	public UimResult op_selectItem(DesignerUIM designer, UimHelper uh, DesignerHelper helper, WbdWidget instance) throws DinaaException, IOException {
 		logger.debug("op_selectItem() start...");
 
 		WbdVersionSelector vs = DesignerUIM.getUserVersionSelector(uh);
