@@ -73,21 +73,31 @@
 	<meta name="generator" content="ToolTwist" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+	<!-- Old Bootstrap & Font Awesome Libraries (remove this if the site is stable after the optimization 
+	    <!-- [ Cloudmall Essentials - Bootstrap and Font Awesome ]
+			<link href="%%URL(/ttsvr/bootstrap/dist/css/bootstrap.min.css)%%" rel="stylesheet" media="screen">
+			<link href="%%URL(/ttsvr/font-awesome/css/font-awesome.min.css)%%" rel="stylesheet" media="screen">
+				<%-- These are from the "css/src" folder --%>
+			<link href="%%URL(/ttsvr/bootstrap/css/build/20160412.css)%%" rel="stylesheet" media="screen">
+		<!-- [ Cloudmall Essentials END ]
+	-->
+	
+	<!-- Title: New Bootstrap, Icons & Fonts (Optimization)
+	---- Date: December 2017 -->
+	
+		<!-- Bootstrap -->
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<!-- Icons -->
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<!-- Font: Montserrat -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600" rel="stylesheet">
+		
     <!-- [ CSS from cssContainer widget ] -->
 	%%headerCode%%
-	<script src="https://cdn.optimizely.com/js/<%=WbdCache.getProperty("optimizely.id")%>.js"></script>
 	<!-- [ CSS from cssContainer widget END ] -->
 
-    <!-- [ Cloudmall Essentials - Bootstrap and Font Awesome ] -->
-		<link href="%%URL(/ttsvr/bootstrap/dist/css/bootstrap.min.css)%%" rel="stylesheet" media="screen">
-		<link href="%%URL(/ttsvr/font-awesome/css/font-awesome.min.css)%%" rel="stylesheet" media="screen">
-			<%-- These are from the "css/src" folder --%>
-		<link href="%%URL(/ttsvr/bootstrap/css/build/20160412.css)%%" rel="stylesheet" media="screen">
-	<!-- [ Cloudmall Essentials END ] -->
-
     <!-- [ Favicon ] -->
-    <link rel="icon" href="/ttsvr/cropImage/<%=WbdCache.getProperty("store.name") %>.images.favicon.ico" type="image/x-icon">
-	<link rel="shortcut icon" href="/ttsvr/cropImage/<%=WbdCache.getProperty("store.name") %>.images.favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://s3-ap-southeast-2.amazonaws.com/cloudmall-webassets/fitmycar/favicon.ico" type="image/x-icon">
 	<!-- [ Favicon END ] -->
 
 	<%
