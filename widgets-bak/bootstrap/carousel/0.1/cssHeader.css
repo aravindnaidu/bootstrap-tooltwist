@@ -1,0 +1,19 @@
+.banner img {
+	width: 940px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.carousel-inner .item{
+	margin-bottom: -5px;
+}
+video {
+  height: 100%; 
+  width: 100%; 
+  margin-top: 167px;
+}
+
+@media (max-width: 767px) {
+	video {
+		margin-top: 75px !important;
+	}
+}
