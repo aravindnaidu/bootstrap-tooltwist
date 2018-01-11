@@ -124,7 +124,7 @@
 		t.src=v;s=b.getElementsByTagName(e)[0];
 		s.parentNode.insertBefore(t,s)}(window,document,'script',
 		'https://connect.facebook.net/en_US/fbevents.js');
-		 fbq('init', '282296572267911'); 
+		fbq('init', '<%=WbdCache.getProperty("pixelId")%>'); 
 		fbq('track', 'PageView');
 	</script>
 	
@@ -132,6 +132,21 @@
 		<img height="1" width="1" src="https://www.facebook.com/tr?id=282296572267911&ev=PageView&noscript=1"/>
 	</noscript>
 	<!-- End Facebook Pixel Code (Initial Code for Stage) -->
+	
+	<!-- Pinterest  start -->
+	
+	<script type="text/javascript">
+		!function(e){if(!window.pintrk){window.pintrk=function(){window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var n=window.pintrk;n.queue=[],n.version="3.0";var t=document.createElement("script");t.async=!0,t.src=e;var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+		pintrk('load','<%=WbdCache.getProperty("pinterestId")%>');
+		pintrk('page');
+	</script>
+	<!-- WbdCache.getProperty("store.name")  -->
+	<noscript>
+		<img height="1" width="1" style="display:none;" alt=""
+		src="https://ct.pinterest.com/v3/?tid=<%=WbdCache.getProperty("pinterestId")%>&noscript=1" />
+	</noscript>
+	
+	<!-- Pinterest end -->
 
   </head>
   <body>
