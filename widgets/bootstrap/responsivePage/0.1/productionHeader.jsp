@@ -98,7 +98,7 @@
 	<!-- [ Google Analytics ] -->
 		<% if (!navpoint.getParent().getId().equals(WbdCache.getProperty("store.name") + "-176")) { %>
 		  	<% if (navpoint.getLabel().equalsIgnoreCase("home")) { %>
-			  	<meta name="google-site-verification" content="AhLcdFsg980gnZh8k4dzSkYUiLzwgnDapP8c80WM_-A" />
+			  	<meta name="google-site-verification" content="VQnOwhh8_0ex8WQozJ14jOZvFK0tRlfVeMEECJ2hOtc" />
 			  	<meta name="msvalidate.01" content="4017B989E703CFA096F76AF5F42A2293" />
 		  	<% } %>
 		<% } %>
