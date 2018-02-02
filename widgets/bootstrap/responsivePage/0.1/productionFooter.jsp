@@ -28,6 +28,14 @@
 <!-- 		<script src="/ttsvr/bootstrap/js/src/justice.min.js"></script> -->
 <!-- 		<script src="/ttsvr/bootstrap/js/src/justice.config.js"></script> -->
 
+		<!-- Google Customer Review -->
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+		<script>
+		  window.___gcfg = {
+		    lang: 'en_AU'
+		  };
+		</script>
+
 		%%bottomCode%%
 
 	</body>
