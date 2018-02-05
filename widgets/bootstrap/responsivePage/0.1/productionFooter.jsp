@@ -30,21 +30,6 @@
 
 		<!-- Google Customer Review -->
 		<script src="https://apis.google.com/js/platform.js" async defer></script>
-		
-		<script>
-		  window.renderBadge = function() {
-		    var ratingBadgeContainer = document.createElement("div");
-		      document.body.appendChild(ratingBadgeContainer);
-		      window.gapi.load('ratingbadge', function() {
-		        window.gapi.ratingbadge.render(
-		          ratingBadgeContainer, {
-		            // REQUIRED
-		            "merchant_id": 113000332
-		          });           
-		     });
-		  }
-		</script>
-
 		<script>
 		  window.___gcfg = {
 		    lang: 'en_AU'
