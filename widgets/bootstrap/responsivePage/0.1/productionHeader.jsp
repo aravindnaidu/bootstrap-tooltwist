@@ -51,7 +51,9 @@
 	<meta name="keywords" content="%%keywordMetatag%%"></meta>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-    	
+	<meta name="author" content="tooltwist" />
+	<meta name="web_author" content="tooltwist" />
+	    	
 	<% 
 		Object isHostStudylane = request.getSession(false).getAttribute("isStudylane");
 		Object isLocalBuild = request.getSession(false).getAttribute("isLocal");
