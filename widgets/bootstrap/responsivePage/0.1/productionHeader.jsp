@@ -101,6 +101,8 @@
 		<meta name="keywords" content="%%keywordMetatag%%">
 		<meta name="generator" content="ToolTwist" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="tooltwist"/>
+		<meta name="web_author" content="tooltwist"/>
 
 		<%if(currentNavpointId.equals("myrp-1327")){%>
 		<meta name="googlebot" content="nofollow, noindex" />
@@ -159,6 +161,18 @@
 				}	
 			} 
 		%>
+		
+		<!-- BEGIN Krux ControlTag for "propertyvalue.com.au" -->
+		<script class="kxct" data-id="sm9r9llxh" data-timing="async" data-version="3.0" type="text/javascript">
+		  window.Krux||((Krux=function(){Krux.q.push(arguments)}).q=[]);
+		  (function(){
+		    var k=document.createElement('script');k.type='text/javascript';k.async=true;
+		    k.src=(location.protocol==='https:'?'https:':'http:')+'//cdn.krxd.net/controltag/sm9r9llxh.js';
+		    var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(k,s);
+		  }());
+		</script>
+		<!-- END Krux ControlTag -->
+		
 	</head>
 
 	<body>
