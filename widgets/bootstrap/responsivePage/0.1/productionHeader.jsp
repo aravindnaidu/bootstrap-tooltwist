@@ -64,6 +64,7 @@
   }
   %>
     <title><%=categoryName %></title> --%>
+	<% HttpServletRequest headerRequest = jh.getRequest(); %>
 
     <title>%%pageTitle%%</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -72,6 +73,20 @@
 	<meta name="keywords" content="%%keywordMetatag%%">
 	<meta name="generator" content="ToolTwist" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <% if (org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-70.jsp") ||
+			org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-286.jsp") ||
+			org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-86.jsp") ||
+			org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-276.jsp") ||
+			org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-291.jsp") ||
+			org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-275.jsp") || 
+			org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-120.jsp") ||
+			org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-191.jsp") ||
+			org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-119.jsp") ||
+			org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-192.jsp") ||
+			org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-80.jsp") ||
+			org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-278.jsp")) { %>
+    <meta name="robots" content="noindex, follow">
+	<% } %>
 
     <!-- [ CSS from cssContainer widget ] -->
 	%%headerCode%%
@@ -107,8 +122,6 @@
   
   <% String googleTagManager = WbdCache.getProperty("google.tag.manager"); %>
   <% if (googleTagManager != null) { %> 
-  <% HttpServletRequest headerRequest = jh.getRequest(); %>
-  
   			<% String pageName = ""; 
   			 String event = ""; 
   			 String category = ""; 
