@@ -114,9 +114,9 @@
 	
 		<!-- [ Styles ] -->
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300" rel="stylesheet" type="text/css">
-		<link href="<%=Cloudfront.getDNS() %>/bootstrap/css/font-awesome.<%=Config.getValue("font-awesome.version")%>.css.gz" type="text/css" rel="stylesheet" media="screen">
-		<link href="<%=Cloudfront.getDNS() %>/bootstrap/css/bootstrap.min.<%=Config.getValue("bootstrap.version")%>.css.gz" type="text/css" rel="stylesheet" media="screen">
-		<link href="<%=Cloudfront.getDNS() %>/freemium/css/pv/cl-bootstrap_z-adjustments.<%=Config.getValue("cl-bootstrap.z-adjustments.version")%>.min.css.gz" type="text/css" rel="stylesheet" media="screen">
+		<link href="<%=ESAPI.encoder().encodeForHTML(Cloudfront.getDNS()) %>/bootstrap/css/font-awesome.<%=ESAPI.encoder().encodeForHTML(Config.getValue("font-awesome.version"))%>.css.gz" type="text/css" rel="stylesheet" media="screen">
+		<link href="<%=ESAPI.encoder().encodeForHTML(Cloudfront.getDNS()) %>/bootstrap/css/bootstrap.min.<%=ESAPI.encoder().encodeForHTML(Config.getValue("bootstrap.version"))%>.css.gz" type="text/css" rel="stylesheet" media="screen">
+		<link href="<%=ESAPI.encoder().encodeForHTML(Cloudfront.getDNS()) %>/freemium/css/pv/cl-bootstrap_z-adjustments.<%=ESAPI.encoder().encodeForHTML(Config.getValue("cl-bootstrap.z-adjustments.version"))%>.min.css.gz" type="text/css" rel="stylesheet" media="screen">
 
 		<!-- [ Favicon ] -->
 		<link rel="shortcut icon" href="/ttsvr/freemium/images/pv/favicon.ico" type="image/x-icon">
@@ -139,10 +139,10 @@
 		%>
 		    <!-- [ jQuery ] -->
 			<!--[if lt IE 9]>
-				<script src="<%=Cloudfront.getDNS() %>/freemium/script/jquery.1.11.1.min.js.gz"></script>
+				<script src="<%=ESAPI.encoder().encodeForHTML(Cloudfront.getDNS()) %>/freemium/script/jquery.1.11.1.min.js.gz"></script>
 			<![endif]-->
 			<!--[if gte IE 9]><!-->
-		    	<script src="<%=Cloudfront.getDNS() %>/freemium/script/jquery-2.1.4.min.js.gz"></script>
+		    	<script src="<%=ESAPI.encoder().encodeForHTML(Cloudfront.getDNS()) %>/freemium/script/jquery-2.1.4.min.js.gz"></script>
 			<!--<![endif]-->
 	
 			<script>$.ajaxSetup({ cache: false });</script>
@@ -156,7 +156,7 @@
 				if(map_navpoint_enabled.equals(currentNavpointId)) {
 		%>
 		<script src="https://maps.googleapis.com/maps/api/js?v=3&client=gme-corelogicsolutions&signature=7Js3Ymvq0Ye7IbvSJ6FaXh-9FVs=&sensor=false&channel=freemium&libraries=places"></script>
-		<script src="<%=Cloudfront.getDNS() %>/freemium/script/markerwithlabel.min.js.gz"></script>
+		<script src="<%=ESAPI.encoder().encodeForHTML(Cloudfront.getDNS()) %>/freemium/script/markerwithlabel.min.js.gz"></script>
 		<%
 				}	
 			} 

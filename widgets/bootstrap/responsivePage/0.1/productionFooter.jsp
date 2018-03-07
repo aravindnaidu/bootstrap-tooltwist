@@ -3,10 +3,10 @@
 	%>
 	    <!-- [ jQuery ] -->
 		<!--[if lt IE 9]>
-			<script src="<%=Cloudfront.getDNS() %>/freemium/script/jquery.1.11.1.min.js.gz"></script>
+			<script src="<%=ESAPI.encoder().encodeForHTML(Cloudfront.getDNS()) %>/freemium/script/jquery.1.11.1.min.js.gz"></script>
 		<![endif]-->
 		<!--[if gte IE 9]><!-->
-	    	<script src="<%=Cloudfront.getDNS() %>/freemium/script/jquery-2.1.4.min.js.gz"></script>
+	    	<script src="<%=ESAPI.encoder().encodeForHTML(Cloudfront.getDNS()) %>/freemium/script/jquery-2.1.4.min.js.gz"></script>
 		<!--<![endif]-->
 
 		<script>$.ajaxSetup({ cache: false });</script>
@@ -14,9 +14,9 @@
 	}
 	%>
 
-		<script src="<%=Cloudfront.getDNS() %>/freemium/script/bootstrap.min.v3.3.1.js.gz"></script> <!-- version used by Simple Machines -->
+		<script src="<%=ESAPI.encoder().encodeForHTML(Cloudfront.getDNS()) %>/freemium/script/bootstrap.min.v3.3.1.js.gz"></script> <!-- version used by Simple Machines -->
 		<!-- [ myrp_t ] -->
-		<script src="<%=Cloudfront.getDNS() %>/freemium/script/allfreemium.<%=Config.getValue("allFreemium.version")%>.min.js.gz"></script>
+		<script src="<%=ESAPI.encoder().encodeForHTML(Cloudfront.getDNS()) %>/freemium/script/allfreemium.<%=Config.getValue("allFreemium.version")%>.min.js.gz"></script>
 		<script type="text/javascript">
 		function recordKissmetricsEvent (eventAction) {
 			try {	_kmq.push(['record', eventAction]); } catch (e) {
