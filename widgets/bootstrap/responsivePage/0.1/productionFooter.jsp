@@ -30,7 +30,7 @@
 		<script type="text/javascript">
 		$(document).ready(function() { 
 			setTimeout(function() { 
-				try { _kmq.push(['identify', '<%=LoginUser.getData(request).getEmail() %>']); } catch (e) {
+				try { _kmq.push(['identify', '<%=Encode.forJavaScriptAttribute(LoginUser.getData(request).getEmail()) %>']); } catch (e) {
 					console.log(e);
 				} 
 			}, 1000); 
