@@ -41,6 +41,7 @@
 <%@page import="tooltwist.wbd.WbdCache"%>
 <%@page import="tooltwist.chinese.enumerated.LanguageEnum"%>
 <%@page import="org.owasp.esapi.ESAPI"%>
+<%@page import="org.owasp.encoder.Encode"%>
 <%@page contentType="text/html; charset=UTF-8" %>
 <% session.removeAttribute("freemiumErrorCatch"); %>
 <% session.removeAttribute("freemiumPageCall"); %>
