@@ -101,7 +101,7 @@
 	<meta property="og:image" content="https://s3-ap-southeast-2.amazonaws.com/cloudmall-webassets/fitmycar/images/seo-images/fitmycar-shop-accessories-online.jpg" />
 	<% } %>
 	
-	<% if (!WbdCache.getProperty("siteUrl").equalsIgnoreCase("www.fitmycar.com")) %>
+	<% if (!WbdCache.getProperty("siteUrl").equalsIgnoreCase("www.fitmycar.com")) { %>
 	<meta name="robots" content="noindex">
 	<% } %>
 	
