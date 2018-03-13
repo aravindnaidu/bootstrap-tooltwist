@@ -101,6 +101,10 @@
 	<meta property="og:image" content="https://s3-ap-southeast-2.amazonaws.com/cloudmall-webassets/fitmycar/images/seo-images/fitmycar-shop-accessories-online.jpg" />
 	<% } %>
 	
+	<% if (!WbdCache.getProperty("siteUrl").equalsIgnoreCase("www.fitmycar.com")) %>
+	<meta name="robots" content="noindex">
+	<% } %>
+	
     <!-- [ CSS from cssContainer widget ] -->
 	%%headerCode%%
 	<script src="https://cdn.optimizely.com/js/<%=WbdCache.getProperty("optimizely.id")%>.js"></script>
