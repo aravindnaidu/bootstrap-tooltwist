@@ -100,9 +100,8 @@
 	<meta property="og:description" content="Save yourself the hassle of shopping at the car dealer for car accessories. Shop online. Fitment is guaranteed, and delivery is free right to your door." />
 	<meta property="og:image" content="https://s3-ap-southeast-2.amazonaws.com/cloudmall-webassets/fitmycar/images/seo-images/fitmycar-shop-accessories-online.jpg" />
 	<% } %>
-	
 	<% if (!WbdCache.getProperty("siteUrl").equalsIgnoreCase("www.fitmycar.com")) { %>
-	<meta name="robots" content="noindex">
+	<meta name="robots" content="noindex, nofollow">
 	<% } %>
 	
     <!-- [ CSS from cssContainer widget ] -->
