@@ -16,7 +16,7 @@
 
 		<script src="<%=ESAPI.encoder().encodeForHTML(Cloudfront.getDNS()) %>/freemium/script/bootstrap.min.v3.3.1.js.gz"></script> <!-- version used by Simple Machines -->
 		<!-- [ myrp_t ] -->
-		<script src="<%=ESAPI.encoder().encodeForHTML(Cloudfront.getDNS()) %>/freemium/script/allfreemium.<%=Config.getValue("allFreemium.version")%>.min.js.gz"></script>
+		<script src="<%=ESAPI.encoder().encodeForHTML(Cloudfront.getDNS()) %>/freemium/script/allfreemium.<%=ESAPI.encoder().encodeForHTML(Config.getValue("allFreemium.version"))%>.min.js.gz"></script>
 		<script type="text/javascript">
 		function recordKissmetricsEvent (eventAction) {
 			try {	_kmq.push(['record', eventAction]); } catch (e) {
