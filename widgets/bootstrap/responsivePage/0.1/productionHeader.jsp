@@ -209,10 +209,15 @@
 
    <% HttpServletRequest headerRequest = jh.getRequest(); %>
     
-   <% if ( org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-125.jsp") 
-		   ||  org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-300.jsp") 
-		   || org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-184.jsp") 
-		   ||  org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-301.jsp")){ %>
+   <% if ( org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-125.jsp")  // Car Mats Static - AU
+		   ||  org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-300.jsp") // Car Mats Dynamic - AU
+		   || org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-184.jsp") // Car Mats Static - US
+		   ||  org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-301.jsp") // Car Mats Static - US
+		   ||  org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-314.jsp") // Dash Mats Dynamic - AU
+		   ||  org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-315.jsp") // Dash Mats Dynamic - US
+		   ||  org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-317.jsp") // Seat Covers Dynamic - AU
+		   ||  org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-318.jsp") // Boot Liners Dynamic - AU
+		 ){ %>
 		<script type="text/javascript" src="https://api.feefo.com/api/javascript/fitmycar" async></script>
   				<% } %>
   				
