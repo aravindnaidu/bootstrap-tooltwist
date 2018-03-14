@@ -64,6 +64,7 @@
   }
   %>
     <title><%=categoryName %></title> --%>
+	<% HttpServletRequest headerRequest = jh.getRequest(); %>
 
     <title>%%pageTitle%%</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -72,7 +73,37 @@
 	<meta name="keywords" content="%%keywordMetatag%%">
 	<meta name="generator" content="ToolTwist" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <% if (org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-70.jsp") ||
+			org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-286.jsp") ||
+			org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-86.jsp") ||
+			org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-276.jsp") ||
+			org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-291.jsp") ||
+			org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-275.jsp") || 
+			org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-120.jsp") ||
+			org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-191.jsp") ||
+			org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-119.jsp") ||
+			org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-192.jsp") ||
+			org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-80.jsp") ||
+			org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-278.jsp")) { %>
+    <meta name="robots" content="noindex, follow">
+	<% } %>
+	<% if (org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-111.jsp")) { %>
+	<meta property="og:url" content="https://www.fitmycar.com/au/" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Shop Online for Car Accessories That Fit" />
+	<meta property="og:description" content="Save yourself the hassle of shopping at the car dealer for car accessories. Shop online. Fitment is guaranteed, and delivery is free right to your door." />
+	<meta property="og:image" content="https://s3-ap-southeast-2.amazonaws.com/cloudmall-webassets/fitmycar/images/seo-images/fitmycar-shop-accessories-online.jpg" />
+	<% } else if (org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-181.jsp")) {%>
+	<meta property="og:url" content="https://www.fitmycar.com/us/" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Shop Online for Car Accessories That Fit" />
+	<meta property="og:description" content="Save yourself the hassle of shopping at the car dealer for car accessories. Shop online. Fitment is guaranteed, and delivery is free right to your door." />
+	<meta property="og:image" content="https://s3-ap-southeast-2.amazonaws.com/cloudmall-webassets/fitmycar/images/seo-images/fitmycar-shop-accessories-online.jpg" />
+	<% } %>
+	<% if (!WbdCache.getProperty("siteUrl").equalsIgnoreCase("www.fitmycar.com")) { %>
+	<meta name="robots" content="noindex, nofollow">
+	<% } %>
+	
     <!-- [ CSS from cssContainer widget ] -->
 	%%headerCode%%
 	<script src="https://cdn.optimizely.com/js/<%=WbdCache.getProperty("optimizely.id")%>.js"></script>
@@ -107,8 +138,6 @@
   
   <% String googleTagManager = WbdCache.getProperty("google.tag.manager"); %>
   <% if (googleTagManager != null) { %> 
-  <% HttpServletRequest headerRequest = jh.getRequest(); %>
-  
   			<% String pageName = ""; 
   			 String event = ""; 
   			 String category = ""; 
