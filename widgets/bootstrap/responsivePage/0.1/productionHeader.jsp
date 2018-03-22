@@ -124,14 +124,14 @@
 		<link rel="icon" href="/ttsvr/freemium/images/pv/favicon.ico" type="image/x-icon">
 
 		<!-- hreflangs -->
-		<link rel="alternate" href="<%=FreemiumUtil.getURLForHrefLanguage(request, LanguageEnum.DEFAULT_ENGLISH.getIdx()) %>" hreflang="en-au" />
-		<link rel="alternate" href="<%=FreemiumUtil.getURLForHrefLanguage(request, LanguageEnum.DEFAULT_ENGLISH.getIdx()) %>" hreflang="en-cn" />
-		<link rel="alternate" href="<%=FreemiumUtil.getURLForHrefLanguage(request, LanguageEnum.DEFAULT_ENGLISH.getIdx()) %>" hreflang="en-hk" />
-		<link rel="alternate" href="<%=FreemiumUtil.getURLForHrefLanguage(request, LanguageEnum.DEFAULT_ENGLISH.getIdx()) %>" hreflang="en-tw" />
-		<link rel="alternate" href="<%=FreemiumUtil.getURLForHrefLanguage(request, LanguageEnum.CHINESE_SIMPLIFIED.getIdx()) %>" hreflang="zh-au" />
-		<link rel="alternate" href="<%=FreemiumUtil.getURLForHrefLanguage(request, LanguageEnum.CHINESE_SIMPLIFIED.getIdx()) %>" hreflang="zh-cn" />
-		<link rel="alternate" href="<%=FreemiumUtil.getURLForHrefLanguage(request, LanguageEnum.CHINESE_SIMPLIFIED.getIdx()) %>" hreflang="zh-hk" />
-		<link rel="alternate" href="<%=FreemiumUtil.getURLForHrefLanguage(request, LanguageEnum.CHINESE_SIMPLIFIED.getIdx()) %>" hreflang="zh-tw" />
+		<link rel="alternate" href="<%=Encode.forHtmlAttribute(FreemiumUtil.getURLForHrefLanguage(request, LanguageEnum.DEFAULT_ENGLISH.getIdx())) %>" hreflang="en-au" />
+		<link rel="alternate" href="<%=Encode.forHtmlAttribute(FreemiumUtil.getURLForHrefLanguage(request, LanguageEnum.DEFAULT_ENGLISH.getIdx())) %>" hreflang="en-cn" />
+		<link rel="alternate" href="<%=Encode.forHtmlAttribute(FreemiumUtil.getURLForHrefLanguage(request, LanguageEnum.DEFAULT_ENGLISH.getIdx())) %>" hreflang="en-hk" />
+		<link rel="alternate" href="<%=Encode.forHtmlAttribute(FreemiumUtil.getURLForHrefLanguage(request, LanguageEnum.DEFAULT_ENGLISH.getIdx())) %>" hreflang="en-tw" />
+		<link rel="alternate" href="<%=Encode.forHtmlAttribute(FreemiumUtil.getURLForHrefLanguage(request, LanguageEnum.CHINESE_SIMPLIFIED.getIdx())) %>" hreflang="zh-au" />
+		<link rel="alternate" href="<%=Encode.forHtmlAttribute(FreemiumUtil.getURLForHrefLanguage(request, LanguageEnum.CHINESE_SIMPLIFIED.getIdx())) %>" hreflang="zh-cn" />
+		<link rel="alternate" href="<%=Encode.forHtmlAttribute(FreemiumUtil.getURLForHrefLanguage(request, LanguageEnum.CHINESE_SIMPLIFIED.getIdx())) %>" hreflang="zh-hk" />
+		<link rel="alternate" href="<%=Encode.forHtmlAttribute(FreemiumUtil.getURLForHrefLanguage(request, LanguageEnum.CHINESE_SIMPLIFIED.getIdx())) %>" hreflang="zh-tw" />
 
 		%%headerCode%%
 
