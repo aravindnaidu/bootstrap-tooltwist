@@ -110,10 +110,10 @@
 	<!-- [ CSS from cssContainer widget END ] -->
 
     <!-- [ Cloudmall Essentials - Bootstrap and Font Awesome ] -->
-		<link href="%%URL(/ttsvr/bootstrap/dist/css/bootstrap.min.css)%%" rel="stylesheet" media="screen">
-		<link href="%%URL(/ttsvr/font-awesome/css/font-awesome.min.css)%%" rel="stylesheet" media="screen">
+		<link href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/bootstrap.min.css.gz" rel="stylesheet" media="screen">
+		<link href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/font-awesome.min.css.gz" rel="stylesheet" media="screen">
 			<%-- These are from the "css/src" folder --%>
-		<link href="%%URL(/ttsvr/bootstrap/css/build/20160412.css)%%" rel="stylesheet" media="screen">
+		<link href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/20160412.min.css.gz" rel="stylesheet" media="screen">
 	<!-- [ Cloudmall Essentials END ] -->
 
     <!-- [ Favicon ] -->
