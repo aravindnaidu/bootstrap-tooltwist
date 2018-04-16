@@ -22,7 +22,7 @@
 		<!-- [ Bootstrap Project ] -->
 		<script src="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/js/bootstrap.min.js.gz"></script>
 		<%-- These are from the "js/src" folder --%>
-		<script src="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/js/build/c120416.js"></script>
+		<script src="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/js/build/c120416.js.gz"></script>
 
 	<!-- 		<!-- [Justice, remove/comment out on production] -->
 <!-- 		<script src="/ttsvr/bootstrap/js/src/justice.min.js"></script> -->
