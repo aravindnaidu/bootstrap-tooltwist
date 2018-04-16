@@ -114,6 +114,9 @@
 		<link href="%%URL(/ttsvr/font-awesome/css/font-awesome.min.css)%%" rel="stylesheet" media="screen">
 			<%-- These are from the "css/src" folder --%>
 		<link href="%%URL(/ttsvr/bootstrap/css/build/20160412.css)%%" rel="stylesheet" media="screen">
+		<link rel="stylesheet" href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/global_stylesheet_v1.0.0.min.css.gz">
+    	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+    	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
 	<!-- [ Cloudmall Essentials END ] -->
 
     <!-- [ Favicon ] -->
