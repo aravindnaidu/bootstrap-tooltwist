@@ -72,7 +72,7 @@
 		<!-- Favicon -->
 		<link 
 			rel="shortcut icon" 
-			href="https://d2hpwmayxrmlo8.cloudfront.net/public/images/icons/favicon/studylane/favicon.ico?v0.1" 
+			href="%%URL(/ttsvr/studylane_t/images/favicon/studylane/favicon.ico)%%?v=1.2" 
 			type="image/x-icon">
 		</link>
 		
@@ -111,10 +111,10 @@
 		</script>    			
 		
 	<% } else { %>
-		<link 
-			rel="shortcut icon" 
-			href="https://d2hpwmayxrmlo8.cloudfront.net/public/images/icons/favicon/gsp/favicon.ico?v0.1" 
-			type="image/x-icon"></link>
+		<link rel="shortcut icon" 
+			href="%%URL(/ttsvr/studylane_t/images/favicon/gsp/favicon.ico)%%?v=1.2" 
+			type="image/x-icon">
+		</link>
 			
 		<!-- Google Tag Manager -->
 		<script>
