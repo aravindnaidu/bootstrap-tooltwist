@@ -104,19 +104,23 @@
 	<meta name="robots" content="noindex, nofollow">
 	<% } %>
 	
+	<!-- [ Cloudmall Essentials - Bootstrap and Fonts ] -->
+		<link href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/bootstrap.min.css.gz" rel="stylesheet" media="screen">
+		<link href="//d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/global_css_v1.0.3.min.css.gz" rel="stylesheet" media="screen">
+    	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+			
+		<%-- These are from the "css/src" folder --%>
+		<link href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/20160412.min.css.gz" rel="stylesheet" media="screen">
+    	<link href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" rel="stylesheet" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+	<!-- [ Cloudmall Essentials END ] -->
+	
     <!-- [ CSS from cssContainer widget ] -->
 	%%headerCode%%
 	<script src="https://cdn.optimizely.com/js/<%=WbdCache.getProperty("optimizely.id")%>.js"></script>
 	<!-- [ CSS from cssContainer widget END ] -->
 
-    <!-- [ Cloudmall Essentials - Bootstrap and Font Awesome ] -->
-		<link href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/bootstrap.min.css.gz" rel="stylesheet" media="screen">
-		<link href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/font-awesome.min.css.gz" rel="stylesheet" media="screen">
-			<%-- These are from the "css/src" folder --%>
-		<link href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/20160412.min.css.gz" rel="stylesheet" media="screen">
-    	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
-    	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
-	<!-- [ Cloudmall Essentials END ] -->
+    <!-- Font Awesome -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- [ Favicon ] -->
     <link rel="icon" href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/fitmycar.images.favicon.ico" type="image/x-icon">
