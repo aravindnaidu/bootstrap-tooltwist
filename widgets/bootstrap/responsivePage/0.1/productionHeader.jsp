@@ -106,7 +106,15 @@
 	
 	<!-- [ Cloudmall Essentials - Bootstrap and Fonts ] -->
 		<link href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/bootstrap.min.css.gz" rel="stylesheet" media="screen">
-		<link href="//d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/global_css_v1.0.4.min.css.gz" rel="stylesheet" media="screen">
+		<%
+		Navpoint navpoint = WbdCache.findNavpointInAnyLoadedProject(jspName, true);
+		boolean requiresLogin = navpoint.requiresLogin();
+		%>
+	
+		<% if (!navpoint.getLabel().contains("Admin") && !navpoint.getLabel().contains("Factory")) { %>
+			<link href="//d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/global_css_v1.0.4.min.css.gz" rel="stylesheet" media="screen">
+		<%}%>
+		
     	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
 			
 		<%-- These are from the "css/src" folder --%>
@@ -126,11 +134,6 @@
     <link rel="icon" href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/fitmycar.images.favicon.ico" type="image/x-icon">
 	<link rel="shortcut icon" href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/fitmycar.images.favicon.ico" type="image/x-icon">
 	<!-- [ Favicon END ] -->
-
-	<%
-	Navpoint navpoint = WbdCache.findNavpointInAnyLoadedProject(jspName, true);
-	boolean requiresLogin = navpoint.requiresLogin();
-	%>
 
 	<!-- [ Google Analytics ] -->
 		<% if (!navpoint.getParent().getId().equals(WbdCache.getProperty("store.name") + "-176")) { %>
