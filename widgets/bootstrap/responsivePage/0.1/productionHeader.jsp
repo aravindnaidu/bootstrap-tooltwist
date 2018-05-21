@@ -112,7 +112,7 @@
 		%>
 	
 		<% if (!navpoint.getLabel().contains("Admin") && !navpoint.getLabel().contains("Factory")) { %>
-			<link href="//d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/global_css_v1.0.5.min.css.gz" rel="stylesheet" media="screen">
+			<link href="//d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/global_css_v1.0.6.min.css.gz" rel="stylesheet" media="screen">
 		<%}%>
 		
     	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
