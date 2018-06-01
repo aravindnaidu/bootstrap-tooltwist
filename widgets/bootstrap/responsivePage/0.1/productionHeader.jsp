@@ -99,7 +99,6 @@
 	<head>
 		<title>%%pageTitle%%</title>
 		<meta name="description" content="%%descriptionMetatag%%">
-		<meta name="keywords" content="%%keywordMetatag%%">
 		<meta name="generator" content="ToolTwist" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="author" content="tooltwist"/>
