@@ -105,21 +105,21 @@
 	<% } %>
 	
 	<!-- [ Cloudmall Essentials - Bootstrap and Fonts ] -->
-		<link href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/bootstrap.min.css.gz" rel="stylesheet" media="screen">
+		<link rel="preload" href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/bootstrap.min.css.gz" as="style" onload="this.onload=null;this.rel='stylesheet'">
 		<%
 		Navpoint navpoint = WbdCache.findNavpointInAnyLoadedProject(jspName, true);
 		boolean requiresLogin = navpoint.requiresLogin();
 		%>
 	
 		<% if (!navpoint.getLabel().contains("Admin") && !navpoint.getLabel().contains("Factory")) { %>
-			<link href="//d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/global_css_v1.0.9.min.css.gz" rel="stylesheet" media="screen">
+			<link rel="preload" href="//d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/global_css_v1.0.9.min.css.gz" as="style" onload="this.onload=null;this.rel='stylesheet'">
 		<%}%>
 		
-    	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+    	<link rel="preload" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" as="style" onload="this.onload=null;this.rel='stylesheet'">
 			
 		<%-- These are from the "css/src" folder --%>
-		<link href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/20160412.min.css.gz" rel="stylesheet" media="screen">
-    	<link href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" rel="stylesheet" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+		<link rel="preload" href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/20160412.min.css.gz" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    	<link rel="preload" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous" as="style" onload="this.onload=null;this.rel='stylesheet'">
 	<!-- [ Cloudmall Essentials END ] -->
 	
     <!-- [ CSS from cssContainer widget ] -->
@@ -127,7 +127,7 @@
 	<!-- [ CSS from cssContainer widget END ] -->
 
     <!-- Font Awesome -->
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     <!-- [ Favicon ] -->
     <link rel="icon" href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/fitmycar.images.favicon.ico" type="image/x-icon">
