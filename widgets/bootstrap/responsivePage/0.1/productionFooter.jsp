@@ -10,23 +10,19 @@
     	</div>
 
 		<!-- [ Should be called first and cannot be mixed into the unified Js file. ] -->
-		<script src="/ttsvr/cloudmall/js/jquery-2.1.4.min.js"></script>
-		<script src="/ttsvr/cloudmall/js/jquery-ui.js"></script>
-		<script src="/ttsvr/cloudmall/js/jquery.blockUI.js"></script>
-		<script src="/ttsvr/cloudmall/js/d3.min.js"></script>
-		<script src="/ttsvr/cloudmall/js/dropzone.js"></script>
+		<script src="https://d3v52uw9mwsoe.cloudfront.net/nutraorganics/static-assets/js/jquery-2.1.4.min.js.gz"></script>
+		<script src="https://d3v52uw9mwsoe.cloudfront.net/nutraorganics/static-assets/js/jquery-ui.min.js.gz"></script>
+		<script src="https://d3v52uw9mwsoe.cloudfront.net/nutraorganics/static-assets/js/jquery.blockUI.min.js.gz"></script>
+		<script src="https://d3v52uw9mwsoe.cloudfront.net/nutraorganics/static-assets/js/d3.min.js.gz"></script>
+		<script src="https://d3v52uw9mwsoe.cloudfront.net/nutraorganics/static-assets/js/dropzone.min.js.gz"></script>
 
 		<!-- [ Cloudmall Project ] -->
-		<script src="/ttsvr/cloudmall/js/build/c201015.js"></script>
+		<script src="https://d3v52uw9mwsoe.cloudfront.net/nutraorganics/static-assets/js/c201015.min.js.gz"></script>
 
 		<!-- [ Bootstrap Project ] -->
-		<script src="/ttsvr/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="https://d3v52uw9mwsoe.cloudfront.net/nutraorganics/static-assets/js/bootstrap.min.js.gz"></script>
 		<%-- These are from the "js/src" folder --%>
-		<script src="/ttsvr/bootstrap/js/build/c120416.js"></script>
-
-	<!-- 		<!-- [Justice, remove/comment out on production] -->
-<!-- 		<script src="/ttsvr/bootstrap/js/src/justice.min.js"></script> -->
-<!-- 		<script src="/ttsvr/bootstrap/js/src/justice.config.js"></script> -->
+		<script src="https://d3v52uw9mwsoe.cloudfront.net/nutraorganics/static-assets/js/c120416.min.js.gz"></script>
 
 		%%bottomCode%%
 
