@@ -11,18 +11,18 @@
 
 		<!-- [ Should be called first and cannot be mixed into the unified Js file. ] -->
 		<script src="/ttsvr/cloudmall/js/jquery-2.1.4.min.js"></script>
-		<script src="/ttsvr/cloudmall/js/jquery-ui.js"></script>
-		<script src="/ttsvr/cloudmall/js/jquery.blockUI.js"></script>
+		<script src="/ttsvr/cloudmall/js/jquery-ui.min.js"></script>
+		<script src="/ttsvr/cloudmall/js/jquery.blockUI.min.js"></script>
 		<script src="/ttsvr/cloudmall/js/d3.min.js"></script>
-		<script src="/ttsvr/cloudmall/js/dropzone.js"></script>
+		<script src="/ttsvr/cloudmall/js/dropzone.min.js"></script>
 
 		<!-- [ Cloudmall Project ] -->
-		<script src="/ttsvr/cloudmall/js/build/c201015.js"></script>
+		<script src="/ttsvr/cloudmall/js/build/c201015.min.js"></script>
 
 		<!-- [ Bootstrap Project ] -->
 		<script src="/ttsvr/bootstrap/dist/js/bootstrap.min.js"></script>
 		<%-- These are from the "js/src" folder --%>
-		<script src="/ttsvr/bootstrap/js/build/c120416.js"></script>
+		<script src="/ttsvr/bootstrap/js/build/c120416.min.js"></script>
 
 	<!-- 		<!-- [Justice, remove/comment out on production] -->
 <!-- 		<script src="/ttsvr/bootstrap/js/src/justice.min.js"></script> -->
