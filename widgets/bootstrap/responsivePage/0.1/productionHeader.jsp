@@ -82,7 +82,7 @@
 		ver = ver.substring(0, ver.indexOf("."));
 		
 		// check if chrome version is valid for "preload"
-		if (Integer.parseInt(ver) > 49) {
+		if (Integer.parseInt(ver) == 41 || Integer.parseInt(ver) > 49) {
 			isChrome = true;
 		}
 	}
