@@ -67,6 +67,7 @@
 	<% 
 	// initialize variable
 	HttpServletRequest headerRequest = jh.getRequest(); 
+	boolean isHomePage = false;
 	boolean isChrome = false;
 	
 	// get user agent
@@ -85,6 +86,12 @@
 		if (Integer.parseInt(ver) == 41 || Integer.parseInt(ver) > 49) {
 			isChrome = true;
 		}
+	}
+	
+	// check if page is home page of au and us
+	if (org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-111.jsp") ||
+		org.apache.commons.lang3.StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-181.jsp")) {
+		isHomePage = true;
 	}
 	%>
 
@@ -139,14 +146,14 @@
 		%>
 	
 		<% if (!navpoint.getLabel().contains("Admin") && !navpoint.getLabel().contains("Factory")) { %>
-			<%if (isChrome) {%>
+			<%if (isChrome && isHomePage) {%>
 				<link rel="preload" href="//d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/global_css_v1.0.9.min.css.gz" as="style" onload="this.onload=null;this.rel='stylesheet'">
 			<%} else {%>
 	       		<link rel="stylesheet" href="//d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/global_css_v1.0.9.min.css.gz" media="screen">
 			<%}%>
 		<%}%>
 		
-		<%if (isChrome) {%>
+		<%if (isChrome && isHomePage) {%>
 			<link rel="preload" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" as="style" onload="this.onload=null;this.rel='stylesheet'">
 			<link rel="preload" href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/20160412.min.css.gz" as="style" onload="this.onload=null;this.rel='stylesheet'">
     		<link rel="preload" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -162,7 +169,7 @@
 	<!-- [ CSS from cssContainer widget END ] -->
 
     <!-- Font Awesome -->
-    <%if (isChrome) {%>
+    <%if (isChrome && isHomePage) {%>
     	<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <%} else {%>
     	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
