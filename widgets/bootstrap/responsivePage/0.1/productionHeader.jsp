@@ -195,7 +195,7 @@
 		</script>
 		<!--- End: Targeting variables --->
 		<!-- START DFP GPT Banners Header Script -->
-		<script src="http://pagead2.googlesyndication.com/pagead/osd.js"></script>
+		<script src="https://pagead2.googlesyndication.com/pagead/osd.js"></script>
 		<script src="https://securepubads.g.doubleclick.net/gpt/pubads_impl_rendering_213.js"></script>
 		<script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
 		<script>
