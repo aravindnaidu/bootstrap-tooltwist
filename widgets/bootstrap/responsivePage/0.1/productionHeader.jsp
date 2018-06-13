@@ -108,6 +108,8 @@
 	} else {
 		bannerPageType = "";
 	}
+	
+	boolean isAdminServer = Config.getValue("freemium.server.name.admin").equals(request.getServerName());
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -188,7 +190,7 @@
 		</script>
 		<!-- END Krux ControlTag -->
 		
-		<% if (displayBanners) { %>
+		<% if (displayBanners && !isAdminServer) { %>
 		<!--- Start: Targeting variables --->
 		<script type="text/javascript">
 		    window.dfpData = {"dfpAdUnits":{"net":"89850847","site":"PropertyValue","sect":"<%=Encode.forJavaScriptAttribute(bannerSection) %>","subsect":""},"dfpKV":{"pagetype":"<%=Encode.forJavaScriptAttribute(bannerPageType) %>","state":"<%=Encode.forJavaScriptAttribute(freemiumKeyword.getState().trim()) %>","suburb":"<%=Encode.forJavaScriptAttribute(freemiumKeyword.getSuburbAddress().trim()) %>","postcode":"<%=Encode.forJavaScriptAttribute(freemiumKeyword.getPostcodeAddress().trim()) %>"}}
