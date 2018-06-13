@@ -134,7 +134,7 @@
 	<% } %>
 	
 	<!-- [ Cloudmall Essentials - Bootstrap and Fonts ] -->
-	    <%if (isChrome) {%>
+	    <%if (isChrome && isHomePage) {%>
 			<link rel="preload" href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/bootstrap.min.css.gz" as="style" onload="this.onload=null;this.rel='stylesheet'">
 		<%} else {%>
 	        <link rel="stylesheet" href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/bootstrap.min.css.gz" media="screen">
