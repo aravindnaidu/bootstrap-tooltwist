@@ -5,7 +5,6 @@
 <%@page import="tooltwist.myrp.util.FreemiumErrorCatchUtil"%>
 <%@page import="tooltwist.myrp.util.Config"%>
 <%@page import="tooltwist.myrp.util.LoginUser"%>
-<%@page import="tooltwist.myrp.util.IPAddressUtil"%>
 <%@page import="java.util.Map"%>
 <%@page import="com.myrp.util.WebUtil"%>
 <%@page import="com.myrp.util.CookiesUtil"%>
@@ -94,61 +93,6 @@
 	}
 
 	boolean isHomePage = currentNavpointId.equals("myrp-1282");
-	boolean isLoginPage = currentNavpointId.equals("myrp-1312");
-	boolean isSignupPage = currentNavpointId.equals("myrp-1311");
-	boolean isAdminServer = Config.getValue("freemium.server.name.admin").equals(request.getServerName());
-	boolean displayBanners = !LoginUser.getData(request).isFreemiumUser() && !IPAddressUtil.isChineseIP(request) && !isAdminServer && !isHomePage && !isLoginPage && !isSignupPage;
-	String requestUrl = request.getAttribute("javax.servlet.forward.request_uri").toString().replace(tooltwist.repository.ToolTwist.getWebapp() + tooltwist.chinese.util.Language.getURLPrefix(request), "");
-	String bannerSection = "";
-	String bannerSubSection = "";
-	String bannerPageType = "";
-	if(displayBanners) {
-		if (currentNavpointId.equals("myrp-1284")) {
-			bannerSection = "explore";
-			bannerPageType = "index";
-			String subSectionTemp = requestUrl.replace("/explore/", "");
-			String[] splitUrl = subSectionTemp.split("/");
-			subSectionTemp = splitUrl.length > 0 ? splitUrl[0] : "";
-			bannerSubSection = subSectionTemp;
-		} else if (currentNavpointId.equals("myrp-1293")) {
-			bannerSection = "suburb";
-			bannerPageType = "details";
-		} else if (currentNavpointId.equals("myrp-1291")) {
-			bannerSection = "map";
-			bannerPageType = "results";
-			bannerSubSection = WebUtil.getParam(request, "status","");
-		} else if (currentNavpointId.equals("myrp-1296")) {
-			bannerSection = "property";
-			bannerPageType = "details";
-		} else if (currentNavpointId.equals("myrp-1295")) {
-			bannerSection = "street";
-			bannerPageType = "details";
-		} else if (currentNavpointId.equals("myrp-1330")) {
-			bannerSection = "property-units";
-			bannerPageType = "results";
-		} else if (currentNavpointId.equals("myrp-1370")) {
-			bannerSection = "postcode";
-			bannerPageType = "results";
-		} else if (currentNavpointId.equals("myrp-1443")) {
-			bannerSection = "news";
-			bannerPageType = "index";
-		} else if (currentNavpointId.equals("myrp-1338")) {
-			bannerSection = "investment-strategies";
-			bannerPageType = "index";
-			bannerSubSection = "cash-flow";
-		} else if (currentNavpointId.equals("myrp-1340")) {
-			bannerSection = "investment-strategies";
-			bannerPageType = "index";
-			bannerSubSection = "lower-risk";
-		} else if (currentNavpointId.equals("myrp-1337")) {
-			bannerSection = "investment-strategies";
-			bannerPageType = "index";
-			bannerSubSection = "capital-growth";	
-		} else {
-			bannerPageType = "index";
-			bannerSection = requestUrl.substring(requestUrl.lastIndexOf("/") + 1);
-		}
-	}
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -228,96 +172,6 @@
 		  }());
 		</script>
 		<!-- END Krux ControlTag -->
-		
-		<% if (displayBanners) { %>
-		<!--- Start: Targeting variables --->
-		<script type="text/javascript">
-		    window.dfpData = {"dfpAdUnits":{"net":"89850847","site":"PropertyValue","sect":"<%=Encode.forJavaScriptAttribute(bannerSection) %>","subsect":"<%=Encode.forJavaScriptAttribute(bannerSubSection) %>"},"dfpKV":{"pagetype":"<%=Encode.forJavaScriptAttribute(bannerPageType) %>","state":"<%=Encode.forJavaScriptAttribute(freemiumKeyword.getState().trim()) %>","suburb":"<%=Encode.forJavaScriptAttribute(freemiumKeyword.getSuburbAddress().trim()) %>","postcode":"<%=Encode.forJavaScriptAttribute(freemiumKeyword.getPostcodeAddress().trim()) %>"}}
-		</script>
-		<!--- End: Targeting variables --->
-		<!-- START DFP GPT Banners Header Script -->
-		<script src="https://pagead2.googlesyndication.com/pagead/osd.js"></script>
-		<script src="https://securepubads.g.doubleclick.net/gpt/pubads_impl_rendering_213.js"></script>
-		<script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
-		<script>
-	        var googletag = googletag || {};
-	        googletag.cmd = googletag.cmd || [];
-	    </script>
-	    <script type="text/javascript">
-	 		// Prepare DFP targeting variables
-        	var dfpNet = window.dfpData.dfpAdUnits.net
-        	var dfpSite = '/' + window.dfpData.dfpAdUnits.site
-        	
-        	if (window.dfpData.dfpAdUnits.sect) {
-	            var dfpSect = '/' + window.dfpData.dfpAdUnits.sect
-	        } else {
-	            dfpSect = "";
-	        }
-	 		
-        	if (window.dfpData.dfpAdUnits.subsect) {
-	            var dfpSubsect = '/' + window.dfpData.dfpAdUnits.subsect
-	        } else {
-	            dfpSubsect = "";
-	        }
-        	
-        	var dfpAdUnitPath = dfpNet + dfpSite + dfpSect + dfpSubsect
-	        // Ad Tester (add "?adtest=testvalue" to url, inserts KV for targeting)
-	        function getQueryVariable(variable) {
-	            var query = window.location.search.substring(1);
-	            var vars = query.split("&");
-	
-	            for (var i = 0; i < vars.length; i++) {
-	                var pair = vars[i].split("=");
-	                if (pair[0] == variable) {
-	                    return pair[1];
-	                }
-	            }
-	            return (false);
-	        }
-        	
-        	var kvAdTest = getQueryVariable("adtest");
-	        // Extract article title from url
-	        pageURL = window.location.pathname;
-	        pageURLArray = pageURL.split('/');
-	        articleURL = '';
-	        
-	        while (pageURLArray.length > 0 && articleURL == '') {
-	            articleURL = pageURLArray.pop();
-	        }
-	        
-	     // Define responsive ad size mapping and declare ad slots
-	        googletag.cmd.push(function() {
-	            var mapBanner = googletag.sizeMapping().addSize([0, 0], [[320, 50],[320, 100],[300, 50]]).addSize([768, 0], [728, 90]).build();
-	            var mapHeader = googletag.sizeMapping().addSize([0, 0], []).addSize([992, 0], [728, 90]).build();
-	            // Banners
-	            <% if (bannerSection.equals("property") || bannerSection.equals("suburb")) { %>
-	            var adslot1 = googletag.defineSlot(dfpAdUnitPath, [728, 90], 'dfp-ad-slot-1').defineSizeMapping(mapHeader).addService(googletag.pubads()).setTargeting('pos', '1')
-	            var adslot2 = googletag.defineSlot(dfpAdUnitPath, [728, 90], 'dfp-ad-slot-2').defineSizeMapping(mapBanner).addService(googletag.pubads()).setTargeting('pos', '2')
-	            var adslot3 = googletag.defineSlot(dfpAdUnitPath, [728, 90], 'dfp-ad-slot-3').defineSizeMapping(mapBanner).addService(googletag.pubads()).setTargeting('pos', '3')
-	            var adslot4 = googletag.defineSlot(dfpAdUnitPath, 'fluid', 'dfp-ad-slot-4').addService(googletag.pubads()).setTargeting('pos', '1')
-				<% } else if (bannerSection.equals("explore")) { %>
-				var adslot1 = googletag.defineSlot(dfpAdUnitPath, [728, 90], 'dfp-ad-slot-1').defineSizeMapping(mapHeader).addService(googletag.pubads()).setTargeting('pos', '1')
-				var adslot2 = googletag.defineSlot(dfpAdUnitPath, [728, 90], 'dfp-ad-slot-2').defineSizeMapping(mapBanner).addService(googletag.pubads()).setTargeting('pos', '2')
-				<% } else { %>
-				// Other pages
-				var adslot1 = googletag.defineSlot(dfpAdUnitPath, [728, 90], 'dfp-ad-slot-1').defineSizeMapping(mapHeader).addService(googletag.pubads()).setTargeting('pos', '1')
-				<% } %>
-				// Set page-level key-values
-	            googletag.pubads().setTargeting("pageURL", [articleURL]).setTargeting("adtest", [kvAdTest]);
-	            if (dfpData.dfpKV) {
-	                Object.keys(dfpData.dfpKV).forEach(function(key) {
-	                    googletag.pubads().setTargeting(key, dfpData.dfpKV[key]);
-	                })
-	            }
-	            googletag.pubads().enableAsyncRendering();
-	            googletag.pubads().collapseEmptyDivs(true);
-	            googletag.pubads().setCentering(true);
-	            googletag.pubads().enableSingleRequest();
-	            googletag.enableServices();
-	        });
-	    </script>
-		<!-- END DFP GPT Banners Header Script -->
-		<% } %>
 	</head>
 
 	<body>
