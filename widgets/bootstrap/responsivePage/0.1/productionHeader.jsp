@@ -19,7 +19,11 @@
    AltLang lang = WebUtils.getAltLang(jh);
    %>
 <!DOCTYPE html>
-<html lang="en">
+<% if (WbdCache.getProperty("project.store.country").equalsIgnoreCase("Australia")) { %>
+	<html lang="en-AU">
+<% } else { %>
+	<html lang="en-US">
+<% } %>
    <head>
       <% 
          // initialize variables
