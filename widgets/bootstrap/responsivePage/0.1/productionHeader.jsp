@@ -234,6 +234,28 @@
    </head>
    <body>
       %%topCode%%
+      <% if (gtm != null) { %>
+	  <% if (pageName != "" && event != "") { %>
+	  <script>
+			dataLayer = [{
+		    	'event': "<%=event%>",
+		    	'google_tag_params': {
+		        'ecomm_pagetype': "<%=pageName%>",
+		        'ecomm_category': "<%=category%>"
+		    	}
+		   	}];
+	  </script>
+      <% } %>
+	  <!-- [ Exclude GTM for factory pages ] -->	
+      <% if (!excludeGTM) { %>
+	  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		   	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		   	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		   	})(window,document,'script','dataLayer',<%=gtm%>);
+      </script>
+	  <% } %>
+	  <% } %>
       <% if ( StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-125.jsp") ||  // Car Mats Static - AU
         	StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-300.jsp") || // Car Mats Dynamic - AU
         	StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-184.jsp") || // Car Mats Static - US
