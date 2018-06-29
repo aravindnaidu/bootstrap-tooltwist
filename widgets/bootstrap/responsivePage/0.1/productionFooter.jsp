@@ -1,9 +1,9 @@
 <hr>
 </div>
 <!-- [ Bootstrap Project ] -->
+<script src="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/js/bootstrap.min.js.gz"></script>
 <%	if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-304.jsp") ||
    StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-179.jsp")) { %>
-<script src="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/js/bootstrap.min.js.gz"></script>
 <script src="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/js/product_details_plugin_v1.min.js.gz"></script>
 <% } %>
 <!-- [ Should be called first and cannot be mixed into the unified Js file. ] -->
