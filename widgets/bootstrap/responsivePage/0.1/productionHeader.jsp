@@ -244,20 +244,24 @@
       		StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-179.jsp") || // gtm for product details US
       		StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-89.jsp") || // gtm for payment summary AU
       		StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-273.jsp")) { // gtm for payment summary US %>
+      <% if (WebUtils.isGtmIncludeDataLayer()) { %>
       <script>
       	dataLayer.push({
     		"ecommerce": <%=WebUtils.getGtmDataLayer() %>
   		});
       </script>
       <% } %>
+      <% } %>
       <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-86.jsp") || // gtm for shopping cart AU
    			StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-276.jsp")) { // gtm for shopping cart US %>
+   	  <% if (WebUtils.isGtmIncludeDataLayer()) { %>
       <script>
       	dataLayer.push({
       		"event": "EE_checkout",
       		"ecommerce": <%=WebUtils.getGtmDataLayer() %>
   		});
       </script>
+      <% } %>
       <% } %>
       <% if (gtm != null) { %>
 	  <% if (pageName != "" && event != "") { %>
