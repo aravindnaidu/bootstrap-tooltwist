@@ -19,7 +19,7 @@
    AltLang lang = WebUtils.getAltLang(jh);
    %>
 <!DOCTYPE html>
-<% if (WbdCache.getProperty("project.store.country").equalsIgnoreCase("Australia")) { %>
+<% if (WbdCache.getProperty("project.store.locale").equalsIgnoreCase("AU")) { %>
 	<html lang="en-AU">
 <% } else { %>
 	<html lang="en-US">
@@ -231,13 +231,34 @@
       <% if (gtm != null) { %>
       <script>var dataLayer  = window.dataLayer || [];</script>
       <% } %>
-      <%if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-304.jsp") ||
-   				StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-179.jsp")) { %>
+      <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-304.jsp") ||
+   			StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-179.jsp")) { %>
       <script src="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/js/jquery-2.1.4.min.js.gz"></script>
       <% } %>
    </head>
    <body>
       %%topCode%%
+      <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-73.jsp") || // gtm for search product List AU
+   			StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-280.jsp") || // gtm for search product List US
+      		StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-304.jsp") || // gtm for product details AU
+      		StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-179.jsp") || // gtm for product details US
+      		StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-89.jsp") || // gtm for payment summary AU
+      		StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-273.jsp")) { // gtm for payment summary US %>
+      <script>
+      	dataLayer.push({
+    		"ecommerce": <%=WebUtils.getGtmDataLayer() %>
+  		});
+      </script>
+      <% } %>
+      <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-86.jsp") || // gtm for shopping cart AU
+   			StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-276.jsp")) { // gtm for shopping cart US %>
+      <script>
+      	dataLayer.push({
+      		"event": "EE_checkout",
+      		"ecommerce": <%=WebUtils.getGtmDataLayer() %>
+  		});
+      </script>
+      <% } %>
       <% if (gtm != null) { %>
 	  <% if (pageName != "" && event != "") { %>
 	  <script>
