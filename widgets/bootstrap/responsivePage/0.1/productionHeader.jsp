@@ -11,24 +11,27 @@
 <%@page import="tooltwist.wbd.WbdCache"%>
 <%@page import="javax.servlet.http.HttpServletRequest"%>
 <%@page contentType="text/html; charset=UTF-8" %>
+
 %%importCode%%
 <%
    String jspName = "%%navpointId%%";
    JspHelper jh = JspHelper.getJspHelper(pageContext, jspName);
    %%preFetchCode%%
    AltLang lang = WebUtils.getAltLang(jh);
+   String countryCode = WbdCache.getProperty("project.store.locale");
+   String siteUrl = WbdCache.getProperty("siteUrl");
    %>
 <!DOCTYPE html>
-<% if (WbdCache.getProperty("project.store.locale").equalsIgnoreCase("AU")) { %>
-	<html lang="en-AU">
+<% if (countryCode.equalsIgnoreCase("AU")) { %>
+  <html lang="en-AU">
 <% } else { %>
-	<html lang="en-US">
+  <html lang="en-US">
 <% } %>
    <head>
       <% 
          // initialize variables
          HttpServletRequest headerRequest = jh.getRequest();
-      	 Navpoint navpoint = WbdCache.findNavpointInAnyLoadedProject(jspName, true);
+         Navpoint navpoint = WbdCache.findNavpointInAnyLoadedProject(jspName, true);
          String gtm = WbdCache.getProperty("google.tag.manager");
          String pageName = StringUtils.EMPTY; 
          String event = StringUtils.EMPTY; 
@@ -42,113 +45,286 @@
          
          // check if chrome browser
          if (userAgent.contains("Chrome")) {
-         	// get browser details
-          	String bd = userAgent.substring(userAgent.indexOf("Chrome")).split(" ")[0];
-         	
-         	// get browser version
-         	String ver = bd.split("/")[1];
-         	ver = ver.substring(0, ver.indexOf("."));
-         	
-         	// check if chrome version is valid for "preload"
-         	if (Integer.parseInt(ver) == 41 || Integer.parseInt(ver) > 49) {
-         		isChrome = true;
-         	}
+          // get browser details
+            String bd = userAgent.substring(userAgent.indexOf("Chrome")).split(" ")[0];
+          
+          // get browser version
+          String ver = bd.split("/")[1];
+          ver = ver.substring(0, ver.indexOf("."));
+          
+          // check if chrome version is valid for "preload"
+          if (Integer.parseInt(ver) == 41 || Integer.parseInt(ver) > 49) {
+            isChrome = true;
+          }
          }
          
          // check if page is home page of au and us
          if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-111.jsp") ||
-         	StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-181.jsp")) {
-         	isHomePage = true;
+          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-181.jsp")) {
+          isHomePage = true;
          }
          
          // check google tag manager script if not null
          if (gtm != null) {
-         	// set page name, event and category base from pages
-          	if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-111.jsp") ||
-          		StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-181.jsp")) { 
-          		event = "remarketing_home"; 
-          	 	pageName = "home"; 
-         	} else if ( StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-125.jsp") ||
-          		StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-300.jsp")) { 
-          		event = "remarketing_category"; 
-          	 	category = "car mats"; 
-          	 	pageName = "category"; 
-          	} else if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-184.jsp") ||
-          		StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-301.jsp")) { 
-          		event = "remarketing_category"; 
-          		category = "floor mats"; 
-          		pageName = "category"; 
-         	} else if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-123.jsp")) { 
-          	 	event = "remarketing_category"; 
-          	 	category = "dash mats"; 
-          	 	pageName = "category"; 
-          	} else if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-186.jsp")) { 
-          	 	event = "remarketing_category"; 
-          	 	category = "dash covers"; 
-          		pageName = "category"; 
-          	} else if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-121.jsp")) { 
-          	 	event = "remarketing_category"; 
-          	 	category = "ute mats"; 
-          	 	pageName = "category"; 
-          	} else if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-188.jsp")){ 
-          	 	event = "remarketing_category"; 
-          	 	category = "trunk mats"; 
-          	 	pageName = "category"; 
-          	} else if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-124.jsp")) { 
-          	 	event = "remarketing_category"; 
-          	 	category = "boot liners"; 
-          	 	pageName = "category"; 
-          	} else if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-185.jsp")){ 
-          	 	event = "remarketing_category"; 
-          	 	category = "trunk liners"; 
-          	 	pageName = "category"; 
-          	} else if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-122.jsp") ||
-          		StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-187.jsp")) { 
-          	 	event = "remarketing_category"; 
-          	 	category = "plastics"; 
-          	 	pageName = "category"; 
-          	} else if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-126.jsp") ||
-          		StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-183.jsp")) { 
-          	 	event = "remarketing_category"; 
-          	 	category = "accessories"; 
-          	 	pageName = "category"; 
-          	} else if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-291.jsp") ||
-          		StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-275.jsp")) { 
-          	 	event = "remarketing_checkout"; 
-          	 	pageName = "checkout"; 
-          	} else if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-89.jsp") ||
-          		StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-273.jsp") ||
-          		StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-275.jsp") ||
-          		StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-73.jsp") ||
-          		StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-280.jsp") ||
-          		StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-86.jsp") ||
-          		StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-276.jsp") ||
-          	    StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-304.jsp") ||
-          	    StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-179.jsp")) { 
-          	 	event = ""; 
-          	 	pageName = ""; 
-          	} else { 
-          	 	event = "remarketing_other"; 
-          	 	pageName = "other"; 
-          	}
+          // set page name, event and category base from pages
+            if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-111.jsp") ||
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-181.jsp")) { 
+              event = "remarketing_home"; 
+              pageName = "home"; 
+          } else if ( StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-125.jsp") ||
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-300.jsp")) { 
+              event = "remarketing_category"; 
+              category = "car mats"; 
+              pageName = "category"; 
+            } else if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-184.jsp") ||
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-301.jsp")) { 
+              event = "remarketing_category"; 
+              category = "floor mats"; 
+              pageName = "category"; 
+          } else if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-123.jsp")) { 
+              event = "remarketing_category"; 
+              category = "dash mats"; 
+              pageName = "category"; 
+            } else if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-186.jsp")) { 
+              event = "remarketing_category"; 
+              category = "dash covers"; 
+              pageName = "category"; 
+            } else if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-121.jsp")) { 
+              event = "remarketing_category"; 
+              category = "ute mats"; 
+              pageName = "category"; 
+            } else if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-188.jsp")){ 
+              event = "remarketing_category"; 
+              category = "trunk mats"; 
+              pageName = "category"; 
+            } else if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-124.jsp")) { 
+              event = "remarketing_category"; 
+              category = "boot liners"; 
+              pageName = "category"; 
+            } else if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-185.jsp")){ 
+              event = "remarketing_category"; 
+              category = "trunk liners"; 
+              pageName = "category"; 
+            } else if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-122.jsp") ||
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-187.jsp")) { 
+              event = "remarketing_category"; 
+              category = "plastics"; 
+              pageName = "category"; 
+            } else if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-126.jsp") ||
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-183.jsp")) { 
+              event = "remarketing_category"; 
+              category = "accessories"; 
+              pageName = "category"; 
+            } else if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-291.jsp") ||
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-275.jsp")) { 
+              event = "remarketing_checkout"; 
+              pageName = "checkout"; 
+            } else if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-89.jsp") ||
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-273.jsp") ||
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-275.jsp") ||
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-73.jsp") ||
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-280.jsp") ||
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-86.jsp") ||
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-276.jsp") ||
+                StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-304.jsp") ||
+                StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-179.jsp")) { 
+              event = ""; 
+              pageName = ""; 
+            } else { 
+              event = "remarketing_other"; 
+              pageName = "other"; 
+            }
          
-         	// check if factory pages then exclude GTM
-          	if (!StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-91.jsp") &&
-          		!StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-92.jsp") &&
-          		!StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-94.jsp") &&
-           		!StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-95.jsp") &&
-           		!StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-96.jsp") &&
-           		!StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-109.jsp") &&
-           		!StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-293.jsp") &&
-           		!StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-294.jsp") && 
-           		!StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-298.jsp") &&
-          		!StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-299.jsp") &&
-           		!StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-307.jsp") &&
-           		!StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-308.jsp")) {
-           		excludeGTM = false;
-          	}
+          // check if factory pages then exclude GTM
+            if (!StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-91.jsp") &&
+              !StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-92.jsp") &&
+              !StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-94.jsp") &&
+              !StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-95.jsp") &&
+              !StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-96.jsp") &&
+              !StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-109.jsp") &&
+              !StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-293.jsp") &&
+              !StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-294.jsp") && 
+              !StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-298.jsp") &&
+              !StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-299.jsp") &&
+              !StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-307.jsp") &&
+              !StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-308.jsp")) {
+              excludeGTM = false;
+            }
          }
          %>
+         
+        <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-304.jsp") ||
+        StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-179.jsp")) { %>
+       <script type="application/ld+json">
+            {
+              "@context": "http://schema.org/",
+              "@type": "Product",
+              "name": "${productDetails.product.productName}",
+              "image": [
+                    ${productDetails.schemaImages}
+                ],
+              "description": "${productDetails.product.description}",
+              "mpn": "${productDetails.product.partNumber}",
+              "brand": {
+                  "@type": "Thing",
+                  "name": "FitMyCar"
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+              "ratingValue": "",
+                "reviewCount": ""
+              },
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "${productDetails.currencyCode}",
+                "price": ${productDetails.price},
+                "itemCondition": "http://schema.org/NewCondition",
+                "availability": "${productDetails.schemaAvailability}",
+                "seller": {
+                  "@type": "Organization",
+                  "name": "Fit My Car"
+                  }
+              }
+            }
+        </script>
+      <% if (!WebUtils.isGeneralAccessory()) { %>
+        <script type="application/ld+json">
+      {
+          "@context": "http://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+          "item": {
+              "@id": "<%=siteUrl%>/<%=countryCode%>",
+              "name": "Home"
+          }
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+            "@id": "<%=siteUrl%>/<%=countryCode%>/${productDetails.parentProductType.categoryUrl}/",
+            "name": "${productDetails.parentProductType.name}"
+            }
+        },{
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@id": "<%=siteUrl%>/<%=countryCode%>/${productDetails.parentProductType.categoryUrl}/${productDetails.makeUrlString}",
+              "name": "${productDetails.product.make}"
+            }
+        },{
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@id": "<%=siteUrl%>/<%=countryCode%>/${productDetails.parentProductType.categoryUrl}/${productDetails.modelUrlString}",
+              "name": "${productDetails.product.model}"
+          }
+        }]
+    }
+    </script>
+    <% } %>
+    
+      <% } %>
+      
+      <%if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-125.jsp") ||
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-184.jsp") || 
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-301.jsp") || 
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-123.jsp") || 
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-316.jsp") || 
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-186.jsp") || 
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-121.jsp") || 
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-188.jsp") ||
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-124.jsp") ||
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-185.jsp") ||
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-122.jsp") ||
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-126.jsp") ||
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-320.jsp")) { %>
+          
+          	<script type="application/ld+json">
+				{
+  				"@context": "http://schema.org",
+  				"@type": "BreadcrumbList",
+  				"itemListElement": [{
+    				"@type": "ListItem",
+    				"position": 1,
+    				"item": {
+      				"@id": "${categoryDetails.homeUrl}",
+      				"name": "Home"
+    				}
+  				},{
+    				"@type": "ListItem",
+    				"position": 2,
+    				"item": {
+      					"@id": "${categoryDetails.categoryUrl}",
+      					"name": "${categoryDetails.categoryName}"
+    				}
+  				}]
+				}
+			</script>
+					          
+          
+      <%}%>
+      
+      <%if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-300.jsp") ||
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-314.jsp") || 
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-317.jsp") || 
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-318.jsp") || 
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-301.jsp") || 
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-315.jsp")) { %>
+          
+          	<script type="application/ld+json">
+				{
+  				"@context": "http://schema.org",
+  				"@type": "BreadcrumbList",
+  				"itemListElement": [{
+    				"@type": "ListItem",
+    				"position": 1,
+    				"item": {
+      				"@id": "${categoryDetails.homeUrl}",
+      				"name": "Home"
+    				}
+  				},{
+    				"@type": "ListItem",
+    				"position": 2,
+    				"item": {
+      					"@id": "${categoryDetails.categoryUrl}",
+      					"name": "${categoryDetails.categoryName}"
+    				}
+  				},{
+    				"@type": "ListItem",
+    				"position": 3,
+    				"item": {
+      					"@id": "${categoryDetails.makeUrl}",
+      					"name": "${categoryDetails.make}"
+    				}
+  				}]
+				}
+			</script>
+					          
+          
+      <%}%>
+      
+      <% if (isHomePage) { %>
+      <script type="application/ld+json">
+    {   "@context" : "http://schema.org",
+        "@type" : "Organization",
+        "legalName" : "Fit My Car",
+        "url" : "https://fitmycar.com/",
+        "contactPoint" : [{
+            "@type" : "ContactPoint",
+            "telephone" : "+613 8348 5311",
+            "contactType" : "customer service"
+        }],
+        "logo" : "https://www.fitmycar.com/au/cropImage/fitmycar.images.fmc_img_logo.png",
+        "sameAs" : [  "https://www.facebook.com/FitMyCar",
+                      "https://twitter.com/FitMyCar/",
+                      "https://www.instagram.com/FitMyCar/",
+                      "https://www.pinterest.com.au/FitMyCar/"]
+    }
+  </script>
+      <% } %>
+      
       <title>%%pageTitle%%</title>
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -232,67 +408,67 @@
       <script>var dataLayer  = window.dataLayer || [];</script>
       <% } %>
       <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-304.jsp") ||
-   			StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-179.jsp")) { %>
+        StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-179.jsp")) { %>
       <script src="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/js/jquery-2.1.4.min.js.gz"></script>
       <% } %>
    </head>
    <body>
       %%topCode%%
       <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-73.jsp") || // gtm for search product List AU
-   			StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-280.jsp") || // gtm for search product List US
-      		StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-304.jsp") || // gtm for product details AU
-      		StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-179.jsp") || // gtm for product details US
-      		StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-89.jsp") || // gtm for payment summary AU
-      		StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-273.jsp")) { // gtm for payment summary US %>
+        StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-280.jsp") || // gtm for search product List US
+          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-304.jsp") || // gtm for product details AU
+          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-179.jsp") || // gtm for product details US
+          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-89.jsp") || // gtm for payment summary AU
+          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-273.jsp")) { // gtm for payment summary US %>
       <% if (WebUtils.isGtmIncludeDataLayer()) { %>
       <script>
-      	dataLayer.push({
-    		"ecommerce": <%=WebUtils.getGtmDataLayer() %>
-  		});
+        dataLayer.push({
+        "ecommerce": <%=WebUtils.getGtmDataLayer() %>
+      });
       </script>
       <% } %>
       <% } %>
       <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-86.jsp") || // gtm for shopping cart AU
-   			StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-276.jsp")) { // gtm for shopping cart US %>
-   	  <% if (WebUtils.isGtmIncludeDataLayer()) { %>
+        StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-276.jsp")) { // gtm for shopping cart US %>
+      <% if (WebUtils.isGtmIncludeDataLayer()) { %>
       <script>
-      	dataLayer.push({
-      		"event": "EE_checkout",
-      		"ecommerce": <%=WebUtils.getGtmDataLayer() %>
-  		});
+        dataLayer.push({
+          "event": "EE_checkout",
+          "ecommerce": <%=WebUtils.getGtmDataLayer() %>
+      });
       </script>
       <% } %>
       <% } %>
       <% if (gtm != null) { %>
-	  <% if (pageName != "" && event != "") { %>
-	  <script>
-			dataLayer = [{
-		    	'event': "<%=event%>",
-		    	'google_tag_params': {
-		        'ecomm_pagetype': "<%=pageName%>",
-		        'ecomm_category': "<%=category%>"
-		    	}
-		   	}];
-	  </script>
+    <% if (pageName != "" && event != "") { %>
+    <script>
+      dataLayer = [{
+          'event': "<%=event%>",
+          'google_tag_params': {
+            'ecomm_pagetype': "<%=pageName%>",
+            'ecomm_category': "<%=category%>"
+          }
+        }];
+    </script>
       <% } %>
-	  <!-- [ Exclude GTM for factory pages ] -->	
+    <!-- [ Exclude GTM for factory pages ] -->  
       <% if (!excludeGTM) { %>
-	  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		   	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		   	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		   	})(window,document,'script','dataLayer',<%=gtm%>);
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer',<%=gtm%>);
       </script>
-	  <% } %>
-	  <% } %>
+    <% } %>
+    <% } %>
       <% if ( StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-125.jsp") ||  // Car Mats Static - AU
-        	StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-300.jsp") || // Car Mats Dynamic - AU
-        	StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-184.jsp") || // Car Mats Static - US
-         	StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-301.jsp") || // Car Mats Static - US
-         	StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-314.jsp") || // Dash Mats Dynamic - AU
-         	StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-315.jsp") || // Dash Mats Dynamic - US
-         	StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-317.jsp") || // Seat Covers Dynamic - AU
-         	StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-318.jsp")) { // Boot Liners Dynamic - AU %>
+          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-300.jsp") || // Car Mats Dynamic - AU
+          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-184.jsp") || // Car Mats Static - US
+          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-301.jsp") || // Car Mats Static - US
+          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-314.jsp") || // Dash Mats Dynamic - AU
+          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-315.jsp") || // Dash Mats Dynamic - US
+          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-317.jsp") || // Seat Covers Dynamic - AU
+          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-318.jsp")) { // Boot Liners Dynamic - AU %>
       <script type="text/javascript" src="https://api.feefo.com/api/javascript/fitmycar" async></script>
       <% } %>
       <!--  Provides a common fixed-width (and optionally responsive) layout with only <div class="container"> required. -->
