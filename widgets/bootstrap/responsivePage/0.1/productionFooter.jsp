@@ -24,8 +24,6 @@
 <script src="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/js/bootstrap.min.js.gz"></script>
 <%-- These are from the "js/src" folder --%>
 <script src="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/js/c120416.min.js.gz"></script>
-<!-- Google Customer Review -->
-<script src="https://apis.google.com/js/platform.js" async defer></script>
 <% } %>
 <!-- [ Exclude this for shopping cart and checkout pages ] -->		
 <%	if (!StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-86.jsp") &&
