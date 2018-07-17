@@ -172,7 +172,7 @@
   			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  			ga('create', <%=uaCode%>, 'auto');
+  			ga('create', '<%=uaCode%>', 'auto');
   			ga('require', <%=gtm%>);
 		</script>
          
@@ -183,9 +183,7 @@
               "@context": "http://schema.org/",
               "@type": "Product",
               "name": "${productDetails.product.productName}",
-              "image": [
-                    ${productDetails.schemaImages}
-                ],
+              "image": ${productDetails.schemaImages},
               "description": "${productDetails.product.description}",
               "mpn": "${productDetails.product.partNumber}",
               "brand": {
@@ -199,7 +197,7 @@
               },
               "offers": {
                 "@type": "Offer",
-                "priceCurrency": "${productDetails.currencyCode}",
+                "priceCurrency": "${productDetails.gtmCurrencyCode}",
                 "price": ${productDetails.price},
                 "itemCondition": "http://schema.org/NewCondition",
                 "availability": "${productDetails.schemaAvailability}",
