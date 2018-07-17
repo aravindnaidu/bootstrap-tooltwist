@@ -41,6 +41,12 @@
          boolean isChrome = false;
          boolean excludeGTM = true;
          
+         // phone number in schema
+         String phoneNumber = "1300 299 922";
+         if (countryCode.equalsIgnoreCase("US")) {
+        	 phoneNumber = "(800) 240-8107";
+         }
+         
          // get user agent
          String userAgent = headerRequest.getHeader("user-agent");
          
@@ -199,7 +205,7 @@
                 "availability": "${productDetails.schemaAvailability}",
                 "seller": {
                   "@type": "Organization",
-                  "name": "Fit My Car"
+                  "name": "FitMyCar"
                   }
               }
             }
@@ -326,11 +332,11 @@
       <script type="application/ld+json">
     {   "@context" : "http://schema.org",
         "@type" : "Organization",
-        "legalName" : "Fit My Car",
+        "legalName" : "FitMyCar",
         "url" : "https://fitmycar.com/",
         "contactPoint" : [{
             "@type" : "ContactPoint",
-            "telephone" : "+613 8348 5311",
+            "telephone" : "<%=phoneNumber%>",
             "contactType" : "customer service"
         }],
         "logo" : "https://www.fitmycar.com/au/cropImage/fitmycar.images.fmc_img_logo.png",
