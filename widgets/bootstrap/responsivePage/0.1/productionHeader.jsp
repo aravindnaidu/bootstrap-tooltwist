@@ -449,17 +449,6 @@
       </script>
       <% } %>
       <% } %>
-      <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-86.jsp") || // gtm for shopping cart AU
-        StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-276.jsp")) { // gtm for shopping cart US %>
-      <% if (WebUtils.isGtmIncludeDataLayer()) { %>
-      <script>
-        dataLayer.push({
-          "event": "EE_checkout",
-          "ecommerce": <%=WebUtils.getGtmDataLayer() %>
-      });
-      </script>
-      <% } %>
-      <% } %>
       <% if (gtm != null) { %>
     <% if (pageName != "" && event != "") { %>
     <script>
@@ -482,6 +471,17 @@
       </script>
     <% } %>
     <% } %>
+    <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-86.jsp") || // gtm for shopping cart AU
+        StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-276.jsp")) { // gtm for shopping cart US %>
+      <% if (WebUtils.isGtmIncludeDataLayer()) { %>
+      <script>
+        dataLayer.push({
+          "event": "EE_checkout",
+          "ecommerce": <%=WebUtils.getGtmDataLayer() %>
+      });
+      </script>
+      <% } %>
+      <% } %>
       <% if ( StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-125.jsp") ||  // Car Mats Static - AU
           StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-300.jsp") || // Car Mats Dynamic - AU
           StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-184.jsp") || // Car Mats Static - US
