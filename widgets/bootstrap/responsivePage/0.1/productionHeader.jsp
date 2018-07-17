@@ -42,9 +42,9 @@
          boolean excludeGTM = true;
          
          // phone number in schema
-         String phoneNumber = "1300 299 922";
+         String phoneNumber = "+61 1300 299 922";
          if (countryCode.equalsIgnoreCase("US")) {
-        	 phoneNumber = "(800) 240-8107";
+        	 phoneNumber = "+1 (800) 240-8107";
          }
          
          // get user agent
