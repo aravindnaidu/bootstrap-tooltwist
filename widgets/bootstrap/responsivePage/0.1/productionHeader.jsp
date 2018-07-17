@@ -190,11 +190,6 @@
                   "@type": "Thing",
                   "name": "FitMyCar"
               },
-              "aggregateRating": {
-                "@type": "AggregateRating",
-              "ratingValue": "",
-                "reviewCount": ""
-              },
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "${productDetails.gtmCurrencyCode}",
