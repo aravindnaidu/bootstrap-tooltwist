@@ -188,7 +188,7 @@
               "mpn": "${productDetails.product.partNumber}",
               "brand": {
                   "@type": "Thing",
-                  "name": "Fit My Car"
+                  "name": "FitMyCar"
               },
               "offers": {
                 "@type": "Offer",
@@ -198,7 +198,7 @@
                 "availability": "${productDetails.schemaAvailability}",
                 "seller": {
                   "@type": "Organization",
-                  "name": "Fit My Car"
+                  "name": "FitMyCar"
                   }
               }
             }
