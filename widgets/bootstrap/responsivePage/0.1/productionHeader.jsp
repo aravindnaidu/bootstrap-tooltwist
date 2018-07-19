@@ -466,7 +466,7 @@
 			h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
 			})(window,document.documentElement,'async-hide','dataLayer',4000,
-			{<%=gtm%>:true});
+			{'GTM-TWDS64H':true});
 		</script>
 		<script>
   			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -474,7 +474,7 @@
   			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
   			ga('create', '<%=uaCode%>', 'auto');
-  			ga('require', <%=gtm%>);
+  			ga('require', 'GTM-TWDS64H');
 	  </script>
       <% if ( StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-125.jsp") ||  // Car Mats Static - AU
           StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-300.jsp") || // Car Mats Dynamic - AU
