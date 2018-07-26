@@ -309,7 +309,7 @@
     {   "@context" : "http://schema.org",
         "@type" : "Organization",
         "legalName" : "FitMyCar",
-        "url" : "https://fitmycar.com/",
+        "url" : "https://fitmycar.com/<%=countryCode%>",
         "contactPoint" : [{
             "@type" : "ContactPoint",
             "telephone" : "<%=phoneNumber%>",
