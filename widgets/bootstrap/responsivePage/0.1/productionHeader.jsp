@@ -357,6 +357,15 @@
       <meta property="og:title" content="Shop Online for Car Accessories That Fit" />
       <meta property="og:description" content="Save yourself the hassle of shopping at the car dealer for car accessories. Shop online. Fitment is guaranteed, and delivery is free right to your door." />
       <meta property="og:image" content="https://s3-ap-southeast-2.amazonaws.com/cloudmall-webassets/fitmycar/images/seo-images/fitmycar-shop-accessories-online.jpg" />
+      <% } else if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-321.jsp")) { %>
+      <meta property="og:url"           content="https://www.fitmycar.com/au/competition" />
+	  <meta property="og:type"          content="website" />
+	  <meta property="og:title"         content="Win Aussie Made Floor Liners & More" />
+	  <meta property="og:description"   content="Enter the draw to win a set of BEDROCK Floor Liners and other made-to-fit gear by FitMyCar. Hurry, draw closes soon." />
+	  <meta property="og:image"         content="<image TBC>" />
+	  <link rel="stylesheet" href="https://use.typekit.net/obm4fnx.css">
+      <% } else if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-73.jsp")) { %>
+      <link rel="stylesheet" href="https://use.typekit.net/obm4fnx.css">
       <% } %>
       <% if (!WbdCache.getProperty("siteUrl").equalsIgnoreCase("www.fitmycar.com")) { %>
       <meta name="robots" content="noindex, nofollow">
