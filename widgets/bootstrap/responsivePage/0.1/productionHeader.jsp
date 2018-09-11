@@ -331,6 +331,7 @@
       <meta name="keywords" content="%%keywordMetatag%%">
       <meta name="generator" content="ToolTwist" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <link rel="stylesheet" href="https://use.typekit.net/obm4fnx.css">
       <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-70.jsp") ||
          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-286.jsp") ||
          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-86.jsp") ||
@@ -363,9 +364,6 @@
 	  <meta property="og:title"         content="Win Aussie Made Floor Liners & More" />
 	  <meta property="og:description"   content="Enter the draw to win a set of BEDROCK Floor Liners and other made-to-fit gear by FitMyCar. Hurry, draw closes soon." />
 	  <meta property="og:image"         content="<image TBC>" />
-	  <link rel="stylesheet" href="https://use.typekit.net/obm4fnx.css">
-      <% } else if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-73.jsp") || StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-126.jsp")) { %>
-      <link rel="stylesheet" href="https://use.typekit.net/obm4fnx.css">
       <% } %>
       <% if (!WbdCache.getProperty("siteUrl").equalsIgnoreCase("www.fitmycar.com")) { %>
       <meta name="robots" content="noindex, nofollow">
