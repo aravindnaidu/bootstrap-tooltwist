@@ -331,6 +331,10 @@
       <meta name="keywords" content="%%keywordMetatag%%">
       <meta name="generator" content="ToolTwist" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="google-signin-scope" content="profile email">
+	  <!-- <meta name="google-signin-client_id" content="524360801356-oekg8ji2vgl3og6rna8qhnm9trtkc126.apps.googleusercontent.com"> -->
+	  <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
+	  <script src="https://apis.google.com/js/api:client.js"></script>
 	  <link rel="stylesheet" href="https://use.typekit.net/obm4fnx.css">
       <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-70.jsp") ||
          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-286.jsp") ||
@@ -495,8 +499,56 @@
           StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-318.jsp")) { // Boot Liners Dynamic - AU %>
       <script type="text/javascript" src="https://api.feefo.com/api/javascript/fitmycar" async></script>
       <% } %>
+        <script>
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+      };
+    </script>
+  <!--   <script>
+  var googleUser = {};
+  var startApp = function() {
+    gapi.load('auth2', function(){
+      // Retrieve the singleton for the GoogleAuth library and set up the client.
+      auth2 = gapi.auth2.init({
+        client_id: '524360801356-oekg8ji2vgl3og6rna8qhnm9trtkc126.apps.googleusercontent.com',
+        cookiepolicy: 'single_host_origin',
+        // Request scopes in addition to 'profile' and 'email'
+        //scope: 'additional_scope'
+      });
+      attachSignin(document.getElementById('login-with-google'));
+    });
+  };
+
+  function attachSignin(element) {
+    auth2.attachClickHandler(element, {},
+        function(googleUser) {
+    	var profile = googleUser.getBasicProfile();
+    		console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+        }, function(error) {
+          alert(JSON.stringify(error, undefined, 2));
+        });
+  }
+  </script>
+  <script>startApp();</script> -->
       <!--  Provides a common fixed-width (and optionally responsive) layout with only <div class="container"> required. -->
       <div class="container">
+      <!--  <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div> -->
          <!--  Create a fluid-->
          <!-- <div class="container-fluid" -->
          <!--END-->
