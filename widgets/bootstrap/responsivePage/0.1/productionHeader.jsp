@@ -331,6 +331,10 @@
       <meta name="keywords" content="%%keywordMetatag%%">
       <meta name="generator" content="ToolTwist" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="google-signin-scope" content="profile email">
+	  <!-- <meta name="google-signin-client_id" content="524360801356-oekg8ji2vgl3og6rna8qhnm9trtkc126.apps.googleusercontent.com"> -->
+	  <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
+	  <script src="https://apis.google.com/js/api:client.js"></script>
 	  <link rel="stylesheet" href="https://use.typekit.net/obm4fnx.css">
       <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-70.jsp") ||
          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-286.jsp") ||
@@ -401,8 +405,8 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <% } %>
       <!-- [ Favicon ] -->
-      <link rel="icon" href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/fitmycar.images.favicon.ico" type="image/x-icon">
-      <link rel="shortcut icon" href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/fitmycar.images.favicon.ico" type="image/x-icon">
+      <link rel="icon" href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/fitmycar_favicon.ico" type="image/x-icon">
+      <link rel="shortcut icon" href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/fitmycar_favicon.ico" type="image/x-icon">
       <!-- [ Favicon END ] -->
       <!-- [ Google Analytics ] -->
       <% if (!navpoint.getParent().getId().equals(WbdCache.getProperty("store.name") + "-176")) { %>
@@ -418,16 +422,25 @@
    <body>
       %%topCode%%
       <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-73.jsp") || // gtm for search product List AU
-        StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-280.jsp") || // gtm for search product List US
+          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-280.jsp") || // gtm for search product List US
           StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-304.jsp") || // gtm for product details AU
-          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-179.jsp") || // gtm for product details US
-          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-89.jsp") || // gtm for payment summary AU
-          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-273.jsp")) { // gtm for payment summary US %>
+          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-179.jsp")) { // gtm for product details US %>
       <% if (WebUtils.isGtmIncludeDataLayer()) { %>
       <script>
         var dataLayer  = window.dataLayer || [];
         dataLayer.push({
         "ecommerce": <%=WebUtils.getGtmDataLayer() %>
+      });
+      </script>
+      <% } %>
+      <% } %>
+      <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-89.jsp") || // gtm for payment success AU
+          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-273.jsp")) {// gtm for payment success US %>
+      <% if (WebUtils.isGtmIncludeDataLayer()) { %>
+      <script>
+        var dataLayer  = window.dataLayer || [];
+        dataLayer.push({
+        "ecommerce": <%=WebUtils.getGtmPaymentSummaryDataLayer() %>
       });
       </script>
       <% } %>
