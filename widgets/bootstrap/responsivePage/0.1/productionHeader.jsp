@@ -332,8 +332,6 @@
       <meta name="generator" content="ToolTwist" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="google-signin-scope" content="profile email">
-	  <!-- <meta name="google-signin-client_id" content="524360801356-oekg8ji2vgl3og6rna8qhnm9trtkc126.apps.googleusercontent.com"> -->
-	  <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
 	  <script src="https://apis.google.com/js/api:client.js"></script>
 	  <link rel="stylesheet" href="https://use.typekit.net/obm4fnx.css">
       <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-70.jsp") ||
