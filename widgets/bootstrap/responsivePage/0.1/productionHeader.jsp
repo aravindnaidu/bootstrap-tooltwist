@@ -503,6 +503,7 @@
           StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-314.jsp") || // Dash Mats Dynamic - AU
           StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-315.jsp") || // Dash Mats Dynamic - US
           StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-317.jsp") || // Seat Covers Dynamic - AU
+          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-325.jsp") || // Boot Liners Dynamic - US
           StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-318.jsp")) { // Boot Liners Dynamic - AU %>
       <script type="text/javascript" src="https://api.feefo.com/api/javascript/fitmycar" async></script>
       <% } %>
