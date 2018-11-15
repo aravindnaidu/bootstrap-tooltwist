@@ -269,6 +269,7 @@
               StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-314.jsp") || 
               StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-317.jsp") || 
               StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-318.jsp") || 
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-325.jsp") || 
               StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-301.jsp") || 
               StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-315.jsp")) { %>
           
@@ -337,6 +338,128 @@
       <meta name="google-signin-scope" content="profile email">
 	  <script src="https://apis.google.com/js/api:client.js"></script>
 	  <link rel="stylesheet" href="https://use.typekit.net/obm4fnx.css">
+	  <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-304.jsp")) { %>
+	  <!-- PRODUCT DETAILS PAGES -->
+	  	<meta name="twitter:site" content="@FitMyCar" />
+		<meta name="twitter:title" content="%%pageTitle%%" />
+		<meta name="twitter:description" content="%%descriptionMetatag%%" />
+		<meta name="twitter:image" content="${productDetails.product.imagesThumb}" />
+		<meta property="og:title" content="%%pageTitle%%" />
+		<meta property="og:description" content="%%descriptionMetatag%%" />
+		<meta property="og:image" content="${productDetails.product.imagesThumb}" />
+		<meta property="og:type" content="product" />
+		<meta property="og:url" content="<%=siteUrl%>${productDetails.product.url}" />	
+      <% } %>
+      <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-111.jsp")) { %>
+      <!-- HOMEPAGE -->
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@FitMyCar" />
+		<meta name="twitter:title" content="%%pageTitle%%" />
+		<meta name="twitter:description" content="%%descriptionMetatag%%" />
+		<meta name="twitter:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_homepage.jpg" />
+		<meta property="og:title" content="%%pageTitle%%" />
+		<meta property="og:description" content="%%descriptionMetatag%%" />
+		<meta property="og:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_homepage.jpg" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://www.fitmycar.com/<%=countryCode%>" />
+      <% } %>
+      <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-125.jsp") ||
+    		  StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-185.jsp") ||
+    		  StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-301.jsp")) { %>
+      <!-- CAR MATS / FLOOR MATS -->
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@FitMyCar" />
+		<meta name="twitter:title" content="%%pageTitle%%" />
+		<meta name="twitter:description" content="%%descriptionMetatag%%" />
+		<meta name="twitter:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_car-mat_<%=countryCode%>.jpg" />
+		<meta property="og:title" content="%%pageTitle%%" />
+		<meta property="og:description" content="%%descriptionMetatag%%" />
+		<meta property="og:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_car-mat_<%=countryCode%>.jpg" />
+		<meta property="og:type" content="product.group" />
+		<meta property="og:url" content="<%=siteUrl%>/<%=countryCode%>/<%=category.replace(" ", "-")%>/" />
+      <% } %>
+      <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-123.jsp") ||
+    		  StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-186.jsp")) { %>
+      <!-- DASH MATS / DASH COVERS -->
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@FitMyCar" />
+		<meta name="twitter:title" content="%%pageTitle%%" />
+		<meta name="twitter:description" content="%%descriptionMetatag%%" />
+		<meta name="twitter:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_dash-mats_<%=countryCode%>.jpg" />
+		<meta property="og:title" content="%%pageTitle%%" />
+		<meta property="og:description" content="%%descriptionMetatag%%" />
+		<meta property="og:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_dash-mats_<%=countryCode%>.jpg" />
+		<meta property="og:type" content="product.group" />
+		<meta property="og:url" content="<%=siteUrl%>/<%=countryCode%>/<%=category.replace(" ", "-")%>/" />
+      <% } %>
+      <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-320.jsp")) { %>
+      <!-- FLOOR LINERS -->
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@FitMyCar" />
+		<meta name="twitter:title" content="%%pageTitle%%" />
+		<meta name="twitter:description" content="%%descriptionMetatag%%" />
+		<meta name="twitter:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_floor-liners.jpg" />
+		<meta property="og:title" content="%%pageTitle%%" />
+		<meta property="og:description" content="%%descriptionMetatag%%" />
+		<meta property="og:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_floor-liners.jpg" />
+		<meta property="og:type" content="product.group" />
+		<meta property="og:url" content="<%=siteUrl%>/<%=countryCode%>/floor-liners/" />
+      <% } %>
+      <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-124.jsp") ||
+    		  StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-185.jsp")) { %>
+      <!-- BOOT LINERS / TRUNK LINERS -->
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@FitMyCar" />
+		<meta name="twitter:title" content="%%pageTitle%%" />
+		<meta name="twitter:description" content="%%descriptionMetatag%%" />
+		<meta name="twitter:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_boot-liner.jpg" />
+		<meta property="og:title" content="%%pageTitle%%" />
+		<meta property="og:description" content="%%descriptionMetatag%%" />
+		<meta property="og:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_boot-liner.jpg" />
+		<meta property="og:type" content="product.group" />
+		<meta property="og:url" content="<%=siteUrl%>/<%=countryCode%>/<%=category.replace(" ", "-")%>/" />
+      <% } %>
+      <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-121.jsp") ||
+    		  StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-188.jsp")) { %>
+      <!-- UTE MATS -->
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@FitMyCar" />
+		<meta name="twitter:title" content="%%pageTitle%%" />
+		<meta name="twitter:description" content="%%descriptionMetatag%%" />
+		<meta name="twitter:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_ute-mats.jpg" />
+		<meta property="og:title" content="%%pageTitle%%" />
+		<meta property="og:description" content="%%descriptionMetatag%%" />
+		<meta property="og:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_ute-mats.jpg" />
+		<meta property="og:type" content="product.group" />
+		<meta property="og:url" content="<%=siteUrl%>/<%=countryCode%>/<%=category.replace(" ", "-")%>/" />
+      <% } %>
+      <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-316.jsp")) { %>
+      <!-- SEAT COVERS -->
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@FitMyCar" />
+		<meta name="twitter:title" content="%%pageTitle%%" />
+		<meta name="twitter:description" content="%%descriptionMetatag%%" />
+		<meta name="twitter:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_boot-liner.jpg" />
+		<meta property="og:title" content="%%pageTitle%%" />
+		<meta property="og:description" content="%%descriptionMetatag%%" />
+		<meta property="og:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_boot-liner.jpg" />
+		<meta property="og:type" content="product.group" />
+		<meta property="og:url" content="<%=siteUrl%>/<%=countryCode%>/<%=category.replace(" ", "-")%>/" />
+      <% } %>
+      <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-126.jsp")) { %>
+      <!-- ACCESSORIES -->
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@FitMyCar" />
+		<meta name="twitter:title" content="%%pageTitle%%" />
+		<meta name="twitter:description" content="%%descriptionMetatag%%" />
+		<meta name="twitter:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_accessories_<%=countryCode%>.jpg" />
+		<meta property="og:title" content="%%pageTitle%%" />
+		<meta property="og:description" content="%%descriptionMetatag%%" />
+		<meta property="og:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_accessories_<%=countryCode%>.jpg" />
+		<meta property="og:type" content="product.group" />
+		<meta property="og:url" content="<%=siteUrl%>/<%=countryCode%>/<%=category.replace(" ", "-")%>/" />
+      <% } %>
+      
       <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-70.jsp") ||
          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-286.jsp") ||
          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-86.jsp") ||
@@ -352,11 +475,7 @@
       <meta name="robots" content="noindex, follow">
       <% } %>
       <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-111.jsp")) { %>
-      <meta property="og:url" content="https://www.fitmycar.com/au/" />
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content="Shop Online for Car Accessories That Fit" />
-      <meta property="og:description" content="Save yourself the hassle of shopping at the car dealer for car accessories. Shop online. Fitment is guaranteed, and delivery is free right to your door." />
-      <meta property="og:image" content="https://s3-ap-southeast-2.amazonaws.com/cloudmall-webassets/fitmycar/images/seo-images/fitmycar-shop-accessories-online.jpg" />
+      
       <% } else if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-181.jsp")) { %>
       <meta property="og:url" content="https://www.fitmycar.com/us/" />
       <meta property="og:type" content="website" />
@@ -506,7 +625,7 @@
           StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-314.jsp") || // Dash Mats Dynamic - AU
           StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-315.jsp") || // Dash Mats Dynamic - US
           StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-317.jsp") || // Seat Covers Dynamic - AU
-          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-325.jsp") || // Boot Liners Dynamic - US
+          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-325.jsp") || // Seat Covers Dynamic - AU
           StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-318.jsp")) { // Boot Liners Dynamic - AU %>
       <script type="text/javascript" src="https://api.feefo.com/api/javascript/fitmycar" async></script>
       <% } %>
