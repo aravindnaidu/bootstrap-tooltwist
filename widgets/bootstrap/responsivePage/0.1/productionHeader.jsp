@@ -338,7 +338,8 @@
       <meta name="google-signin-scope" content="profile email">
 	  <script src="https://apis.google.com/js/api:client.js"></script>
 	  <link rel="stylesheet" href="https://use.typekit.net/obm4fnx.css">
-	  <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-304.jsp")) { %>
+	  <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-304.jsp")||
+    		  StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-288.jsp")) { %>
 	  <!-- PRODUCT DETAILS PAGES -->
 	  	<meta name="twitter:site" content="@FitMyCar" />
 		<meta name="twitter:title" content="%%pageTitle%%" />
@@ -350,7 +351,8 @@
 		<meta property="og:type" content="product" />
 		<meta property="og:url" content="<%=siteUrl%>${productDetails.product.url}" />	
       <% } %>
-      <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-111.jsp")) { %>
+      <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-111.jsp")||
+    		  StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-181.jsp")) { %>
       <!-- HOMEPAGE -->
 		<meta name="twitter:card" content="summary" />
 		<meta name="twitter:site" content="@FitMyCar" />
@@ -446,7 +448,8 @@
 		<meta property="og:type" content="product.group" />
 		<meta property="og:url" content="<%=siteUrl%>/<%=countryCode%>/<%=category.replace(" ", "-")%>/" />
       <% } %>
-      <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-126.jsp")) { %>
+      <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-126.jsp") ||
+    		  StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-183.jsp")) { %>
       <!-- ACCESSORIES -->
 		<meta name="twitter:card" content="summary" />
 		<meta name="twitter:site" content="@FitMyCar" />
