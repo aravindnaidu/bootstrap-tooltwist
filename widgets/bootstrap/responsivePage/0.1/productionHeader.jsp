@@ -478,15 +478,7 @@
          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-278.jsp")) { %>
       <meta name="robots" content="noindex, follow">
       <% } %>
-      <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-111.jsp")) { %>
-      
-      <% } else if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-181.jsp")) { %>
-      <meta property="og:url" content="https://www.fitmycar.com/us/" />
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content="Shop Online for Car Accessories That Fit" />
-      <meta property="og:description" content="Save yourself the hassle of shopping at the car dealer for car accessories. Shop online. Fitment is guaranteed, and delivery is free right to your door." />
-      <meta property="og:image" content="https://s3-ap-southeast-2.amazonaws.com/cloudmall-webassets/fitmycar/images/seo-images/fitmycar-shop-accessories-online.jpg" />
-      <% } else if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-321.jsp")) { %>
+      <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-321.jsp")) { %>
       <meta property="og:url"           content="https://www.fitmycar.com/au/competition" />
 	  <meta property="og:type"          content="website" />
 	  <meta property="og:title"         content="Win Aussie Made Floor Liners & More" />
