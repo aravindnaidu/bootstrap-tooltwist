@@ -339,8 +339,9 @@
 	  <script src="https://apis.google.com/js/api:client.js"></script>
 	  <link rel="stylesheet" href="https://use.typekit.net/obm4fnx.css">
 	  <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-304.jsp")||
-    		  StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-288.jsp")) { %>
+    		  StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-179.jsp")) { %>
 	  <!-- PRODUCT DETAILS PAGES -->
+		<meta name="twitter:card" content="summary" />
 	  	<meta name="twitter:site" content="@FitMyCar" />
 		<meta name="twitter:title" content="%%pageTitle%%" />
 		<meta name="twitter:description" content="%%descriptionMetatag%%" />
