@@ -442,10 +442,10 @@
 		<meta name="twitter:site" content="@FitMyCar" />
 		<meta name="twitter:title" content="%%pageTitle%%" />
 		<meta name="twitter:description" content="%%descriptionMetatag%%" />
-		<meta name="twitter:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_boot-liner.jpg" />
+		<meta name="twitter:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_seat-covers.jpg" />
 		<meta property="og:title" content="%%pageTitle%%" />
 		<meta property="og:description" content="%%descriptionMetatag%%" />
-		<meta property="og:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_boot-liner.jpg" />
+		<meta property="og:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_seat-covers.jpg" />
 		<meta property="og:type" content="product.group" />
 		<meta property="og:url" content="<%=siteUrl%>/<%=countryCode%>/<%=category.replace(" ", "-")%>/" />
       <% } %>
