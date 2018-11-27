@@ -324,7 +324,7 @@
   </script>
       <% } %>
        <%
-       	String pageMetaTitle = "Toyota";
+       	String pageMetaTitle = "toyota";
        %>
       <title>%%pageTitle%%</title>
       <!-- <meta charset="UTF-8">   -->
