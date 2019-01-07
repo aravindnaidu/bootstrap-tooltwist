@@ -338,10 +338,8 @@
       <meta name="google-signin-scope" content="profile email">
 	  <script src="https://apis.google.com/js/api:client.js"></script>
 	  <link rel="stylesheet" href="https://use.typekit.net/obm4fnx.css">
-<<<<<<< HEAD
 	  <!-- Zip Pay -->
 	  <script src="https://static.zipmoney.com.au/checkout/checkout-v1.min.js"></script>
-=======
 	  <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-304.jsp")||
     		  StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-179.jsp")) { %>
 	  <!-- PRODUCT DETAILS PAGES -->
@@ -468,7 +466,6 @@
 		<meta property="og:url" content="<%=siteUrl%>/<%=countryCode%>/<%=category.replace(" ", "-")%>/" />
       <% } %>
       
->>>>>>> e5a60f166203a4ca1cd5f8539d5555e59fc70e43
       <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-70.jsp") ||
          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-286.jsp") ||
          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-86.jsp") ||
