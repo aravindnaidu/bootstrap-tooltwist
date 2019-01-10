@@ -340,6 +340,9 @@
 	  <link rel="stylesheet" href="https://use.typekit.net/obm4fnx.css">
 	  <!-- Zip Pay -->
 	  <script src="https://static.zipmoney.com.au/checkout/checkout-v1.min.js"></script>
+	  <!-- Zip Pay USP bar and Product Details-->
+	  <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+	  <script type="text/javascript" src="https://d3k1w8lx8mqizo.cloudfront.net/lib/js/zm-widget-js/dist/zipmoney-widgets-v1.min.js"></script>
 	  <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-304.jsp")||
     		  StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-179.jsp")) { %>
 	  <!-- PRODUCT DETAILS PAGES -->
