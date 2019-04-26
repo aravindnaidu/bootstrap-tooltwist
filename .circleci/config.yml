@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:8-jdk-node-browsers
+    working_directory: ~/bootstrap-tooltwist
+    steps:
+      - checkout
+      - run: echo 'export TERM=xterm' >> $BASH_ENV
+      - run:
+          command: | 
+            ./gradlew artifactoryPublish
+    branches:
+      ignore:
+        - /STORY_.*/
+        - /BUG_.*/
