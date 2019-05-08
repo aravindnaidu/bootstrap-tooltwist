@@ -1,3 +1,19 @@
+
+	<div class="modal fade" id="accept_cookies_modal" data-backdrop="" tabindex="-1" role="dialog" aria-labelledby="acceptCookies" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<p class="text-justify">Our website uses cookies to improve our website and your online experience, to tailor content and
+					adverts, and to analyse visitor use of this site. We may share cookie information with third parties
+					for the purposes of advertising. By clicking "Accept", you consent to cookies being used. You can
+					opt-out at any time by adjusting your browser settings. 
+					See our <a target="_blank" href="https://www.corelogic.com.au/about-us/privacy-policy">Privacy Policy</a> 
+					to find out more.</p>
+					<button data-dismiss="modal" type="button" style="color:#fff;border:0;margin:0;" class="btn orange-btn" onclick="setCookie('cookies_accepted',true,1000)">Accept</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<%
 	if (isHomePage) {
 	%>
@@ -76,6 +92,14 @@
 				Justice.init();
 			</script>
 		<%}	%>
+		
+		<script>
+			jQuery(document).ready(function() { 
+				if(!getCookie('cookies_accepted')){
+					jQuery('#accept_cookies_modal').modal();
+				};
+			});
+		</script>
 </html><!-- This should be the end -->
 
 <%
