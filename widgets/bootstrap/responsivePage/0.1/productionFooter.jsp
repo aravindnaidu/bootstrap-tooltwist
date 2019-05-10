@@ -95,7 +95,9 @@
 		
 		<script>
 			jQuery(document).ready(function() { 
-				if(!getCookie('cookies_accepted')){
+				var serverUrl = '<%=Encode.forJavaScriptBlock(Config.getValue("freemium.server.url"))%>';
+				var locationOrigin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port: '');
+				if(!getCookie('cookies_accepted') && serverUrl === locationOrigin){
 					jQuery('#accept_cookies_modal').modal();
 				};
 			});
