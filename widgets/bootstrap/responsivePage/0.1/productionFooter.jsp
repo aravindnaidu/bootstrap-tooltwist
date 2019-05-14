@@ -14,6 +14,25 @@
 			</div>
 		</div>
 	</div>
+	
+	<div class="modal fade" id="local_agent_modal" data-backdrop="" tabindex="-1" role="dialog" aria-labelledby="localAgentFinder" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p class="text-justify">
+						By clicking on this link, you will be re-directed to the LocalAgentFinder website.
+					</p>
+					<a href="https://online.localagentfinder.com.au/property-value-header/" target="_blank" type="button" class="btn orange-btn" onclick="">Compare agents now</a>
+				</div>
+			</div>
+		</div>
+	</div>
 	<%
 	if (isHomePage) {
 	%>
