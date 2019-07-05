@@ -78,7 +78,8 @@
 	<!--<![endif]-->
 	
 <!-- 	<script src="/ttsvr/bootstrap/js/bootstrap.min.js?v=3.0.0" type="text/javascript"></script> -->
-	<script src="https://d2hpwmayxrmlo8.cloudfront.net/public/libraries/bootstrap/js/bootstrap.min.js?v=3.0.0" type="text/javascript"></script>
+<!--	<script src="https://d2hpwmayxrmlo8.cloudfront.net/public/libraries/bootstrap/js/bootstrap.min.js?v=3.0.0" type="text/javascript"></script> -->
+        <script src="%%URL(/ttsvr/studylane_t/public/libraries/bootstrap/js/bootstrap.min.js?v=1.0.0)%%" type="text/javascript"></script>		
 	<script type="text/javascript">if (typeof console == "undefined" || typeof console.log == "undefined") var console = { log: function() {} };</script>
 
     
