@@ -501,9 +501,9 @@
       <% } %>
       <% if (!navpoint.getLabel().contains("Admin") && !navpoint.getLabel().contains("Factory")) { %>
       <% if (isChrome && isHomePage) { %>
-      <link rel="preload" href="//d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/global_css_v1.0.9.min.css.gz" as="style" onload="this.onload=null;this.rel='stylesheet'">
+      <link rel="preload" href="https://cloudmall-webassets.s3-ap-southeast-2.amazonaws.com/fitmycar/static-assets/css/global_css_v1.10.0.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
       <% } else { %>
-      <link rel="stylesheet" href="//d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/global_css_v1.0.9.min.css.gz" media="screen">
+      <link rel="stylesheet" href="https://cloudmall-webassets.s3-ap-southeast-2.amazonaws.com/fitmycar/static-assets/css/global_css_v1.10.0.min.css" media="screen">
       <% } %>
       <% } %>
       <% if (isChrome && isHomePage) { %>
