@@ -93,6 +93,10 @@
 	}
 
 	boolean isHomePage = currentNavpointId.equals("myrp-1282");
+	
+	response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+	response.setHeader("Pragma", "no-cache");
+	response.setDateHeader("Expires", 0);
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -103,7 +107,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="author" content="tooltwist"/>
 		<meta name="web_author" content="tooltwist"/>
-
+		
 		<%if(currentNavpointId.equals("myrp-1327")){%>
 		<meta name="googlebot" content="nofollow, noindex" />
 		<% } %>
