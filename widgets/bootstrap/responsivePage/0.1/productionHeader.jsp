@@ -72,6 +72,7 @@
          }
          
          // check google tag manager script if not null
+         // check google tag manager script if not nulll
          if (gtm != null) {
           // set page name, event and category base from pages
             if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-111.jsp") ||
