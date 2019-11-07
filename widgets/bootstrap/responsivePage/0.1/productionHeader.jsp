@@ -71,7 +71,6 @@
           isHomePage = true;
          }
          
-         // check google tag manager script if not null
          // check google tag manager script if not nulll
          if (gtm != null) {
           // set page name, event and category base from pages
@@ -168,7 +167,7 @@
               "@type": "Product",
               "name": "${productDetails.product.productName}",
               "image": ${productDetails.schemaImages},
-              "description": "${productDetails.product.description}",
+              "description": '${productDetails.product.description}',
               "mpn": "${productDetails.product.partNumber}",
               "brand": {
                   "@type": "Thing",
@@ -272,7 +271,8 @@
               StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-318.jsp") || 
               StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-325.jsp") || 
               StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-301.jsp") || 
-              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-315.jsp")) { %>
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-315.jsp") || 
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-330.jsp")) { %>
           
           	<script type="application/ld+json">
 				{
@@ -628,7 +628,8 @@
           StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-315.jsp") || // Dash Mats Dynamic - US
           StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-317.jsp") || // Seat Covers Dynamic - AU
           StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-325.jsp") || // Seat Covers Dynamic - AU
-          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-318.jsp")) { // Boot Liners Dynamic - AU %>
+          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-318.jsp") || // Boot Liners Dynamic - AU
+          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-330.jsp")) { // Car Covers Dynamic - AU %>
       <script type="text/javascript" src="https://api.feefo.com/api/javascript/fitmycar" async></script>
       <% } %>
       <!--  Provides a common fixed-width (and optionally responsive) layout with only <div class="container"> required. -->
