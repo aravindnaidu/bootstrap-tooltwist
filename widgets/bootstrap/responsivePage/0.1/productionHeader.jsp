@@ -167,7 +167,7 @@
               "@type": "Product",
               "name": "${productDetails.product.productName}",
               "image": ${productDetails.schemaImages},
-              "description": '${productDetails.product.description}',
+              "description": "${productDetails.parentProductType.description}",
               "mpn": "${productDetails.product.partNumber}",
               "brand": {
                   "@type": "Thing",
