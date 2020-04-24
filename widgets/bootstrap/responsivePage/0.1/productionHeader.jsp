@@ -249,7 +249,7 @@
     				"position": 1,
     				"item": {
       				"@id": "${categoryDetails.homeUrl}",
-      				"name": "Home"
+      				"name": "shop"
     				}
   				},{
     				"@type": "ListItem",
@@ -283,7 +283,7 @@
     				"position": 1,
     				"item": {
       				"@id": "${categoryDetails.homeUrl}",
-      				"name": "Home"
+      				"name": "shop"
     				}
   				},{
     				"@type": "ListItem",
