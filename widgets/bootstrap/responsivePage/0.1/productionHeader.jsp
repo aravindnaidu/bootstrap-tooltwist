@@ -169,6 +169,14 @@
               "image": ${productDetails.schemaImages},
               "description": "${productDetails.parentProductType.description}",
               "mpn": "${productDetails.product.partNumber}",
+			  "sku": "${productDetails.product.productId}",
+			  "aggregateRating": {
+				  "@type":"AggregateRating",
+				  "bestRating": "5",
+			  	  "worstRating": "1",
+				  "ratingValue": "${productDetails.rating}",
+			  	  "reviewCount": "${productDetails.reviewCount}"
+			  },
               "brand": {
                   "@type": "Thing",
                   "name": "FitMyCar"
@@ -183,7 +191,8 @@
                   "@type": "Organization",
                   "name": "FitMyCar"
                   }
-              }
+              },
+			  "review": ${productDetails.review}
             }
         </script>
       <% if (!WebUtils.isGeneralAccessory()) { %>
@@ -196,28 +205,28 @@
             "position": 1,
           "item": {
               "@id": "<%=siteUrl%>/<%=countryCode%>",
-              "name": "Home"
+              "name": "shop"
           }
         },{
             "@type": "ListItem",
             "position": 2,
             "item": {
             "@id": "<%=siteUrl%>/<%=countryCode%>/${productDetails.parentProductType.categoryUrl}/",
-            "name": "${productDetails.parentProductType.name}"
+            "name": "${productDetails.categoryName}"
             }
         },{
             "@type": "ListItem",
             "position": 3,
             "item": {
               "@id": "<%=siteUrl%>/<%=countryCode%>/${productDetails.parentProductType.categoryUrl}/${productDetails.makeUrlString}",
-              "name": "${productDetails.product.make}"
+              "name": "${productDetails.makeValue}"
             }
         },{
             "@type": "ListItem",
             "position": 4,
             "item": {
               "@id": "<%=siteUrl%>/<%=countryCode%>/${productDetails.parentProductType.categoryUrl}/${productDetails.modelUrlString}",
-              "name": "${productDetails.product.model}"
+              "name": "${productDetails.modelValue}"
           }
         }]
     }
@@ -227,8 +236,7 @@
       <% } %>
       
       <%if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-125.jsp") ||
-              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-184.jsp") || 
-              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-301.jsp") || 
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-184.jsp") ||
               StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-123.jsp") || 
               StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-316.jsp") || 
               StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-186.jsp") || 
@@ -238,7 +246,8 @@
               StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-185.jsp") ||
               StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-122.jsp") ||
               StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-126.jsp") ||
-              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-320.jsp")) { %>
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-320.jsp") ||
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-329.jsp")) { %>
           
           	<script type="application/ld+json">
 				{
