@@ -185,6 +185,7 @@
                 "@type": "Offer",
                 "priceCurrency": "${productDetails.gtmCurrencyCode}",
                 "price": ${productDetails.price},
+				"url": "<%=siteUrl%>${requestScope['javax.servlet.forward.request_uri']}",
                 "itemCondition": "http://schema.org/NewCondition",
                 "availability": "${productDetails.schemaAvailability}",
                 "seller": {
