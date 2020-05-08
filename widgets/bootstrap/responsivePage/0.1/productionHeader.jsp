@@ -170,13 +170,7 @@
               "description": "${productDetails.parentProductType.description}",
               "mpn": "${productDetails.product.partNumber}",
 			  "sku": "${productDetails.product.productId}",
-			  "aggregateRating": {
-				  "@type":"AggregateRating",
-				  "bestRating": "5",
-			  	  "worstRating": "1",
-				  "ratingValue": "${productDetails.rating}",
-			  	  "reviewCount": "${productDetails.reviewCount}"
-			  },
+			  ${productDetails.rating}
               "brand": {
                   "@type": "Thing",
                   "name": "FitMyCar"
