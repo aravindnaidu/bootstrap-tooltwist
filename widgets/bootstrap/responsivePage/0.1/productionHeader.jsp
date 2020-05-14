@@ -357,6 +357,7 @@
     				"item": {
       					"@id": "${categoryDetails.siteMapUrl}",
       					"name": "vehicles"
+						}
     			},{
     				"@type": "ListItem",
     				"position": 3,
