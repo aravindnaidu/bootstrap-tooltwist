@@ -310,6 +310,67 @@
           
       <%}%>
       
+      <%if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-160.jsp")) { %>
+          
+          	<script type="application/ld+json">
+				{
+  				"@context": "http://schema.org",
+  				"@type": "BreadcrumbList",
+  				"itemListElement": [{
+    				"@type": "ListItem",
+    				"position": 1,
+    				"item": {
+      				"@id": "${categoryDetails.homeUrl}",
+      				"name": "shop"
+    				}
+  				},{
+    				"@type": "ListItem",
+    				"position": 2,
+    				"item": {
+      					"@id": "${categoryDetails.siteMapUrl}",
+      					"name": "vehicles"
+    				}
+  				}]
+				}
+			</script>
+					          
+          
+      <%}%>
+      
+      <%if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-161.jsp") ||
+    		  StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-162.jsp")) { %>
+          
+          	<script type="application/ld+json">
+				{
+  				"@context": "http://schema.org",
+  				"@type": "BreadcrumbList",
+  				"itemListElement": [{
+    				"@type": "ListItem",
+    				"position": 1,
+    				"item": {
+      				"@id": "${categoryDetails.homeUrl}",
+      				"name": "shop"
+    				}
+  				},{
+    				"@type": "ListItem",
+    				"position": 2,
+    				"item": {
+      					"@id": "${categoryDetails.siteMapUrl}",
+      					"name": "vehicles"
+    			},{
+    				"@type": "ListItem",
+    				"position": 3,
+    				"item": {
+      					"@id": "${categoryDetails.makeUrl}",
+      					"name": "${categoryDetails.make}"
+    				}
+  				}]
+				}
+			</script>
+					          
+          
+      <%}%>
+      
       <% if (isHomePage) { %>
       <script type="application/ld+json">
     {   "@context" : "http://schema.org",
