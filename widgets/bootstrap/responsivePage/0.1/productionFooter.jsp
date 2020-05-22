@@ -67,7 +67,8 @@
 		});
 		
 		dataLayer.push({
-			'logged_in' : '<%=LoginUser.isLoggedIn(request)%>'
+			'logged_in' : '<%=LoginUser.isLoggedIn(request)%>',
+			'paying_subscriber': '<%=LoginUser.isPremiumUser(request)%>'
 		});
 		</script>
 		 <%if (FreemiumErrorCatchUtil.isPageError(request)=="true"){ %>
