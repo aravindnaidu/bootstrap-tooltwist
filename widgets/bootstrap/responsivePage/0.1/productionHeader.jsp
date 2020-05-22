@@ -169,8 +169,7 @@
               "image": ${productDetails.schemaImages},
               "description": "${productDetails.parentProductType.description}",
               "mpn": "${productDetails.product.partNumber}",
-			  "sku": "${productDetails.product.productId}",
-			  ${productDetails.rating}
+			  "sku": "${productDetails.product.productId}"${productDetails.rating},
               "brand": {
                   "@type": "Thing",
                   "name": "FitMyCar"
@@ -376,6 +375,7 @@
       <script type="application/ld+json">
     {   "@context" : "http://schema.org",
         "@type" : "Organization",
+		"name" : "FitMyCar",
         "legalName" : "FitMyCar",
         "url" : "https://fitmycar.com/<%=countryCode%>",
         "contactPoint" : [{
@@ -383,11 +383,14 @@
             "telephone" : "<%=phoneNumber%>",
             "contactType" : "customer service"
         }],
-        "logo" : "https://www.fitmycar.com/au/cropImage/fitmycar.images.fmc_img_logo.png",
-        "sameAs" : [  "https://www.facebook.com/FitMyCar",
+        "logo" : "${homeDetails.homeUrl}cropImage/fitmycar.images.fmc_img_logo_new.png",
+        "sameAs" : 
+				[
+					  "https://www.facebook.com/FitMyCar",
                       "https://twitter.com/FitMyCar/",
                       "https://www.instagram.com/FitMyCar/",
-                      "https://www.pinterest.com.au/FitMyCar/"]
+                      "https://www.pinterest.com.au/FitMyCar/"
+				]${homeDetails.rating}
     }
   </script>
       <% } %>
