@@ -435,10 +435,10 @@
 		<meta name="twitter:site" content="@FitMyCar" />
 		<meta name="twitter:title" content="%%pageTitle%%" />
 		<meta name="twitter:description" content="%%descriptionMetatag%%" />
-		<meta name="twitter:image" content="https://d3d28nc9u6ltts.cloudfront.net/fitmycar/static-assets/images/meta_homepage.jpg" />
+		<meta name="twitter:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_homepage.jpg" />
 		<meta property="og:title" content="%%pageTitle%%" />
 		<meta property="og:description" content="%%descriptionMetatag%%" />
-		<meta property="og:image" content="https://d3d28nc9u6ltts.cloudfront.net/fitmycar/static-assets/images/meta_homepage.jpg" />
+		<meta property="og:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_homepage.jpg" />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://www.fitmycar.com/<%=countryCode%>" />
       <% } %>
@@ -450,10 +450,10 @@
 		<meta name="twitter:site" content="@FitMyCar" />
 		<meta name="twitter:title" content="%%pageTitle%%" />
 		<meta name="twitter:description" content="%%descriptionMetatag%%" />
-		<meta name="twitter:image" content="https://d3d28nc9u6ltts.cloudfront.net/fitmycar/static-assets/images/meta_car-mat_<%=countryCode%>.jpg" />
+		<meta name="twitter:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_car-mat_<%=countryCode%>.jpg" />
 		<meta property="og:title" content="%%pageTitle%%" />
 		<meta property="og:description" content="%%descriptionMetatag%%" />
-		<meta property="og:image" content="https://d3d28nc9u6ltts.cloudfront.net/fitmycar/static-assets/images/meta_car-mat_<%=countryCode%>.jpg" />
+		<meta property="og:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_car-mat_<%=countryCode%>.jpg" />
 		<meta property="og:type" content="product.group" />
 		<meta property="og:url" content="<%=siteUrl%>/<%=countryCode%>/<%=category.replace(" ", "-")%>/" />
       <% } %>
@@ -464,10 +464,10 @@
 		<meta name="twitter:site" content="@FitMyCar" />
 		<meta name="twitter:title" content="%%pageTitle%%" />
 		<meta name="twitter:description" content="%%descriptionMetatag%%" />
-		<meta name="twitter:image" content="https://d3d28nc9u6ltts.cloudfront.net/fitmycar/static-assets/images/meta_dash-mats_<%=countryCode%>.jpg" />
+		<meta name="twitter:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_dash-mats_<%=countryCode%>.jpg" />
 		<meta property="og:title" content="%%pageTitle%%" />
 		<meta property="og:description" content="%%descriptionMetatag%%" />
-		<meta property="og:image" content="https://d3d28nc9u6ltts.cloudfront.net/fitmycar/static-assets/images/meta_dash-mats_<%=countryCode%>.jpg" />
+		<meta property="og:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_dash-mats_<%=countryCode%>.jpg" />
 		<meta property="og:type" content="product.group" />
 		<meta property="og:url" content="<%=siteUrl%>/<%=countryCode%>/<%=category.replace(" ", "-")%>/" />
       <% } %>
@@ -477,10 +477,10 @@
 		<meta name="twitter:site" content="@FitMyCar" />
 		<meta name="twitter:title" content="%%pageTitle%%" />
 		<meta name="twitter:description" content="%%descriptionMetatag%%" />
-		<meta name="twitter:image" content="https://d3d28nc9u6ltts.cloudfront.net/fitmycar/static-assets/images/meta_floor-liners.jpg" />
+		<meta name="twitter:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_floor-liners.jpg" />
 		<meta property="og:title" content="%%pageTitle%%" />
 		<meta property="og:description" content="%%descriptionMetatag%%" />
-		<meta property="og:image" content="https://d3d28nc9u6ltts.cloudfront.net/fitmycar/static-assets/images/meta_floor-liners.jpg" />
+		<meta property="og:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_floor-liners.jpg" />
 		<meta property="og:type" content="product.group" />
 		<meta property="og:url" content="<%=siteUrl%>/<%=countryCode%>/floor-liners/" />
       <% } %>
@@ -491,10 +491,10 @@
 		<meta name="twitter:site" content="@FitMyCar" />
 		<meta name="twitter:title" content="%%pageTitle%%" />
 		<meta name="twitter:description" content="%%descriptionMetatag%%" />
-		<meta name="twitter:image" content="https://d3d28nc9u6ltts.cloudfront.net/fitmycar/static-assets/images/meta_boot-liner.jpg" />
+		<meta name="twitter:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_boot-liner.jpg" />
 		<meta property="og:title" content="%%pageTitle%%" />
 		<meta property="og:description" content="%%descriptionMetatag%%" />
-		<meta property="og:image" content="https://d3d28nc9u6ltts.cloudfront.net/fitmycar/static-assets/images/meta_boot-liner.jpg" />
+		<meta property="og:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_boot-liner.jpg" />
 		<meta property="og:type" content="product.group" />
 		<meta property="og:url" content="<%=siteUrl%>/<%=countryCode%>/<%=category.replace(" ", "-")%>/" />
       <% } %>
@@ -505,10 +505,10 @@
 		<meta name="twitter:site" content="@FitMyCar" />
 		<meta name="twitter:title" content="%%pageTitle%%" />
 		<meta name="twitter:description" content="%%descriptionMetatag%%" />
-		<meta name="twitter:image" content="https://d3d28nc9u6ltts.cloudfront.net/fitmycar/static-assets/images/meta_ute-mats.jpg" />
+		<meta name="twitter:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_ute-mats.jpg" />
 		<meta property="og:title" content="%%pageTitle%%" />
 		<meta property="og:description" content="%%descriptionMetatag%%" />
-		<meta property="og:image" content="https://d3d28nc9u6ltts.cloudfront.net/fitmycar/static-assets/images/meta_ute-mats.jpg" />
+		<meta property="og:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_ute-mats.jpg" />
 		<meta property="og:type" content="product.group" />
 		<meta property="og:url" content="<%=siteUrl%>/<%=countryCode%>/<%=category.replace(" ", "-")%>/" />
       <% } %>
@@ -518,10 +518,10 @@
 		<meta name="twitter:site" content="@FitMyCar" />
 		<meta name="twitter:title" content="%%pageTitle%%" />
 		<meta name="twitter:description" content="%%descriptionMetatag%%" />
-		<meta name="twitter:image" content="https://d3d28nc9u6ltts.cloudfront.net/fitmycar/static-assets/images/meta_seat-covers.jpg" />
+		<meta name="twitter:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_seat-covers.jpg" />
 		<meta property="og:title" content="%%pageTitle%%" />
 		<meta property="og:description" content="%%descriptionMetatag%%" />
-		<meta property="og:image" content="https://d3d28nc9u6ltts.cloudfront.net/fitmycar/static-assets/images/meta_seat-covers.jpg" />
+		<meta property="og:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_seat-covers.jpg" />
 		<meta property="og:type" content="product.group" />
 		<meta property="og:url" content="<%=siteUrl%>/<%=countryCode%>/<%=category.replace(" ", "-")%>/" />
       <% } %>
@@ -532,10 +532,10 @@
 		<meta name="twitter:site" content="@FitMyCar" />
 		<meta name="twitter:title" content="%%pageTitle%%" />
 		<meta name="twitter:description" content="%%descriptionMetatag%%" />
-		<meta name="twitter:image" content="https://d3d28nc9u6ltts.cloudfront.net/fitmycar/static-assets/images/meta_accessories_<%=countryCode%>.jpg" />
+		<meta name="twitter:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_accessories_<%=countryCode%>.jpg" />
 		<meta property="og:title" content="%%pageTitle%%" />
 		<meta property="og:description" content="%%descriptionMetatag%%" />
-		<meta property="og:image" content="https://d3d28nc9u6ltts.cloudfront.net/fitmycar/static-assets/images/meta_accessories_<%=countryCode%>.jpg" />
+		<meta property="og:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_accessories_<%=countryCode%>.jpg" />
 		<meta property="og:type" content="product.group" />
 		<meta property="og:url" content="<%=siteUrl%>/<%=countryCode%>/<%=category.replace(" ", "-")%>/" />
       <% } %>
@@ -566,24 +566,24 @@
       <% } %>
       <!-- [ Cloudmall Essentials - Bootstrap and Fonts ] -->
       <% if (isChrome && isHomePage) { %>
-      <link rel="preload" href="https://d3d28nc9u6ltts.cloudfront.net/fitmycar/static-assets/css/bootstrap.min.css.gz" as="style" onload="this.onload=null;this.rel='stylesheet'">
+      <link rel="preload" href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/bootstrap.min.css.gz" as="style" onload="this.onload=null;this.rel='stylesheet'">
       <% } else { %>
-      <link rel="stylesheet" href="https://d3d28nc9u6ltts.cloudfront.net/fitmycar/static-assets/css/bootstrap.min.css.gz" media="screen">
+      <link rel="stylesheet" href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/bootstrap.min.css.gz" media="screen">
       <% } %>
       <% if (!navpoint.getLabel().contains("Admin") && !navpoint.getLabel().contains("Factory")) { %>
       <% if (isChrome && isHomePage) { %>
-      <link rel="preload" href="https://cloudmall-webassets2.s3-ap-southeast-2.amazonaws.com/fitmycar/static-assets/css/global_css_v1.10.0.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+      <link rel="preload" href="https://cloudmall-webassets.s3-ap-southeast-2.amazonaws.com/fitmycar/static-assets/css/global_css_v1.10.0.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
       <% } else { %>
-      <link rel="stylesheet" href="https://cloudmall-webassets2.s3-ap-southeast-2.amazonaws.com/fitmycar/static-assets/css/global_css_v1.10.0.min.css" media="screen">
+      <link rel="stylesheet" href="https://cloudmall-webassets.s3-ap-southeast-2.amazonaws.com/fitmycar/static-assets/css/global_css_v1.10.0.min.css" media="screen">
       <% } %>
       <% } %>
       <% if (isChrome && isHomePage) { %>
       <link rel="preload" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" as="style" onload="this.onload=null;this.rel='stylesheet'">
-      <link rel="preload" href="https://d3d28nc9u6ltts.cloudfront.net/fitmycar/static-assets/css/20160412.min.css.gz" as="style" onload="this.onload=null;this.rel='stylesheet'">
+      <link rel="preload" href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/20160412.min.css.gz" as="style" onload="this.onload=null;this.rel='stylesheet'">
       <link rel="preload" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous" as="style" onload="this.onload=null;this.rel='stylesheet'">
       <% } else { %>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700">
-      <link rel="stylesheet" href="https://d3d28nc9u6ltts.cloudfront.net/fitmycar/static-assets/css/20160412.min.css.gz" media="screen">
+      <link rel="stylesheet" href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/20160412.min.css.gz" media="screen">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
       <% } %>
       <!-- [ Cloudmall Essentials ENDD ] -->
@@ -597,8 +597,8 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <% } %>
       <!-- [ Favicon ] -->
-      <link rel="icon" href="https://d3d28nc9u6ltts.cloudfront.net/fitmycar/static-assets/images/fitmycar_favicon.ico" type="image/x-icon">
-      <link rel="shortcut icon" href="https://d3d28nc9u6ltts.cloudfront.net/fitmycar/static-assets/images/fitmycar_favicon.ico" type="image/x-icon">
+      <link rel="icon" href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/fitmycar_favicon.ico" type="image/x-icon">
+      <link rel="shortcut icon" href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/fitmycar_favicon.ico" type="image/x-icon">
       <!-- [ Favicon END ] -->
       <!-- [ Google Analytics ] -->
       <% if (!navpoint.getParent().getId().equals(WbdCache.getProperty("store.name") + "-176")) { %>
@@ -608,7 +608,7 @@
       <!-- [ Google Analytics END ] -->
       <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-304.jsp") ||
         StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-179.jsp")) { %>
-      <script src="https://d3d28nc9u6ltts.cloudfront.net/fitmycar/static-assets/js/jquery-2.1.4.min.js.gz"></script>
+      <script src="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/js/jquery-2.1.4.min.js.gz"></script>
       <% } %>
    </head>
    <body>
