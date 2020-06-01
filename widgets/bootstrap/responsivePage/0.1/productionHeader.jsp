@@ -390,6 +390,7 @@
                       "https://twitter.com/FitMyCar/",
                       "https://www.instagram.com/FitMyCar/",
                       "https://www.pinterest.com.au/FitMyCar/"
+					  "https://www.youtube.com/channel/UCl_J4HQ-c496fj7bDgiau1w"
 				]${homeDetails.rating}
     }
   </script>
