@@ -1,13 +1,14 @@
 
-	<div class="modal fade" id="accept_cookies_modal" data-backdrop="" tabindex="-1" role="dialog" aria-labelledby="acceptCookies" aria-hidden="true">
+	<div class="modal fade" id="accept_cookies_modal" data-backdrop="" tabindex="-1" style="background-color: rgba(255,255,255,0.5);" role="dialog" aria-labelledby="acceptCookies" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-body">
-					<p class="text-justify">Our website uses cookies to improve our website and your online experience, to tailor content and
-					adverts, and to analyse visitor use of this site. We may share cookie information with third parties
-					for the purposes of advertising. By clicking "Accept", you consent to cookies being used. You can
-					opt-out at any time by adjusting your browser settings. 
-					See our <a target="_blank" href="https://www.corelogic.com.au/about-us/privacy-policy">Privacy Policy</a> 
+					<p class="text-justify">This product uses cookies and other similar technologies to improve and 
+					customise your browsing experience, to tailor content and adverts, and for analytics and 
+					metrics regarding visitor usage on this product and other media. We may share cookie and analytics 
+					information with third parties for the purposes of advertising. By continuing to use our website, you 
+					consent to cookies being used. See our 
+					<a target="_blank" rel="noopener noreferrer" href="https://www.corelogic.com.au/about-us/privacy-policy">privacy policy</a> 
 					to find out more.</p>
 					<button 
             id="acceptCookieButton"
