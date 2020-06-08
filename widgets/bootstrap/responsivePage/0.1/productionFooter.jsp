@@ -9,7 +9,15 @@
 					opt-out at any time by adjusting your browser settings. 
 					See our <a target="_blank" href="https://www.corelogic.com.au/about-us/privacy-policy">Privacy Policy</a> 
 					to find out more.</p>
-					<button data-dismiss="modal" type="button" style="color:#fff;border:0;margin:0;" class="btn orange-btn" onclick="setCookie('cookies_accepted',true,1000)">Accept</button>
+					<button 
+            id="acceptCookieButton"
+            data-dismiss="modal" 
+            type="button" 
+            style="color:#fff;border:0;margin:0;" 
+            class="btn orange-btn" 
+            onclick="setCookie('cookies_accepted',true,1000)">
+              Accept
+          </button>
 				</div>
 			</div>
 		</div>
