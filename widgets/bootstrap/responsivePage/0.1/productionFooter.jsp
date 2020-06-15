@@ -25,6 +25,13 @@
 <%-- These are from the "js/src" folder --%>
 <script src="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/js/c120416.min.js.gz"></script>
 <% } %>
+<!-- [ Exclude this for shopping cart and checkout pages ] -->		
+<%	if (!StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-86.jsp") &&
+   !StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-276.jsp") && 
+   !StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-291.jsp") &&
+   !StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-275.jsp")) { %>
+<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
+<% } %>
 <script>
    window.___gcfg = {
      lang: 'en_AU'
