@@ -442,6 +442,7 @@
 		<meta property="og:image" content="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/images/meta_homepage.jpg" />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://www.fitmycar.com/<%=countryCode%>" />
+		<meta name="ahrefs-site-verification" content="e641b6c23b6ca9b76ed3b96a720bd87afe875865df5946f94c30b2de5badf4b3">
       <% } %>
       <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-125.jsp") ||
     		  StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-184.jsp") ||
