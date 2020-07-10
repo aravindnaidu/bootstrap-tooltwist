@@ -15,8 +15,7 @@
             data-dismiss="modal" 
             type="button" 
             style="color:#fff;border:0;margin:0;" 
-            class="btn orange-btn" 
-            onclick="setCookie('cookies_accepted',true,1000)">
+            class="btn orange-btn">
               Accept
           </button>
 				</div>
@@ -110,6 +109,27 @@
 				if(!getCookie('cookies_accepted') && serverUrl === locationOrigin){
 					jQuery('#accept_cookies_modal').modal();
 				};
+				
+				var localUrl = '<%=Encode.forJavaScriptBlock(Config.getValue("freemium.server.is.localhost"))%>' === 'true'
+				    ? '/ttsvr' : '';
+				
+				var cookieUrl = serverUrl + localUrl + "/private/cookieConsent";
+				jQuery('#acceptCookieButton').click(function() {
+					setCookie('cookies_accepted', true, 160);
+					
+                   jQuery.ajax({
+                        type: 'GET',
+                        url: cookieUrl,
+                        success: function(data) {
+                            if (!data) return;
+                            
+                            console.log("Successful setting cookie consent with identifier ID: '" + identifierId + "'");
+                        },
+                        error: function(error) {
+                            console.error('Failed request from cookie consent ');
+                        }
+                    });
+				});
 			});
 		</script>
 </html><!-- This should be the end -->
