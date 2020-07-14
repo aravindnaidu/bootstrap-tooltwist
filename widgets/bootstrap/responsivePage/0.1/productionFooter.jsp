@@ -123,7 +123,7 @@
                         success: function(data) {
                             if (!data) return;
                             
-                            console.log("Successful setting cookie consent with identifier ID: '" + identifierId + "'");
+                            console.log("Successful setting cookie consent with identifier ID: '" + data.identifierId + "'");
                         },
                         error: function(error) {
                             console.error('Failed request from cookie consent ');
