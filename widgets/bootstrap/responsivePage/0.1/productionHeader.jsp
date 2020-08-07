@@ -398,11 +398,18 @@
        <%
        	String pageMetaTitle = "toyota";
        %>
-      <title>%%pageTitle%%</title>
+       <!-- Short term fix only. Will remove next sprint -->
+       <% if (request.getAttribute("metaTitle").toString() != "") { %>
+      		<title>${metaTitle}</title>
+      		<meta name="description" content="${metaDesc}">
+       <% } else { %>
+      		<title>%%pageTitle%%</title>
+      		<meta name="description" content="%%descriptionMetatag%%">
+       <% } %>
       <!-- <meta charset="UTF-8">   -->
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-      <meta name="description" content="%%descriptionMetatag%%">
+      
       <meta name="keywords" content="%%keywordMetatag%%">
       <meta name="generator" content="ToolTwist" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
