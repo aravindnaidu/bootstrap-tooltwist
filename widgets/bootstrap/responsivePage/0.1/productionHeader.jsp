@@ -575,17 +575,15 @@
       <% } %>
       <% if (!navpoint.getLabel().contains("Admin") && !navpoint.getLabel().contains("Factory")) { %>
       <% if (isChrome && isHomePage) { %>
-      <link rel="preload" href="https://cloudmall-webassets.s3-ap-southeast-2.amazonaws.com/fitmycar/static-assets/css/global_css_v1.10.0.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+      <link rel="preload" href="https://cloudmall-webassets.s3-ap-southeast-2.amazonaws.com/fitmycar/static-assets/css/global_css_v1.11.0.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
       <% } else { %>
-      <link rel="stylesheet" href="https://cloudmall-webassets.s3-ap-southeast-2.amazonaws.com/fitmycar/static-assets/css/global_css_v1.10.0.min.css" media="screen">
+      <link rel="stylesheet" href="https://cloudmall-webassets.s3-ap-southeast-2.amazonaws.com/fitmycar/static-assets/css/global_css_v1.11.0.min.css" media="screen">
       <% } %>
       <% } %>
       <% if (isChrome && isHomePage) { %>
-      <link rel="preload" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" as="style" onload="this.onload=null;this.rel='stylesheet'">
       <link rel="preload" href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/20160412.min.css.gz" as="style" onload="this.onload=null;this.rel='stylesheet'">
       <link rel="preload" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous" as="style" onload="this.onload=null;this.rel='stylesheet'">
       <% } else { %>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700">
       <link rel="stylesheet" href="https://d3v52uw9mwsoe.cloudfront.net/fitmycar/static-assets/css/20160412.min.css.gz" media="screen">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
       <% } %>
