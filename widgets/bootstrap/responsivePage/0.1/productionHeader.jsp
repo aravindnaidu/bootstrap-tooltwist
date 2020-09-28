@@ -575,9 +575,9 @@
       <% } %>
       <% if (!navpoint.getLabel().contains("Admin") && !navpoint.getLabel().contains("Factory")) { %>
       <% if (isChrome && isHomePage) { %>
-      <link rel="preload" href="https://assets.fitmycar.com/fitmycar/static-assets/css/global_css_v1.11.0.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+      <link rel="preload" href="https://assets.fitmycar.com/fitmycar/static-assets/css/global_css_v1.12.0.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
       <% } else { %>
-      <link rel="stylesheet" href="https://assets.fitmycar.com/fitmycar/static-assets/css/global_css_v1.11.0.min.css" media="screen">
+      <link rel="stylesheet" href="https://assets.fitmycar.com/fitmycar/static-assets/css/global_css_v1.12.0.min.css" media="screen">
       <% } %>
       <% } %>
       <% if (isChrome && isHomePage) { %>
