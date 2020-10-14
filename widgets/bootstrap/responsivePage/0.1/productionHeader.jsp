@@ -268,6 +268,25 @@
           
       <%}%>
       
+      <%if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-125.jsp") ||
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-123.jsp") ||
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-121.jsp") || 
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-124.jsp") ||
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-316.jsp") ||
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-320.jsp") ||
+              StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-329.jsp")) { %>
+          
+          	<script type="application/ld+json">
+				{
+  				"@context": "http://schema.org",
+  				"@type": "FAQPage",
+				"mainEntity": ${categoryDetails.faq}
+				}
+			</script>
+					          
+          
+      <%}%>
+      
       <%if (StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-300.jsp") ||
               StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-314.jsp") || 
               StringUtils.contains(request.getRequestURL(), "fitmycar-webdesign-317.jsp") || 
