@@ -720,6 +720,8 @@
 	        StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-317.jsp") || // Seat Covers Dynamic - AU
 	        StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-325.jsp") || // Seat Covers Dynamic - AU
 	        StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-318.jsp") || // Boot Liners Dynamic - AU
+	        StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-331.jsp") || // UTE Mats Dynamic - AU
+	        StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-335.jsp") || // Car Sunshades Dynamic - AU
 	        StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-330.jsp")) { // Car Covers Dynamic - AU %>
       <script type="text/javascript" src="https://api.feefo.com/api/javascript/fitmycar" async></script>
       <% } %>
