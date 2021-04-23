@@ -74,10 +74,6 @@
 			});
 		});
 		
-		dataLayer.push({
-			'logged_in' : '<%=LoginUser.isLoggedIn(request)%>',
-			'paying_subscriber': '<%=LoginUser.isPremiumUser(request)%>'
-		});
 		</script>
 		 <%if (FreemiumErrorCatchUtil.isPageError(request)=="true"){ %>
 		<script type="text/javascript">
