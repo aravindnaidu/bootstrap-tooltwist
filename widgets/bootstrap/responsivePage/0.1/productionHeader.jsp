@@ -646,17 +646,6 @@
       </script>
       <% } %>
       <% } %>
-      <% if (StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-89.jsp") || // gtm for payment success AU
-          StringUtils.contains(headerRequest.getRequestURL(), "fitmycar-webdesign-273.jsp")) {// gtm for payment success US %>
-      <% if (WebUtils.isGtmIncludeDataLayer()) { %>
-      <script>
-        var dataLayer  = window.dataLayer || [];
-        dataLayer.push({
-        "ecommerce": <%=WebUtils.getGtmPaymentSummaryDataLayer() %>
-      });
-      </script>
-      <% } %>
-      <% } %>
       <% if (gtm != null) { %>
       <!-- [ Exclude GTM for factory pages ] -->  
       <% if (!excludeGTM) { %>
